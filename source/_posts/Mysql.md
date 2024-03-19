@@ -2,6 +2,8 @@
 title: Mysql
 date: 2024-03-18 21:22:27
 tags: Mysql
+feature: true
+cover: https://raw.githubusercontent.com/3309446352/Images/main/img/Snipaste_2023-03-27_21-42-14.png
 ---
 
 # 1Mysql
