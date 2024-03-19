@@ -2,6 +2,7 @@
 title: java八股文
 date: 2024-03-18 17:14:43
 tags: 面试题
+cover: https://raw.githubusercontent.com/3309446352/Images/main/img/index-read.gif
 feature: true
 ---
 

@@ -1,9 +1,12 @@
+---
 title: 湖南农民运动考察报告
 tags: 农民运动
 autor: Zmc
+categories: 毛选
 date: 2024-03-19 00:39:00
 feature: true
 cover: https://raw.githubusercontent.com/3309446352/Images/main/img/007.jpg
+---
 ## 谁是我们的敌人，谁是我们的朋友
 
 第一次国内革命战争时期

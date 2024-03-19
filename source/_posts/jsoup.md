@@ -1,7 +1,11 @@
 ---
 title: jsoup
 date: 2024-03-19 00:12:01
-tags: 爬虫
+tags: 
+  -爬虫
+categories:
+  - 爬虫
+cover: https://raw.githubusercontent.com/3309446352/Images/main/img/Snipaste_2023-03-27_21-51-18.png?token=ASFPQID2C66R7XCXGYTGM4LF7JJ2U
 ---
 ### 一、jsoup概述
 
