@@ -12,7 +12,7 @@ site:
   subtitle: 好名字都是狗起的's Blog
   author: 好名字都是狗起的
   nick: zmc UI
-  description: '<h1 style="color:red"幽灵，>一个共产主义的幽灵，在欧洲徘徊着.为了对这个幽灵进行神圣的围剿，旧欧洲的一切势力,都联合起来了。</h1>'
+  description: '<h1 style="color:red">幽灵，一个共产主义的幽灵，在欧洲徘徊着.为了对这个幽灵进行神圣的围剿，旧欧洲的一切势力,都联合起来了。</h1>'
   link: page/about
   language: zh-CN
   multi_language: true
