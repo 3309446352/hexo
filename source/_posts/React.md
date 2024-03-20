@@ -6,7 +6,7 @@ cover: https://raw.githubusercontent.com/3309446352/Images/main/img/react.svg
 author:
   name: TriDiamond # 作者名字
   link: https://tridiamond.tech #链接
-  avatar: https://avatar.png #作者头像
+  avatar: https://raw.githubusercontent.com/3309446352/Images/main/img/illust_77229305_20210626_204628.png #作者头像
   description: 'Think like an artist, code like an artisan.' #简介
   socials:
     github: https://github.com/tridiamond #联系方式

@@ -12,7 +12,7 @@ site:
   subtitle: 好名字都是狗起的's Blog
   author: 好名字都是狗起的
   nick: zmc UI
-  description: '一个幽灵，共产主义的幽灵，在欧洲徘徊着'
+  description: '<h1 style="color:red"幽灵，>一个共产主义的幽灵，在欧洲徘徊着.为了对这个幽灵进行神圣的围剿，旧欧洲的一切势力,都联合起来了。</h1>'
   link: page/about
   language: zh-CN
   multi_language: true
@@ -57,7 +57,14 @@ menu:
   Archives: true
   Categories: true
   Links: true #此页面将显示您所有朋友的博客列表。
-  Works: true
+
+  ChasingFan:
+    name: 'ChasingFan'
+    path: '/page/ChasingFan'
+    i18n:
+      zh-CN: '追番'
+      en: 'ChasingFan'
+
   pages-menus:  # 个人链接
     name: 'Message Board'
     path: '/page/message-board'
@@ -65,24 +72,35 @@ menu:
       zh-CN: '留言板'
       en: 'Message Board'
   projects:
-    name: 'Projects'
+    name: '我的'
     i18n:
-      zh-CN: '项目'
-      en: 'Projects'
+      zh-CN: '我的'
+      en: '我的'
     children:
-      obsidian:
-        name: 'Obsidian Theme'
-        path: 'https://github.com/tridiamond/hexo-theme-obsidian'
+      blog:
+        name: '博客'
+        path: 'https://zmc-blog-t6py.vercel.app/'
         i18n:
-          zh-CN: 'Obsidian 主题'
-          en: 'Obsidian Theme'
-      Aurora:
-        name: 'Aurora Theme'
-        path: 'https://github.com/Aurora/hexo-theme-Aurora'
+          zh-CN: '博客'
+          en: 'Blog'
+      RuiXin:
+        name: 'RuiXin'
+        path: 'https://mlicktea.vercel.app/#/main/home'
         i18n:
-          zh-CN: 'Aurora 主题'
-          en: 'Aurora Theme'
-
+          zh-CN: '瑞幸咖啡'
+          en: 'RuiXin Coffee'
+      ToDoList:
+        name: '待办清单'
+        path: 'https://mlik.vercel.app/#/'
+        i18n:
+          zh-CN: '待办清单'
+          en: 'To-do List'
+  AuroraTheme:
+    name: 'Aurora Theme'
+    path: 'https://aurora.tridiamond.tech/cn/'
+    i18n:
+      zh-CN: 'Aurora 主题'
+      en: 'Aurora Theme'
 
 #! ---------------------------------------------------------------
 #! Theme Config
@@ -114,8 +132,8 @@ socials:
     bilibili:
       icon: /svg/blibli.svg
       link: https://space.bilibili.com/272466600
-    wechat: #! --- Using IconFont
-      icon: /svg/csgo.svg
+    Discord: #! --- Using IconFont
+      icon: /svg/discord.svg
       link: https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg
   #! --- Using FontAwesome
 #  自定义社交链接
@@ -138,44 +156,49 @@ site_meta:
 #! ---------------------------------------------------------------
 
 # For local development only!
-gitalk:
-  enable: true
-  autoExpand: true
-  clientID: ece57caae7950b86bb5f
-  clientSecret: 218c9ad0d82ae41d79757f727a42b055b686a67c
-  repo: 'hexo-theme-Aurora-doc' ## dev-blo-comments
-  owner: '' ## owner name
-  admin: 3309446352   #['admin_name']
-  id: 3309446352
-  language: zhc-CN
-  distractionFreeMode: true
-  recentComment: true
-  proxy: ''
+#gitalk:
+#  enable: fasle
+#  autoExpand: true
+#  clientID: ece57caae7950b86bb5f
+#  clientSecret: 218c9ad0d82ae41d79757f727a42b055b686a67c
+#  repo: 'hexo-theme-Aurora-doc' ## dev-blo-comments
+#  owner: '' ## owner name
+#  admin: 3309446352   #['admin_name']
+#  id: 3309446352
+#  language: zhc-CN
+#  distractionFreeMode: true
+#  recentComment: true
+#  proxy: ''
 
 # Valine comment plugin (recommended!)
 # see https://valine.js.org/quickstart.html 无后端评论系统
-valine:
-  enable: true
-  app_id: 3309446352
-  app_key: 74mCpIYgnDYNhL2T6qyYKPSBhug0ZEA2X9PssYI0CLswDu2G1ciyeXIC3bkqKamW-cn-n1
-  avatar: ''
-  placeholder: Leave your thoughts behind~
-  visitor: true
-  lang: cn
-  avatarForce: false
-  meta: ['nick', 'mail']
-  requiredFields: ['nick', 'mail']
-  admin: 好名字都是狗起的 # admin username
-  recentComment: true
+#valine:
+#  enable: true
+#  app_id: N8amRVAaXOJjo71kpLhHOGxf-gzGzoHsz
+#  app_key: o7xcAiwThZF5WcwIhTI4x0vd
+#  avatar: https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg
+#  placeholder: Leave your thoughts behind~
+#  visitor: true
+#  lang: cn
+#  avatarForce: false
+#  meta: ['nick', 'mail','link']
+#  requiredFields: ['nick', 'mail','link']
+#  admin: 好名字都是狗起的 # admin username
+#  recentComment: true
 
 # Twikoo comment plugin
 # see https://twikoo.js.org/quick-start.html
-twikoo:
-  enable: true
-  recentComment: true
-  envId: https://hexo-git-test-3309446352s-projects.vercel.app # 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
-  # region: ap-guangzhou # 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
-  lang: 'zh-CN' # 用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/main/src/client/utils/i18n/index.js
+# twikoo 评论插件
+
+#twikoo:
+#  enable: true
+#  recentComment: true
+#  envId: https://hexo-git-test-3309446352s-projects.vercel.app # 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+#  # region: ap-guangzhou # 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
+#  lang: 'zh-cn' # 用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/main/src/client/utils/i18n/index.js
+# twikoo 评论插件
+
+#waline 评论插件
 
 # Waline comment plugin
 # see https://waline.js.org/guide/get-started/
@@ -190,7 +213,10 @@ waline: #服务端部署
   wordLimit: 100
   imageUploader: true #您可以将其设置为禁用图像上传
   pageSize: 10
-  serverURL: '' # 填写服务端地址
+  serverURL: 'https://waline-auroa-5glt4qzaw-3309446352s-projects.vercel.app' # 填写服务端地址
+
+#waline 评论插件
+
 
 # Enable Busuanzi statistic plugin
 # see http://ibruce.info/2015/04/04/busuanzi/
@@ -209,6 +235,7 @@ copy_protection:
     cn: 博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议
     en: This content is shared under the CC BY-NC-SA 4.0 protocol (Non-Commercial)
 
+#机器人
 #! ---------------------------------------------------------------
 #! Enable Aurora Bot Dia
 #! @docs https://aurora.tridiamond.tech/guide/site-meta.html#custom-meta
@@ -426,6 +453,7 @@ aurora_bot:
         text:
           Today is <span>New Year's Eve</span>, this year is going away, but next year
           is going to be better!
+#机器人
 
 #! ---------------------------------------------------------------
 #! Injections
@@ -443,12 +471,15 @@ footer_links: #页脚链接
     links:
       - title: link # link title
         url: www.pornhub.com # URL link
-
       - title: pornhub # link title
         url: # URL link
-
       - title: Friends # link of friends mode / 友链模式
         mode: 'links'
+        url: ./friends # URL link
+      - title: link # link title
+        mode: 'link'
+        url: ./link # URL link
+
   - title: 我的
     links:
       - title: link # link title
@@ -457,31 +488,42 @@ footer_links: #页脚链接
       - title: link # link title
         mode: 'About'
         url: ./about # URL link
+      - title: link # link title
+        mode: 'link'
+        url: ./link # URL link
+      - title: link # link title
+        mode: 'link'
+        url: ./link # URL link
+
   - title: 友链
     links:
       - title: link # link title
         mode: 'Friends'
         url: ./friends # URL link
+      - title: link # link title
+        mode: 'link'
+        url: ./link # URL link
+      - title: link # link title
+        mode: 'link'
+        url: ./link # URL link
+      - title: link # link title
+        mode: 'link'
+        url: ./link # URL link
+
   - title: 游戏
     links:
-      - title: CSGO # link title
-        mode: 'CSGO'
-        url: https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg # URL link
-      - title: LOL # link title
-        mode: 'LOL'
-        url: https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg # URL link
-      - title: DOTA2 # link title
-        mode: 'DOTA2'
-        url: https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg # URL link
+      - title: EPIC # link title
+        mode: 'Epic'
+        url: https://store.epicgames.com/
       - title: 原神
         mode: 'Genshin'
         url: https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg # URL link
       - title: stream
         mode: 'Stream'
         url: https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg # URL link
-      - title: 使命召唤
-        mode: '使命召唤'
-        url: https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg # URL link
+      - title: link # link title
+        mode: 'link'
+        url: ./link # URL link
   - title: 文章
     links:
       - title: link # link title
@@ -493,11 +535,24 @@ footer_links: #页脚链接
       - title: link # link title
         mode: 'Archives'
         url: ./archives # URL link
+      - title: link # link title
+        mode: 'link'
+        url: ./link # URL link
+
   - title: 图片
     links:
       - title: 体育老师 # link title
         mode: 'GitHub'
-        url:
+        url: '/url'
+      - title: link # link title
+        mode: 'link'
+        url: ./link # URL link
+      - title: link # link title
+        mode: 'link'
+        url: ./link # URL link
+      - title: link # link title
+        mode: 'link'
+        url: ./link # URL link
   - title: 生活 # link title
     links:
       - title: 音乐 # link title
@@ -505,9 +560,6 @@ footer_links: #页脚链接
         url: https://www.kugou.com/
       - title: 电影 # link title
         mode: '电影'
-        url: https://www.iqiyi.com/
-      - title: 电视剧 # link title
-        mode: '电视剧'
         url: https://www.iqiyi.com/
       - title: 动漫 # link title
         mode: '动漫'
