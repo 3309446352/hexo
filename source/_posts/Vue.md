@@ -25,7 +25,7 @@ cover: https://cover.png #文章头像
 author:
   name: TriDiamond # 作者名字
   link: https://tridiamond.tech #链接
-  avatar: https://raw.githubusercontent.com/3309446352/Images/main/img/pr.png #作者头像
+  avatar: https://raw.githubusercontent.com/3309446352/Images/main/img/Snipaste_2024-02-04_23-53-27.png #作者头像
   description: 'Think like an artist, code like an artisan.' #简介
   socials:
     github: https://github.com/tridiamond #联系方式

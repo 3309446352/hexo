@@ -12,12 +12,13 @@ site:
   subtitle: 好名字都是狗起的's Blog
   author: 好名字都是狗起的
   nick: zmc UI
-  description: '<h1 style="color:red">幽灵，一个共产主义的幽灵，在欧洲徘徊着.为了对这个幽灵进行神圣的围剿，旧欧洲的一切势力,都联合起来了。</h1>'
+  description: '<h1 style="color:aqua;font-weight:bolder;">幽灵，一个共产主义的幽灵，在欧洲徘徊着.为了对这个幽灵进行神圣的围剿，旧欧洲的一切势力,都联合起来了。</h1>'
   link: page/about
   language: zh-CN
   multi_language: true
-  logo: https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg
-  avatar: https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg #头像
+  logo: svg/prwe.jpg
+  theme: aurora
+  avatar: /svg/logo.jpg #头像
   beian:  #备案信息
     number: 粤ICP34122502000211号 #备案号
     link: 'page/about' #备案链接
@@ -56,8 +57,10 @@ menu:
   Tags: true
   Archives: true
   Categories: true
-  Links: true #此页面将显示您所有朋友的博客列表。
-
+  Links:
+    i18n:
+      zh-CN: '友链'
+      en: 'Links' #此页面将显示您所有朋友的博客列表。
   ChasingFan:
     name: 'ChasingFan'
     path: '/page/ChasingFan'
@@ -69,7 +72,7 @@ menu:
     name: 'Message Board'
     path: '/page/message-board'
     i18n:
-      zh-CN: '留言板'
+      zh-CN: '留言'
       en: 'Message Board'
   projects:
     name: '我的'
@@ -96,11 +99,23 @@ menu:
           zh-CN: '待办清单'
           en: 'To-do List'
   AuroraTheme:
-    name: 'Aurora Theme'
-    path: 'https://aurora.tridiamond.tech/cn/'
+    name: 'Aurora'
     i18n:
-      zh-CN: 'Aurora 主题'
-      en: 'Aurora Theme'
+      zh-CN: 'Aurora'
+      en: 'Aurora '
+    children:
+      AuroraTheme:
+        name: 'Aurora Theme'
+        path: 'https://aurora.tridiamond.tech/cn/'
+        i18n:
+          zh-CN: 'Aurora 主题'
+          en: 'Aurora Theme'
+      AuroraThemeDocs:
+        name: 'Aurora Theme Docs'
+        path: 'https://aurora.tridiamond.tech/cn/docs/'
+        i18n:
+          zh-CN: 'Aurora 主题文档'
+          en: 'Aurora Theme Docs'
 
 #! ---------------------------------------------------------------
 #! Theme Config
@@ -114,7 +129,10 @@ theme:
     color_1: '#24c6dc'
     color_2: '#5433ff'
     color_3: '#ff0099'
-
+#    配色
+#    color_1: '#0093E9'
+#    color_2: '#8BC6EC'
+#    color_3: '#80D0C7'
 #! ---------------------------------------------------------------
 #! Social Configs
 #! @docs https://aurora.tridiamond.tech/guide/social.html
@@ -156,26 +174,26 @@ site_meta:
 #! ---------------------------------------------------------------
 
 # For local development only!
-#gitalk:
-#  enable: fasle
-#  autoExpand: true
-#  clientID: ece57caae7950b86bb5f
-#  clientSecret: 218c9ad0d82ae41d79757f727a42b055b686a67c
-#  repo: 'hexo-theme-Aurora-doc' ## dev-blo-comments
-#  owner: '' ## owner name
-#  admin: 3309446352   #['admin_name']
-#  id: 3309446352
-#  language: zhc-CN
-#  distractionFreeMode: true
-#  recentComment: true
-#  proxy: ''
-
+gitalk:
+  enable: true
+  autoExpand: true
+  clientID: 'b01e8c3ab32d2bce30c8' #appid
+  clientSecret: 'eab97b416414992c04d1aafefb8e093596472359' #秘钥
+  repo: 'Aurora-Comment'  # dev-blo-comments #仓库名
+  owner: '3309336352' ## owner name 用户名
+  admin: ['3309446352']   #['admin_name']
+  id: location.pathname
+  distractionFreeMode: false
+  language: 'zh-CN'
+  recentComment: true
+  proxy: ''
+  #详情请看教程https://luiyang08.github.io/post/Edit%20Blog-1#%E6%96%87%E4%B8%AD%E5%9B%BE%E7%89%87%E3%80%81%E8%B7%B3%E8%BD%AC
 # Valine comment plugin (recommended!)
 # see https://valine.js.org/quickstart.html 无后端评论系统
 #valine:
 #  enable: true
-#  app_id: N8amRVAaXOJjo71kpLhHOGxf-gzGzoHsz
-#  app_key: o7xcAiwThZF5WcwIhTI4x0vd
+#  app_id: DPgfY6EuHcEIDCyHwUsWSzr4-MdYXbMMI
+#  app_key: 7lIgstJIXdZpCNESrREkPuRi
 #  avatar: https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg
 #  placeholder: Leave your thoughts behind~
 #  visitor: true
@@ -202,18 +220,18 @@ site_meta:
 
 # Waline comment plugin
 # see https://waline.js.org/guide/get-started/
-waline: #服务端部署
-  enable: true
-  recentComment: true
-  reaction: true
-  login: 'disable' # 'disable' | 'modal' | 'page'是否登录才能评论
-  meta: ['nick', 'mail']
-  requiredMeta: ['nick', 'mail']
-  commentSorting: 'latest'
-  wordLimit: 100
-  imageUploader: true #您可以将其设置为禁用图像上传
-  pageSize: 10
-  serverURL: 'https://waline-auroa-5glt4qzaw-3309446352s-projects.vercel.app' # 填写服务端地址
+#waline: #服务端部署
+#  enable: true
+#  recentComment: true
+#  reaction: true
+#  login: 'disable' # 'disable' | 'modal' | 'page'是否登录才能评论
+#  meta: ['nick', 'mail']
+#  requiredMeta: ['nick', 'mail']
+#  commentSorting: 'latest'
+#  wordLimit: 100
+#  imageUploader: true #您可以将其设置为禁用图像上传
+#  pageSize: 10
+#  serverURL: 'https://waline-psi-murex.vercel.app' # 填写服务端地址
 
 #waline 评论插件
 
@@ -227,7 +245,7 @@ copy_protection:
   enable: true
   author:
     cn: 作者
-    en: Author
+    en: ZMC
   link:
     cn: 本文来自于
     en: Article is from
@@ -236,6 +254,7 @@ copy_protection:
     en: This content is shared under the CC BY-NC-SA 4.0 protocol (Non-Commercial)
 
 #机器人
+
 #! ---------------------------------------------------------------
 #! Enable Aurora Bot Dia
 #! @docs https://aurora.tridiamond.tech/guide/site-meta.html#custom-meta
@@ -260,199 +279,198 @@ aurora_bot:
   bot_type: dia
 
   # This tips are used to react to user interactions
+  # 这个技巧是用来对用户交互做出反应的
   tips:
     # ======================================================
-    # These are random messages that Dia will say every 30 seconds.
+    # 这些是 Dia 每30秒会说的随机消息。
     # ======================================================
     messages:
-      - Hi, I am <span>Dia</span>, I am here to help you~
-      - Long time no see, time passes with the blink of the eyes...
-      - Hi～ Come play with me！
-      - '*Hammer your chest with my kitty fist*'
-      # This is a special function which will trigger the quotes API
-      # and Dia will say out the daily quote message.
+      - 你好，我是 <span>Dia</span>，好高兴遇见你～
+      - 好久不见，日子过得好快呢……
+      - '<span>大坏蛋！</span>你都多久没理人家了呀，嘤嘤嘤～'
+      - 嗨～快来逗我玩吧！
+      - 拿小拳拳锤你胸口！
+      - 学习使我们快乐，快乐使我们更想学习～
+      - 你知道吗？你可以<span>点击我</span>返回页面顶部哦！～
+      # 这是一个特殊的函数，它将触发 quotes API
+      # 和 Dia 会说出每日引用的信息。
       - showQuote
 
     # ======================================================
-    # This will trigger when user open the browser console.
+    # 将在用户打开浏览器控制台时触发。
     # ======================================================
-    console: LOL, you opened the console, want to find out my little secrets?
+    console: 哈哈，你打开了控制台，是想要看看我的小秘密吗？
 
     # ======================================================
-    # This will trigger when user copy things off your blog.
+    # 当用户从你的博客上复制内容时触发。
     # ======================================================
-    copy: What have you copied? Remember to add the source when using it!
+    copy: 你都复制了些什么呀，转载要记得加上出处哦！
 
     # ======================================================
-    # This will trigger when user come back to the window.
+    # 这将在用户返回窗口时触发。
     # ======================================================
-    visibility_change: Welcome back my friend!~
+    visibility_change: 老朋友，你怎么才回来呀～
 
     # ======================================================
-    # Welcome messages, the number is the time of the day.
+    # 欢迎留言，号码是一天中的时间。
     # -----------------------------------
-    # eg: 24 = 00:00 which is midnight
-    # eg: 17-19 = during 5pm to 7pm
+    # eg: 24 = 00:00 也就是午夜
+    # eg: 17-19 = 在下午 5 点到 7 点之间
     # -----------------------------------
-    # During this time of the day, Dia will greet your readers
-    # with the corresponding message.
+    # 在一天的这段时间里，Dia 会向你的读者问好
+    # 与相应的消息。
     # ======================================================
     welcome:
-      '24': Are you a night owl? Will you able get up tomorrow?
-      '5_7':
-        Good morning! The plan for a day lies in the morning, and a beautiful day
-        is about to begin.
-      '7_11': Good morning! How is your day doing? don't sit for too long!
-      '11_13': It's noon, Must have being working all morning, and it's lunch time!
-      '13_17': It's easy to get sleepy in the afternoon. Have a cup of coffee maybe?
-      '17_19': It's evening! The sunset outside the window is beautiful.
-      '19_21': Good evening, how are you doing today?
+      '24': 你是夜猫子呀？这么晚还不睡觉，明天起的来嘛？
+      '5_7': 早上好！一日之计在于晨，美好的一天就要开始了。
+      '7_11': 上午好！工作顺利嘛，不要久坐，多起来走动走动哦！
+      '11_13': 中午了，工作了一个上午，现在是午餐时间！
+      '13_17': 午后很容易犯困呢，今天的运动目标完成了吗？
+      '17_19': 傍晚了！窗外夕阳的景色很美丽呢，最美不过夕阳红～
+      '19_21': 晚上好，今天过得怎么样？
       '21_23':
-        - It's getting late, rest early, good night~
-        - Take good care of your eyes!
+        - 已经这么晚了呀，早点休息吧，晚安～
+        - 深夜时要爱护眼睛呀！
 
     # ======================================================
-    # This is used when your user come from a Search Engine.
+    # 当用户来自搜索引擎时使用。
     # ======================================================
     referrer:
-      # User came from your own site.
-      self: Welcome to <span>「[PLACEHOLDER]」</span>
-      # User came from Baidu search engine.
-      baidu:
-        Hello！Friend from Baidu search engine,<br>did you search <span>「[PLACEHOLDER]」</span>
-        to find me？
-      # User came from 360 search engine.
-      so:
-        Hello！Friend from 360 search engine,<br>did you search <span>「[PLACEHOLDER]」</span>
-        to find me？
-      # User came from Google search engine.
-      google: Hello！Friend from Google search engine,<br>enjoy your time reading <span>「[PLACEHOLDER]」</span>
-      # User came from another website.
-      site: Hello there, friend from <span>[PLACEHOLDER]</span>
-      # For any other source.
-      other: Thanks for reading <span>「[PLACEHOLDER]」</span>
+      # 用户来自你自己的网站。
+      self: 欢迎来到<span>「[PLACEHOLDER]」</span>
+      # 用户来自百度搜索引擎。
+      baidu: Hello！来自 百度搜索 的朋友<br>你是搜索 <span>「[PLACEHOLDER]」</span> 找到的我吗？
+      # 用户来自360搜索引擎。
+      so: Hello！来自 360搜索 的朋友<br>你是搜索 <span>「[PLACEHOLDER]」</span> 找到的我吗？
+      # 用户来自谷歌搜索引擎。
+      google: Hello！来自 谷歌搜索 的朋友<br>欢迎阅读<span>「[PLACEHOLDER]」</span>
+      # 用户来自另一个网站。
+      site: Hello！来自 <span>[PLACEHOLDER]</span> 的朋友
+      # 任何其他来源。
+      other: 感谢您阅读： <span>「[PLACEHOLDER]」</span>
 
     # ======================================================
-    # When your `mouse hover` on to certain HTML tag, Dia will
-    # give your user a message to help them out.
+    # 当你的'鼠标悬停'到特定的HTML标签，Dia将
+    # 给用户留言帮助他们解决问题。
     # ------------------------------------------------------
-    # selector: tag selector (you can use any css selector for this)
-    # text: this is the message(s) that Dia will say. (If you want
-    #       Dia to say a random one from a set of messages, set it with
-    #       array, else just plain text)
-    # ======================================================
+    # selector: 标签选择器(你可以使用任何css选择器)
+    # text: 这是Dia将要传达的信息。(如果你想要的
+    #       Dia从一组信息中随机说出一个，设置它
+    #       数组，否则只是纯文本)
+    #  ======================================================
     mouseover:
-      # Hover on Dia
+      # 悬浮在 Dia 上
       - selector: '#Aurora-Dia'
         text:
-          - Waaaaaaaa...What are you <span>doing</span>? O.O
-          - Please be gentle, I am very delicate! O.O
-          - '<span>Sir yes sir!</span> What can I help you with? O.O'
-      # Hover on home menu
+          - 哇啊啊啊啊啊啊... <span>你想干嘛</span>? O.O
+          - 请您轻一点，我是<span>很昂贵</span>的机器人哦! O.O
+          - '<span>领导，我在呢!</span> 我有什么可以帮到你呢? O.O'
+      # 悬浮在 Home 菜单
       - selector: "[data-menu='Home']"
         text:
-          - 'Click to go to the <span>home page</span>. '
-          - Yes, click here to go <span>back home</span>.
-          - Go take a look at the <span>home page</span>.
-      # Hover on about menu
+          - 点击前往首页，想回到上一页可以使用浏览器的后退功能哦。
+          - 点它就可以回到首页啦！
+          - 回首页看看吧。
+      # 悬浮在 About 菜单
       - selector: "[data-menu='About']"
         text:
-          - You want to know more about my <span>master</span>?
-          - Here hides all the <span>secrets of my master</span>, want to take a look?
-          - Found my master's <span>secret hideout</span>!
-      # Hover on archives menu
+          - 你想知道我家主人是谁吗？
+          - 这里有一些关于我家主人的秘密哦，要不要看看呢？
+          - 发现主人出没地点！
+      # 悬浮在 Archives 菜单
       - selector: "[data-menu='Archives']"
         text:
-          - Here stores all the <span>works</span> my master had done！
-          - Wanna see my master's <span>library?</span>
-          - Yes, my masters' <span>ancient histories</span> are all here!
-      # Hover on tags menu
+          - 这里存储了主人的所有作品哦！
+          - 想看看主人的图书馆吗？
+      # 悬浮在 Tags 菜单
       - selector: "[data-menu='Tags']"
         text:
-          - Click here to look at <span>article tags</span>.
-          - Tags are used to better <span>categorize</span> your articles.
-      # Hover on language menu
+          - 点击就可以看文章的标签啦！
+          - 使用标签可以更好的分类你的文章哦～
+      # 悬浮在 language 菜单
       - selector: "[data-dia='language']"
-        text: Master's blog supports multiple <span>languages.</span>
-      # Hover on light and dark switch
+        text: 主人的博客支持多种语言。
+      # 悬浮在黑白切换按钮上
       - selector: "[data-dia='light-switch']"
-        text:
-          You can switch between <span>light</span> and <span>dark</span> mode, click
-          the switch to see the magic!
-      # Hover on author profile
+        text: 您可以点击这里切换黑白模式哦！
+      # 悬浮在作者简介上
       - selector: "[data-dia='author']"
         text:
-          - Here is a short profile of my master.
-          - Click any of these links can teleport to my master's other worlds.
-      # Hover on jump to comment menu in article page.
+          - 这是我主人的简介。
+          - 点击其中任何一个链接都可以传送到我主人的其他世界。
+      # 悬浮在作跳转评论按钮上
       - selector: "[data-dia='jump-to-comment']"
         text:
-          - Do you want to check out the comments?
-          - Click here will help you jump right into the comments section.
+          - 你想看看评论吗?
+          - 点击这里可以帮助你直接跳转到评论部分。
 
     # ======================================================
-    # When your `mouse on click` for certain HTML tag, Dia will
-    # give your user a message to help them out.
+    # 当你的'鼠标点击'为特定的HTML标签，Dia将
+    # 给用户留言帮助他们解决问题。
     # ------------------------------------------------------
-    # Properties is same as `moveover` event
+    # 属性与' moveover '事件相同
     # ======================================================
     click:
-      # Click on search button.
+      # 鼠标点击搜索按钮
       - selector: "[data-dia='search']"
         text:
-          - Didn't find what you are looking for? Try search it here!
-          - You can also use <span>ctrl/cmd + k</span> keyboard shortcut to open the search
-            menu.
-      # Click on article header link.
+          - 没有看到你想要的文章，那么就输入你想搜索的关键词吧～
+          - 可以使用 ctrl/cmd + k 快捷键打开搜索哦～
+      # 鼠标点击文章标题
       - selector: "[data-dia='article-link']"
         text:
-          - Enjoy reading:<span>「{text}」</span>.
-          - That's a good pick, enjoy time reading this article.
-          - Hope you can learn something from:<span>「{text}」</span>.
-      # Click on Gitalk comment
+          - 希望你会喜欢这篇文章：<span>「{text}」</span>.
+          - 您的选择真的不错哦！好好享受这篇文章吧～
+          - 希望您能从 <span>「{text}」</span>这篇文章中学到点东西。
+      # 鼠标点击跳转评论输入框（Gitalk）
       - selector: '.gt-header-textarea'
         text:
-          - Wanna write something?
-          - Be sure write your comment carefully meow~
-          - Anything you want to say to the author?
-          - If you think the article is good, leave a message for the author.
-      # Click on Valine comment
+          - 要吐槽些什么呢？
+          - 一定要认真填写喵～
+          - 有什么想说的吗？
+          - 如果觉得文章不错的话，就给博主留个言吧～
+      # 鼠标点击跳转评论输入框（Valine）
       - selector: '.veditor'
         text:
-          - Wanna write something?
-          - Be sure write your comment carefully meow~
-          - Anything you want to say to the author?
-          - If you think the article is good, leave a message for the author.
+          - 要吐槽些什么呢？
+          - 一定要认真填写喵～
+          - 有什么想说的吗？
+          - 如果觉得文章不错的话，就给博主留个言吧～
 
     # ======================================================
-    # During certain special date Dia will greet your readers.
+    # 在特定的日期，Dia会向你的读者问候。
     # ------------------------------------------------------
-    # date: date of the special event (format: month/day or month/day - month/day)
+    # date: 特别活动的日期(格式:月/日或月/日-月/日)
     # text:
-    #   --- Single text just use a simple string.
-    #   --- Random set of message, use array config format.
+    # ---只使用一个简单的字符串。
+    # -——消息的随机集合，使用数组配置格式。
     # ======================================================
     events:
       - date: 01/01
-        text: '<span>Happy new year</span>，{year}～'
+        text: '<span>元旦</span>了呢，新的一年又开始了，今年是{year}年～'
       - date: 02/14
-        text: It's <span>Valentine's Day</span>，have you found your loved one in {year}?
+        text: 又是一年<span>情人节</span>，{year}年找到对象了嘛～
       - date: 03/08
-        text: Today is <span>International Women's Day</span>！
+        text: 今天是<span>国际妇女节</span>！
+      - date: 03/12
+        text: 今天是<span>植树节</span>，要保护环境呀！
       - date: 04/01
-        text:
-          Tell you a secret, don't trust anyone today, because today is <span>April
-          Fool</span>
+        text: 悄悄告诉你一个秘密～<span>今天是愚人节，不要被骗了哦～</span>
       - date: 05/01
-        text: Today is <span>International Labour Day</span>，have you planned to go travel?
-      - date: 12/20-12/30
-        text:
-          These few days is <span>Christmas</span>，my master must being shopping like
-          crazy!
-      - date: 12/31
-        text:
-          Today is <span>New Year's Eve</span>, this year is going away, but next year
-          is going to be better!
+        text: 今天是<span>五一劳动节</span>，计划好假期去哪里了吗～
+      - date: 06/01
+        text: '<span>儿童节</span>了呢，快活的时光总是短暂，要是永远长不大该多好啊…'
+      - date: '09/03'
+        text: '<span>中国人民抗日战争胜利纪念日</span>，铭记历史、缅怀先烈、珍爱和平、开创未来。'
+      - date: '09/10'
+        text: '<span>教师节</span>，在学校要给老师问声好呀～'
+      - date: 10/01
+        text: '<span>国庆节</span>到了，为祖国母亲庆生！'
+      - date: 11/05-11/12
+        text: 今年的<span>双十一</span>是和谁一起过的呢～
+      - date: 12/20-12/31
+        text: 这几天是<span>圣诞节</span>，主人肯定又去剁手买买买了～
+
 #机器人
 
 #! ---------------------------------------------------------------
@@ -460,8 +478,15 @@ aurora_bot:
 #! @docs https://aurora.tridiamond.tech/guide/site-meta.html#custom-meta
 #! ---------------------------------------------------------------
 injects:
+  head: #头部
+    - <canvas id="universe.css"></canvas> # 创建画布
+    - <script src="/js/universe.css.js"></script> # 引入js
   scripts:
+#    - <script src="https://cdn.jsdelivr.net/gh/Fan223/live2d-widget@latest/autoload.js"></script>
   css:
+    - <link rel="stylesheet" href="/css/style.css?1">
+      #看板娘
+#    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
 
 #! ---------------------------------------------------------------
 #! Footer links

@@ -51,8 +51,8 @@ highlight:
   wrap: true
   hljs: false
 prismjs:
-  enable: false
-  preprocess: true
+  enable: true
+  preprocess: false
   line_number: true
   tab_replace: ''
 
@@ -105,3 +105,4 @@ deploy:
   type: git
   repo: https://github.com/3309446352/3309446352.github.io.git
   branch: master
+
