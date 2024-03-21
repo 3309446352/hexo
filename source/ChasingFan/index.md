@@ -7,3 +7,23 @@ categories:
   - 追番
 ---
 # 活着就是为了艹樱岛麻衣
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Animated Login Form</title>
+	<style> 
+</style>
+</head>
+
+<body>
+	<div class="box" style="  position: relative;width: 100%;height: 800px;background: #1c1c1c;border-radius: 8px;overflow: hidden;">
+		<form autocomplete="off" style=" box-shadow: 0 0 20px 19px aqua; position: absolute;inset: 2px;background: #28292d;padding: 50px 40px;border-radius: 8px;z-index: 2;display: flex;flex-direction: column;">
+		<h1 style="margin: auto">活着就是为了艹樱岛麻衣</h1>
+        <a  style="margin: auto"><img style="width:620px" height="620px" src="https://raw.githubusercontent.com/3309446352/Images/main/img/少年锦衣卫.jpg"/> </a>
+       </form>
+	</div>
+</body>
+
+</html>

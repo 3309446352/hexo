@@ -179,12 +179,13 @@ gitalk:
   autoExpand: true
   clientID: 'fce0f27ba88fd333fcf7' #appid
   clientSecret: 'de54ed8ed05c82b24235a6ccf4358d284a2f9875' #秘钥
-  repo: 'Aurora-gitalk'  # dev-blo-comments #仓库名
+  repo: 'https://github.com/3309446352/gitalk.git'  # dev-blo-comments #仓库名
   owner: '3309336352' ## owner name 用户名
   admin: ['3309446352']   #['admin_name']
-  id: location.pathname
+  id: "location.pathname"
   distractionFreeMode: false
-  language: 'zh-CN'
+  language: zh-CN
+  labels: ['Gitalk', 'Aurora']
   recentComment: true
   proxy: ''
   #详情请看教程https://luiyang08.github.io/post/Edit%20Blog-1#%E6%96%87%E4%B8%AD%E5%9B%BE%E7%89%87%E3%80%81%E8%B7%B3%E8%BD%AC
@@ -211,7 +212,7 @@ gitalk:
 twikoo:
   enable: true
   recentComment: true
-  envId: https://hexo-git-test-3309446352s-projects.vercel.app # 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+  envId: https://hexo-git-test-3309446352s-projects.vercel.app/ # 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
   # region: ap-guangzhou # 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
   lang: 'zh-cn' # 用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/main/src/client/utils/i18n/index.js
 # twikoo 评论插件
