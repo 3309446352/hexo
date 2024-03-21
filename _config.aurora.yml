@@ -174,20 +174,20 @@ site_meta:
 #! ---------------------------------------------------------------
 
 # For local development only!
-gitalk:
-  enable: true
-  autoExpand: true
-  clientID: 'fce0f27ba88fd333fcf7' #appid
-  clientSecret: 'de54ed8ed05c82b24235a6ccf4358d284a2f9875' #秘钥
-  repo: 'https://github.com/3309446352/gitalk.git'  # dev-blo-comments #仓库名
-  owner: '3309336352' ## owner name 用户名
-  admin: ['3309446352']   #['admin_name']
-  id: "location.pathname"
-  distractionFreeMode: false
-  language: zh-CN
-  labels: ['Gitalk', 'Aurora']
-  recentComment: true
-  proxy: ''
+#gitalk:
+#  enable: true
+#  autoExpand: true
+#  clientID: 'fce0f27ba88fd333fcf7' #appid
+#  clientSecret: 'de54ed8ed05c82b24235a6ccf4358d284a2f9875' #秘钥
+#  repo: 'https://github.com/3309446352/gitalk.git'  # dev-blo-comments #仓库名
+#  owner: '3309336352' ## owner name 用户名
+#  admin: ['3309446352']   #['admin_name']
+#  id: "location.pathname"
+#  distractionFreeMode: false
+#  language: zh-CN
+#  labels: ['Gitalk', 'Aurora']
+#  recentComment: true
+#  proxy: ''
   #详情请看教程https://luiyang08.github.io/post/Edit%20Blog-1#%E6%96%87%E4%B8%AD%E5%9B%BE%E7%89%87%E3%80%81%E8%B7%B3%E8%BD%AC
 # Valine comment plugin (recommended!)
 # see https://valine.js.org/quickstart.html 无后端评论系统
@@ -221,18 +221,18 @@ twikoo:
 
 # Waline comment plugin
 # see https://waline.js.org/guide/get-started/
-#waline: #服务端部署
-#  enable: true
-#  recentComment: true
-#  reaction: true
-#  login: 'disable' # 'disable' | 'modal' | 'page'是否登录才能评论
-#  meta: ['nick', 'mail']
-#  requiredMeta: ['nick', 'mail']
-#  commentSorting: 'latest'
-#  wordLimit: 100
-#  imageUploader: true #您可以将其设置为禁用图像上传
-#  pageSize: 10
-#  serverURL: 'https://waline-psi-murex.vercel.app' # 填写服务端地址
+waline: #服务端部署
+  enable: true
+  recentComment: true
+  reaction: true
+  login: 'enable' # 'disable' | 'modal' | 'page'是否登录才能评论
+  meta: ['nick', 'mail']
+  requiredMeta: ['nick', 'mail']
+  commentSorting: 'latest'
+  wordLimit: 100
+  imageUploader: true #您可以将其设置为禁用图像上传
+  pageSize: 10
+  serverURL: 'https://waline-comment-jet-two.vercel.app/' # 填写服务端地址
 
 #waline 评论插件
 
