@@ -18,9 +18,8 @@ author:
 title: Article Title #标题
 date: 2020-08-15 18:49:36 #时间
 tags: #标签
-  - Tag
+  - aurora
 categories:
-  - Cate
 cover: https://cover.png #文章头像
 author:
   name: TriDiamond # 作者名字
