@@ -184,7 +184,7 @@ gitalk:
   autoExpand: true
   clientID: 'fce0f27ba88fd333fcf7' #appid
   clientSecret: 'de54ed8ed05c82b24235a6ccf4358d284a2f9875' #秘钥
-  repo:  'hexo'  # dev-blo-comments #仓库名
+  repo:  hexo  # dev-blo-comments #仓库名
   owner: '3309446352' ## owner name 用户名
   admin: ['3309446352']   #['admin_name']
   id: "Demo" #uid
