@@ -106,7 +106,7 @@ menu:
   AuroraTheme:
     name: 'Aurora'
     i18n:
-      zh-CN: 'Aurora'
+      zh-CN: '极光'
       en: 'Aurora '
     children:
       AuroraThemeDocs:

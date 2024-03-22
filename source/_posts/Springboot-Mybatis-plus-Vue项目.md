@@ -24,3 +24,5 @@ abstracts:
         <iframe style="height: 500px;width: 100%;" src="//player.bilibili.com/player.html?aid=257068652&bvid=BV1NY411g7cf&cid=734545984&p=2" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
     </form>
 </div>
+
+<a href="/links"><img src="/svg/OIP.jpg" alt="OIP" style="zoom: 67%;" /></a>
