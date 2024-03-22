@@ -19,9 +19,15 @@ data:
     description: 温故而知新
     link: https://yishuihean.cn/
     label: links-badge-personal
+  - nick: 铭心石刻
+    link: https://blog.kouseki.cn/
+    avatar: https://blog.kouseki.cn/imgs/avatar.webp
+    description: 愿岁并谢，与友长兮
+    siteshot: https://blog.kouseki.cn/imgs/siteshot.webp
+    label: links-badge-personal
 ---
 :::tip Hello
-# 添加友链格式
+# 添加友链格式zh-CN
 这里是zmc的博客，欢迎各位大佬光临！
 来访的朋友，你好！这里是我的友链页面，欢迎来交换友链哦！
 - 博客名称：zmc的博客
@@ -32,6 +38,12 @@ data:
 
 :::
 
+:::tip Hello
+# 添加友链格式 en
 
+- nick: 好名字都是狗起的
+- avatar: https://raw.githubusercontent.com/3309446352/Images/main
+- description: 古来圣贤皆寂寞，惟有饮者留其名。
+- link: 3309446352.github.io
 
-
+:::
