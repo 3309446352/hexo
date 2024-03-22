@@ -16,14 +16,14 @@ site:
   link: page/about
   language: zh-CN
   multi_language: true
-  logo: svg/prwe.jpg
+  logo: https://raw.githubusercontent.com/3309446352/Images/main/img/Snipaste_2023-03-27_21-42-14.png
   theme: aurora
   avatar: /svg/logo.jpg #头像
   beian:  #备案信息
-    number: 粤ICP34122502000211号 #备案号
+    number: 粤ICP44580300211号 #备案号
     link: 'page/about' #备案链接
   police_beian: #公安备案信息
-    number: 粤公网备34122502000211号 #备案号
+    number: 粤公网备445803209456号 #备案号
     link: 'page/about' #备案链接
   # Start date of the blog YYY-MM-DD
   # 博客开始运行日期
@@ -179,13 +179,13 @@ gitalk:
   autoExpand: true
   clientID: 'fce0f27ba88fd333fcf7' #appid
   clientSecret: 'de54ed8ed05c82b24235a6ccf4358d284a2f9875' #秘钥
-  repo: 'https://github.com/3309446352/gitalk.git'  # dev-blo-comments #仓库名
-  owner: '3309336352' ## owner name 用户名
+  repo: ' hexo'  # dev-blo-comments #仓库名
+  owner: '3309446352' ## owner name 用户名
   admin: ['3309446352']   #['admin_name']
-  id: "location.pathname"
+  id: location.pathname #uid
   distractionFreeMode: false
   language: zh-CN
-  labels: ['Gitalk', 'Aurora']
+  labels: ['Gitalk']
   recentComment: true
   proxy: ''
   #详情请看教程https://luiyang08.github.io/post/Edit%20Blog-1#%E6%96%87%E4%B8%AD%E5%9B%BE%E7%89%87%E3%80%81%E8%B7%B3%E8%BD%AC
@@ -483,11 +483,13 @@ injects:
     - <canvas id="universe.css"></canvas> # 创建画布
     - <script src="/js/universe.css.js"></script> # 引入js
   scripts:
-#    - <script src="https://cdn.jsdelivr.net/gh/Fan223/live2d-widget@latest/autoload.js"></script>
+#    - <script src="https://cdn.jsdelivr.net/gh/Fan223/live2d-widget@latest/autoload.js"></script> #看板娘
+    - <script rel="preload" src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script> #音乐播放器
+    - <script rel="preload" src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script> #音乐播放器
   css:
-    - <link rel="stylesheet" href="/css/style.css?1">
-      #看板娘
-#    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+#    - <link rel="stylesheet" href="/css/style.css?1">
+    - <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"> #音乐播放器
+#    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"> #看板娘
 
 #! ---------------------------------------------------------------
 #! Footer links
