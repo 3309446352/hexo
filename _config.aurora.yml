@@ -182,17 +182,17 @@ site_meta:
 gitalk:
   enable: true
   autoExpand: true
-  clientID: 'd86b100925099c3b1c63' #appid
-  clientSecret: '7a945135604b19fe4b5e4a8c0ce4013c5b0accb0' #秘钥
-  repo: ' hexo'  # dev-blo-comments #仓库名
+  clientID: 'fce0f27ba88fd333fcf7' #appid
+  clientSecret: 'de54ed8ed05c82b24235a6ccf4358d284a2f9875' #秘钥
+  repo:  hexo  # dev-blo-comments #仓库名
   owner: '3309446352' ## owner name 用户名
   admin: ['3309446352']   #['admin_name']
   id: "Demo" #uid
   distractionFreeMode: false
-  language: cn
+  language: zh-CN
   labels: ['Gitalk']
   recentComment: true
-  proxy: ''
+  proxy: 'https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token'
   #详情请看教程https://luiyang08.github.io/post/Edit%20Blog-1#%E6%96%87%E4%B8%AD%E5%9B%BE%E7%89%87%E3%80%81%E8%B7%B3%E8%BD%AC
 # Valine comment plugin (recommended!)
 # see https://valine.js.org/quickstart.html 无后端评论系统
