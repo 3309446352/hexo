@@ -15,7 +15,7 @@ data:
     link: https://luiyang08.github.io/
     label: links-badge-personal
   - nick: 依水而安
-    avatar: https://raw.githubusercontent.com/3309446352/Images/main/img/屏幕截图(1).png
+    avatar: https://cdn.staticaly.com/gh/jankin12138/IMG@main/img/b8d3b3c382fa44e5c92a361d33e0c616_hd.4sew3rxcedq0.jpg
     description: 温故而知新
     link: https://yishuihean.cn/
     label: links-badge-personal
@@ -25,25 +25,21 @@ data:
     description: 愿岁并谢，与友长兮
     siteshot: https://blog.kouseki.cn/imgs/siteshot.webp
     label: links-badge-personal
+  - nick: 微笑工房
+    link: https://smilin.net
+    avatar: https://smilin.net/img/avatar.png
+    description: Code · Thinking · ACG
+    siteshot: https://blog.kouseki.cn/imgs/siteshot.webp
+    label: links-badge-personal
 ---
 :::tip Hello
-# 添加友链格式zh-CN
+# 添加友链格式
 这里是zmc的博客，欢迎各位大佬光临！
 来访的朋友，你好！这里是我的友链页面，欢迎来交换友链哦！
-- 博客名称：zmc的博客
+- 博客名称：好名字都是狗起的
 - 博客简介：古来圣贤皆寂寞，惟有饮者留其名。
 - 博客地址：https://hexo-git-test-3309446352s-projects.vercel.app/ or https://3309446352.github.io/
 - 头像地址：https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg
 - 交换方式：在下方的gitalk留言板留言即可！
-
-:::
-
-:::tip Hello
-# 添加友链格式 en
-
-- nick: 好名字都是狗起的
-- avatar: https://raw.githubusercontent.com/3309446352/Images/main
-- description: 古来圣贤皆寂寞，惟有饮者留其名。
-- link: 3309446352.github.io
 
 :::

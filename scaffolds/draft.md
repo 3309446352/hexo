@@ -1,4 +1,9 @@
 ---
 title: {{ title }}
-tags:
+tags: {{ tag  }}
+categories: {{  }}
+date: {{ date }}
+cover: {{ cover }}
+abstracts: {{ abstracts }}
+
 ---

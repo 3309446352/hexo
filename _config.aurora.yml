@@ -109,19 +109,24 @@ menu:
       zh-CN: 'Aurora'
       en: 'Aurora '
     children:
-      AuroraTheme:
-        name: 'Aurora Theme'
-        path: 'https://aurora.tridiamond.tech/cn/'
-        i18n:
-          zh-CN: 'Aurora 主题'
-          en: 'Aurora Theme'
       AuroraThemeDocs:
         name: 'Aurora Theme Docs'
-        path: 'https://aurora.tridiamond.tech/cn/docs/'
+        path: 'https://aurora.tridiamond.tech/en/guide/getting-started.html'
         i18n:
-          zh-CN: 'Aurora 主题文档'
+          zh-CN: '极光 主题文档'
           en: 'Aurora Theme Docs'
-
+      HexoTheme:
+        name: 'Hexo 文档'
+        path: 'https://hexo.io/zh-cn/docs/writing'
+        i18n:
+          zh-CN: 'Hexo 文档'
+          en: 'Hexo document'
+      EJS:
+        name: 'EJS 文档'
+        path: 'https://ejs.bootcss.com/#docs'
+        i18n:
+          zh-CN: 'EJS 文档'
+          en: 'EJS document'
 #! ---------------------------------------------------------------
 #! Theme Config
 #! @docs https://aurora.tridiamond.tech/guide/theme.html
@@ -131,13 +136,13 @@ theme:
   profile_shape: diamond # support `circle`, `diamond`, `rounded`
   feature: true
   gradient:
-    color_1: '#24c6dc'
-    color_2: '#5433ff'
-    color_3: '#ff0099'
+#    color_1: '#24c6dc'
+#    color_2: '#5433ff'
+#    color_3: '#ff0099'
 #    配色
-#    color_1: '#0093E9'
-#    color_2: '#8BC6EC'
-#    color_3: '#80D0C7'
+    color_1: '#0093E9'
+    color_2: '#8BC6EC'
+    color_3: '#80D0C7'
 #! ---------------------------------------------------------------
 #! Social Configs
 #! @docs https://aurora.tridiamond.tech/guide/social.html
@@ -500,7 +505,7 @@ injects:
 #! Footer links
 #! ---------------------------------------------------------------
 footer_links: #页脚链接
-  - title: pornhub # main title
+  - title: www # main title
     links:
       - title: link # link title
         url: www.pornhub.com # URL link
