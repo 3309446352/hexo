@@ -1,6 +1,6 @@
 ---
 abbrlink: ''
-abstracts: Qexo 是一个快速、强大、美观的在线 静态博客编辑器
+abstracts: ''
 author:
   avatar: https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg
   description: 古来圣贤皆寂寞，惟有饮者留其名。
