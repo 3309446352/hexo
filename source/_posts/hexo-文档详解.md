@@ -11,8 +11,7 @@ author:
     github: https://github.com/3309446352
 date: 2024-03-22 20:19:44
 tags: 
-  - hexo
-  - 博客创建教程
+  - 博客创建
 categories:
 ---
 
