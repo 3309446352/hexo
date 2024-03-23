@@ -9,13 +9,13 @@ author:
   socials:
     github: https://github.com/3309446352
 categories: []
-cover: https://raw.githubusercontent.com/3309446352/Images/main/img/favicon.ico
+cover: https://raw.githubusercontent.com/3309446352/Images/main/img/103436983.png
 date: '2024-03-23T07:50:50+08:00'
-description: Qexo 是一个快速、强大、美观的在线 静态博客编辑器。使用 GPL3.0 开源协议。支持包括且不限于在 Vercel 等平台部署, 为您的静态博客添加动态的元素
+description: Qexo 是一个快速、强大、美观的在线 静态博客编辑器。使用 GPL3.0 开源协议。支持包括且不限于在 Vercel 等平台部署, 为您的静态博客添加动态的元素
 tags:
 - aurora
 title: Qexo
-updated: '2024-03-23T18:34:11.597+08:00'
+updated: '2024-03-23T19:57:37.718+08:00'
 ---
 #  {{ title }}
 
