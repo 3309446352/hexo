@@ -127,6 +127,12 @@ menu:
         i18n:
           zh-CN: 'EJS 文档'
           en: 'EJS document'
+      Qexo:
+        name: 'Qexo'
+        path: 'https://qexohexoblog.vercel.app/'
+        i18n:
+          zh-CN: 'Qexo'
+          en: 'Qexo background'
 #! ---------------------------------------------------------------
 #! Theme Config
 #! @docs https://aurora.tridiamond.tech/guide/theme.html
