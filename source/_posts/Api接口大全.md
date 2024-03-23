@@ -16,7 +16,7 @@ title: api
 #updated: '2024-03-23T21:02:17.496+08:00'
 ---
 
-- 一、教书先生
+# 一、教书先生
   https://api.oioweb.cn/
 
 - 二、UomgAPI
@@ -33,7 +33,7 @@ title: api
 - http://47.94.135.214/
 - 八、free-api
 - https://www.free-api.com/- 
-- # 免费api接口（需要注册）- 
+# 免费api接口（需要注册）- 
 - 一、聚合数据
 - https://www.juhe.cn/docs?bd_vid=12366660879320847918
 - 二、万维易源
@@ -44,7 +44,7 @@ title: api
 - https://ai.baidu.com/
 - 五、阿里云免费api
 - https://www.aliyun.com/?spm=a2c4e.11155472.1280361.1.3f665d02tWDTRR- 
-- # 下面分享一些在网上找到的免费API- 
+# 下面分享一些在网上找到的免费API- 
 - 新实时段子
 - https://api.apiopen.top/getJoke?page=1&count=2&type=video
 - 通过Id查段子
