@@ -1,17 +1,19 @@
 ---
-title: Hexo-aurora 文章属性配置详解
-date: 2020-08-15 18:49:36
-Tags: 
-  -Hexo
-  -aurora
-cover: https://raw.githubusercontent.com/3309446352/Images/main/img/illust_63502560_20210626_204746.jpg
+Tags: -Hexo -aurora
+abbrlink: ''
 author:
-  name: TriDiamond
-  link: https://tridiamond.tech
   avatar: https://raw.githubusercontent.com/3309446352/Images/main/img/pr.png
-  description: 'Think like an artist, code like an artisan.'
+  description: Think like an artist, code like an artisan.
+  link: https://tridiamond.tech
+  name: TriDiamond
   socials:
     github: https://github.com/tridiamond
+categories: []
+cover: https://raw.githubusercontent.com/3309446352/Images/main/img/illust_63502560_20210626_204746.jpg
+date: '2020-08-15T18:49:36+08:00'
+tags: []
+title: Hexo-aurora 文章属性配置详解
+updated: '2024-03-23T22:22:41.663+08:00'
 ---
 ```yaml
 ---
@@ -68,6 +70,4 @@ author: author-1
 ---
 ```
 
-
-
-> 详情请见官方文档： [Plugins | Hexo Aurora Docs (tridiamond.tech)](https://aurora.tridiamond.tech/en/configs/plugins.html) 
+> 详情请见官方文档： [Plugins | Hexo Aurora Docs (tridiamond.tech)](https://aurora.tridiamond.tech/en/configs/plugins.html)
