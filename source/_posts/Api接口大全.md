@@ -1,6 +1,6 @@
 ---
 abbrlink: ''
-abstracts: API（Application Programming Interface，应用程序接口）是一些预先定义的函数，或指软件系统不同组成部分衔接的约定。目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访问原码，或理解内部工作机制的细节。
+abstracts: API（Application Programming Interface，应用程序接口）是一些预先定义的函数，或指软件系统不同组成部分衔接的约定。目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访问原码，或理解内部工作机制的细节。
 author:
   avatar: https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg
   description: 古来圣贤皆寂寞，惟有饮者留其名。
@@ -11,18 +11,12 @@ author:
 categories: []
 cover: null
 date: '2024-03-23T20:39:52.637845+08:00'
-description: API（Application Programming Interface，应用程序接口）是一些预先定义的函数，或指软件系统不同组成部分衔接的约定。目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访问原码，或理解内部工作机制的细节。
+description: API（Application Programming Interface，应用程序接口）是一些预先定义的函数，或指软件系统不同组成部分衔接的约定。目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访问原码，或理解内部工作机制的细节。
 tags: []
 title: Api接口大全
-updated: '2024-03-23T20:39:54.002+08:00'
+updated: '2024-03-23T20:42:49.670+08:00'
 ---
-#  {{ title }}
-
-1. {{ description}}
-2.
-
-API（应用程序编程接口）
-API（Application Programming Interface，应用程序接口）是一些预先定义的函数，或指软件系统不同组成部分衔接的约定。目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访问原码，或理解内部工作机制的细节。
+# }
 
 免费api访问网址（不需要注册）
 一、教书先生
