@@ -33,16 +33,7 @@ siteshot: https://blog.kouseki.cn/imgs/siteshot.webp
 label: links-badge-personal
 ---
 :::tip Hello
-# 添加友链格式
-这里是zmc的博客，欢迎各位大佬光临！
-来访的朋友，你好！这里是我的友链页面，欢迎来交换友链哦！
-- 博客名称：好名字都是狗起的
-- 博客简介：古来圣贤皆寂寞，惟有饮者留其名。
-- 博客地址：https://hexo-git-test-3309446352s-projects.vercel.app/ or https://3309446352.github.io/
-- 头像地址：https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg
-- 交换方式：在下方的gitalk留言板留言即可！
 
-:::
 
 <!DOCTYPE html>
 <html lang="en">
@@ -56,8 +47,6 @@ label: links-badge-personal
 
 <body>
   <div id="qexo-friends"></div>
-
-
 </body>
 
 </html>
@@ -66,3 +55,15 @@ label: links-badge-personal
 <script>
   loadQexoFriends("qexo-friends", "${https://qexohexoblog.vercel.app}")
 </script>
+
+# 添加友链格式
+这里是zmc的博客，欢迎各位大佬光临！
+来访的朋友，你好！这里是我的友链页面，欢迎来交换友链哦！
+- 博客名称：好名字都是狗起的
+- 博客简介：古来圣贤皆寂寞，惟有饮者留其名。
+- 博客地址：https://hexo-git-test-3309446352s-projects.vercel.app/ or https://3309446352.github.io/
+- 头像地址：https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg
+- 交换方式：在下方的gitalk留言板留言即可！
+
+:::
+
