@@ -18,7 +18,7 @@ author:
 title: Article Title #标题
 date: 2020-08-15 18:49:36 #时间
 tags: #标签
-  - aurora
+  - 博客搭建
 categories:
 cover: https://cover.png #文章头像
 author:
