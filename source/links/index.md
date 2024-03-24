@@ -49,7 +49,7 @@ data:
 </html>
 
 <script src="https://cdn.jsdelivr.net/npm/qexo-static@1.6.0/hexo/friends.js"></script>
-<script>loadQexoFriends("qexo-friends", "${https://qexohexoblog.vercel.app/}")</script>
+<script>loadQexoFriends("qexo-friends", "https://qexohexoblog.vercel.app")</script>
 
 # 添加友链格式
 这里是zmc的博客，欢迎各位大佬光临！
