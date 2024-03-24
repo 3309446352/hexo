@@ -193,10 +193,10 @@ site_meta:
 gitalk:
   enable: true
   autoExpand: true
-  clientID: 'd86b100925099c3b1c63' #appid  服务器
- # cllintID: 'fce0f27ba88fd333fcf7'#本地
-  clientSecret: 'c152325716c70650dd1c62b59b576460dc1e2d39' #服务器秘钥
- # clientSecret : 'de54ed8ed05c82b24235a6ccf4358d284a2f9875' #本地
+#  clientID: 'd86b100925099c3b1c63' #appid  服务器
+  cllintID: 'fce0f27ba88fd333fcf7'#本地
+#  clientSecret: 'c152325716c70650dd1c62b59b576460dc1e2d39' #服务器秘钥
+  clientSecret : 'de54ed8ed05c82b24235a6ccf4358d284a2f9875' #本地
   repo:  hexo  # dev-blo-comments #仓库名
   owner: '3309446352' ## owner name 用户名
   admin: ['3309446352']   #['admin_name']
@@ -513,106 +513,11 @@ injects:
 #! Footer links
 #! ---------------------------------------------------------------
 footer_links: #页脚链接
-  - title: www # main title
-    links:
-      - title: link # link title
-        url: www.pornhub.com # URL link
-      - title: pornhub # link title
-        url: # URL link
-      - title: Friends # link of friends mode / 友链模式
-        mode: 'links'
-        url: ./friends # URL link
-      - title: link # link title
-        mode: 'link'
-        url: ./link # URL link
-
-  - title: 我的
-    links:
-      - title: link # link title
-        mode: 'Message board'
-        url: ./page/message-board # URL link
-      - title: link # link title
-        mode: 'About'
-        url: ./about # URL link
-      - title: link # link title
-        mode: 'link'
-        url: ./link # URL link
-      - title: link # link title
-        mode: 'link'
-        url: ./link # URL link
-
-  - title: 友链
-    links:
-      - title: link # link title
-        mode: 'Friends'
-        url: ./friends # URL link
-      - title: link # link title
-        mode: 'link'
-        url: ./link # URL link
-      - title: link # link title
-        mode: 'link'
-        url: ./link # URL link
-      - title: link # link title
-        mode: 'link'
-        url: ./link # URL link
-
-  - title: 游戏
-    links:
-      - title: EPIC # link title
-        mode: 'Epic'
-        url: https://store.epicgames.com/
-      - title: 原神
-        mode: 'Genshin'
-        url: https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg # URL link
-      - title: stream
-        mode: 'Stream'
-        url: https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg # URL link
-      - title: link # link title
-        mode: 'link'
-        url: ./link # URL link
-  - title: 文章
-    links:
-      - title: link # link title
-        mode: 'Tags'
-        url: ./tags # URL link
-      - title: link # link title
-        mode: 'Categories'
-        url: ./categories # URL link
-      - title: link # link title
-        mode: 'Archives'
-        url: ./archives # URL link
-      - title: link # link title
-        mode: 'link'
-        url: ./link # URL link
-
-  - title: 图片
-    links:
-      - title: 体育老师 # link title
-        mode: 'GitHub'
-        url: '/url'
-      - title: link # link title
-        mode: 'link'
-        url: ./link # URL link
-      - title: link # link title
-        mode: 'link'
-        url: ./link # URL link
-      - title: link # link title
-        mode: 'link'
-        url: ./link # URL link
-  - title: 生活 # link title
-    links:
-      - title: 音乐 # link title
-        mode: '音乐'
-        url: https://www.kugou.com/
-      - title: 电影 # link title
-        mode: '电影'
-        url: https://www.iqiyi.com/
-      - title: 动漫 # link title
-        mode: '动漫'
-        url: https://www.bilibili.com/
-      - title: 小说 # link title
-        mode: '小说'
-        url: https://www.biquge.info/
+#  - title: 游戏
+#    links:
+#      - title: EPIC # link title
+#        mode: 'Games'
+#        url: ./page/Games # URL link
 
 #! ---------------------------------------------------------------
 #! Highlighter Shiki
