@@ -193,10 +193,10 @@ site_meta:
 gitalk:
   enable: true
   autoExpand: true
- # clientID: 'd86b100925099c3b1c63' #appid  服务器
-  cllintID: 'fce0f27ba88fd333fcf7'#本地
- # clientSecret: 'c152325716c70650dd1c62b59b576460dc1e2d39' #服务器秘钥
-  clientSecret : 'de54ed8ed05c82b24235a6ccf4358d284a2f9875' #本地
+  clientID: 'd86b100925099c3b1c63' #appid  服务器
+ # cllintID: 'fce0f27ba88fd333fcf7'#本地
+  clientSecret: 'c152325716c70650dd1c62b59b576460dc1e2d39' #服务器秘钥
+ # clientSecret : 'de54ed8ed05c82b24235a6ccf4358d284a2f9875' #本地
   repo:  hexo  # dev-blo-comments #仓库名
   owner: '3309446352' ## owner name 用户名
   admin: ['3309446352']   #['admin_name']
