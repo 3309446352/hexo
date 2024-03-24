@@ -200,7 +200,7 @@ gitalk:
   repo:  hexo  # dev-blo-comments #仓库名
   owner: '3309446352' ## owner name 用户名
   admin: ['3309446352']   #['admin_name']
-  id: uid #uid
+  id: lo #uid
   distractionFreeMode: true
   language: zh-CN
   labels: ['Gitalk']
