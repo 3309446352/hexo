@@ -15,7 +15,7 @@ description: REmote DIctionary Server(Redis) 是一个由 Salvatore Sanfili
 tags:
 - 后端
 title: Redis使用方法
-updated: '2024-03-25T00:20:12.175+08:00'
+updated: '2024-03-25T00:42:36.473+08:00'
 ---
 # 简介：
 
