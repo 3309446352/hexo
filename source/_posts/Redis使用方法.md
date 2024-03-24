@@ -15,9 +15,11 @@ description: REmote DIctionary Server(Redis) 是一个由 Salvatore Sanfili
 tags:
 - 后端
 title: Redis使用方法
-updated: '2024-03-24T23:13:17.016+08:00'
+updated: '2024-03-25T00:53:40.934+08:00'
 ---
-# 简介：{{ description}}
+# 简介：
+
+{{ description}}
 
 # redis
 
@@ -273,7 +275,7 @@ public class RedisTemTest {
 
 		// 定时 设置 hash 的数据存活时间为5秒 测试时注释
         redisTemplate.expire("hash", 5, TimeUnit.SECONDS);
-    
+  
         // 查询 hash中hashKey 为1的值
         User hash = (User) redisTemplate.opsForHash().get("hash", "1");
         // 查询 hash中 所有hashKey 对应的的值
