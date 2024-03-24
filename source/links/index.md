@@ -31,9 +31,19 @@ data:
     description: Code · Thinking · ACG
     siteshot: https://blog.kouseki.cn/imgs/siteshot.webp
     label: links-badge-personal
+  - nick: 青桔气球
+    link: https://blog.qjqq.cn/
+    avatar: https://avatar.qjqq.cn/1/6503bb1b7fa1a.webp!avatar
+    description: 分享网络安全与科技生活
+    siteshot: https://www.qingjuqiqiu.com/img/siteshot.jpg
+    label: links-badge-designer
+  - nick: 一只程序猿
+    link: https://www.yizhicheng.com/
+    avatar: https://www.yizhicheng.com/img/avatar.jpg
+    description: 一个程序猿的日常
+    siteshot: https://www.yizhicheng.com/img/siteshot.jpg
+    label: links-badge-tech
 ---
-:::tip Hello
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -51,6 +61,7 @@ data:
 <script src="https://cdn.jsdelivr.net/npm/qexo-static@1.6.0/hexo/friends.js"></script>
 <script>loadQexoFriends("qexo-friends", "https://qexohexoblog.vercel.app")</script>
 
+:::tip Hello
 # 添加友链格式
 这里是zmc的博客，欢迎各位大佬光临！
 来访的朋友，你好！这里是我的友链页面，欢迎来交换友链哦！

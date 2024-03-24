@@ -17,7 +17,7 @@ tags:
 title: Redis使用方法
 updated: '2024-03-24T23:13:17.016+08:00'
 ---
-# 简介：}
+# 简介：{{ description}}
 
 # redis
 
@@ -65,7 +65,7 @@ spring:
 
 ## 序列化防止乱码
 
-```
+```java
 @Bean
 pubtic RedisTemptate<String, Object> redisTemptate(RedisConnectionFactory redisConnectionFactory) { 
    
@@ -81,7 +81,7 @@ pubtic RedisTemptate<String, Object> redisTemptate(RedisConnectionFactory redisC
 
 或
 
-```
+```java
 @Configuration
 public class RedisConfig {
     @Bean
@@ -112,7 +112,7 @@ public class RedisConfig {
 
 #### String-字符串类型
 
-```
+```java
 package com.tensquare.article;
 
 import com.tensquare.article.pojo.User;
@@ -159,7 +159,7 @@ public class RedisTemTest {
 
 #### Set-集合类型
 
-```
+```java
  /*
      * Set 集合类型CURD
      * */
@@ -211,7 +211,7 @@ public class RedisTemTest {
 
 #### List-链表类型
 
-```
+```java
  /*
      * List 数据类型的CRUD
      * */
@@ -339,7 +339,7 @@ public class RedisTemTest {
 
 ### 增删改查工具类
 
-```
+```java
 package com.lsqingfeng.springboot.utils; 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
