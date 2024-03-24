@@ -10,7 +10,7 @@ author:
 date: 2024-03-22 22:17:58
 tags:
   -springboot
-categories: 后端
+categories: ["后端"]
 cover: /svg/OIP.jpg
 description:
 abstracts:

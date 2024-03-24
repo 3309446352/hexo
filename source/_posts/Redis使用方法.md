@@ -8,7 +8,7 @@ author:
   name: 好名字都是狗起的
   socials:
     github: https://github.com/3309446352
-categories: 后端
+categories: ["后端"]
 cover: https://redis.io/
 date: '2024-03-24T23:13:16.329363+08:00'
 description: REmote DIctionary Server(Redis) 是一个由 Salvatore Sanfilippo 写的 key-value 存储系统，是跨平台的非关系型数据库。  Redis 是一个开源的使用 ANSI C 语言编写、遵守 BSD 协议、支持网络、可基于内存、分布式、可选持久性的键值对(Key-Value)存储数据库，并提供多种语言的 API。
