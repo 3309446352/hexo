@@ -54,7 +54,7 @@ authors:
     description: 'Think like an artist, code like an artisan.'
     socials:
       github: https://github.com/tridiamond
-    author-2:
+  author-2:
       name: Jerry
       avatar: https://Jerry.png
       link: https://github.com/TriDiamond
