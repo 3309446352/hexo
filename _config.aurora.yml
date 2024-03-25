@@ -40,14 +40,27 @@ site:
 #! ---------------------------------------------------------------
 authors:
 ##! example
-TriDiamond:
-    name: Zmchttps://raw.githubusercontent.com/3309446352/Images/main/img/屏幕截图(1).png
-    avatar:
-    link: https://github.com/TriDiamond
-    description: '像艺术家一样思考，像工匠一样编码.'
+  TriDiamond:
+      name: Zmchttps://raw.githubusercontent.com/3309446352/Images/main/img/屏幕截图(1).png
+      avatar:
+      link: https://github.com/TriDiamond
+      description: '像艺术家一样思考，像工匠一样编码.'
+      socials:
+        github: https://tridiamond.tech
+  author-1:
+    name: TriDiamond
+    link: https://tridiamond.tech
+    avatar: https://avatar.png
+    description: 'Think like an artist, code like an artisan.'
     socials:
-      github: https://tridiamond.tech
-
+      github: https://github.com/tridiamond
+    author-2:
+      name: Jerry
+      avatar: https://Jerry.png
+      link: https://github.com/TriDiamond
+      description: 'I am Jerry, how are you?'
+      socials:
+        github: https://github.com/Jerry
 #! ---------------------------------------------------------------
 #! Menu Configs
 #！ @docs https://aurora.tridiamond.tech/guide/menu.html
