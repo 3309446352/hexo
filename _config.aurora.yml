@@ -9,9 +9,9 @@
 #！ @docs https://aurora.tridiamond.tech/guide/configuration.html
 #! ---------------------------------------------------------------
 site:
-  subtitle: 好名字都是狗起的's Blog
-  author: 好名字都是狗起的
-  nick: zmc UI
+  subtitle: 云深不知处
+  author: 云深不知处
+  nick: ZMC
   description: '<h1 style="color:aqua;font-weight:bolder;">幽灵，一个共产主义的幽灵，在欧洲徘徊着.为了对这个幽灵进行神圣的围剿，旧欧洲的一切势力,都联合起来了。</h1>'
   link: page/about
   language: zh-CN
@@ -80,12 +80,6 @@ menu:
     i18n:
       zh-CN: '追番'
       en: 'ChasingFan'
-  Genshin:
-    name: 'Genshin'
-    path: '/page/Genshin'
-    i18n:
-      zh-CN: '原神'
-      en: 'Genshin'
   pages-menus:  # 个人链接
     name: 'Message Board'
     path: '/page/message-board'
@@ -98,24 +92,12 @@ menu:
       zh-CN: '我的'
       en: '我的'
     children:
-      blog:
-        name: '博客'
-        path: 'https://zmc-blog-t6py.vercel.app/'
-        i18n:
-          zh-CN: '博客'
-          en: 'Blog'
       RuiXin:
         name: 'RuiXin'
         path: 'https://mlicktea.vercel.app/#/main/home'
         i18n:
           zh-CN: '瑞幸咖啡'
           en: 'RuiXin Coffee'
-      ToDoList:
-        name: '待办清单'
-        path: 'https://mlik.vercel.app/#/'
-        i18n:
-          zh-CN: '待办清单'
-          en: 'To-do List'
   AuroraTheme:
     name: 'Aurora'
     i18n:
@@ -134,12 +116,6 @@ menu:
         i18n:
           zh-CN: 'Hexo 文档'
           en: 'Hexo document'
-      EJS:
-        name: 'EJS 文档'
-        path: 'https://ejs.bootcss.com/#docs'
-        i18n:
-          zh-CN: 'EJS 文档'
-          en: 'EJS document'
       Qexo:
         name: 'Qexo'
         path: 'https://qexohexoblog.vercel.app/'
@@ -203,22 +179,23 @@ site_meta:
 #! ---------------------------------------------------------------
 
 # For local development only!
-gitalk:
-  enable: true
-  autoExpand: true
-  clientID: 'd86b100925099c3b1c63' #appid  服务器
-#   cllintID: 'fce0f27ba88fd333fcf7'#本地
-  clientSecret: 'efc00442a9b30cb054d43196c4c5962b00b9234d' #服务器秘钥
-#   clientSecret : 'de54ed8ed05c82b24235a6ccf4358d284a2f9875' #本地
-  repo:  hexo  # dev-blo-comments #仓库名
-  owner: '3309446352' ## owner name 用户名
-  admin: ['3309446352']   #['admin_name']
-  id: "Demo" #uid
-  distractionFreeMode: false
-  language: zh-CN
-  labels: ['Gitalk']
-  recentComment: true
-  proxy: ''
+#gitalk:
+#  enable: true
+#  autoExpand: true
+#  clientID: 'd86b100925099c3b1c63' #appid  服务器
+##   cllintID: 'fce0f27ba88fd333fcf7'#本地
+#  clientSecret: 'efc00442a9b30cb054d43196c4c5962b00b9234d' #服务器秘钥
+##   clientSecret : 'de54ed8ed05c82b24235a6ccf4358d284a2f9875' #本地
+#  repo:  hexo  # dev-blo-comments #仓库名
+#  owner: '3309446352' ## owner name 用户名
+#  admin: ['3309446352']   #['admin_name']
+#  id: "Demo" #uid
+#  distractionFreeMode: false
+#  language: zh-CN
+#  labels: ['Gitalk']
+#  recentComment: true
+#  proxy: ''
+
   #详情请看教程https://luiyang08.github.io/post/Edit%20Blog-1#%E6%96%87%E4%B8%AD%E5%9B%BE%E7%89%87%E3%80%81%E8%B7%B3%E8%BD%AC
 # Valine comment plugin (recommended!)
 # see https://valine.js.org/quickstart.html 无后端评论系统
@@ -252,18 +229,18 @@ gitalk:
 
 # Waline comment plugin
 # see https://waline.js.org/guide/get-started/
-#waline: #服务端部署
-#  enable: true
-#  recentComment: true
-#  reaction: true
-#  login: 'enable' # 'disable' | 'modal' | 'page'是否登录才能评论
-#  meta: ['nick', 'mail']
-#  requiredMeta: ['nick', 'mail']
-#  commentSorting: 'latest'
-#  wordLimit: 100
-#  imageUploader: true #您可以将其设置为禁用图像上传
-#  pageSize: 10
-#  serverURL: 'https://waline-comment-jet-two.vercel.app/' # 填写服务端地址
+waline: #服务端部署
+  enable: true
+  recentComment: true
+  reaction: true
+  login: 'enable' # 'disable' | 'modal' | 'page'是否登录才能评论
+  meta: ['nick', 'mail']
+  requiredMeta: ['nick', 'mail']
+  commentSorting: 'latest'
+  wordLimit: 100
+  imageUploader: true #您可以将其设置为禁用图像上传
+  pageSize: 10
+  serverURL: 'https://waline-comment-jet-two.vercel.app/' # 填写服务端地址
 
 #waline 评论插件
 
