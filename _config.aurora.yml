@@ -233,14 +233,14 @@ waline: #服务端部署
   enable: true
   recentComment: true
   reaction: true
-  login: 'enable' # 'disable' | 'modal' | 'page'是否登录才能评论
+  login: 'page' # 'disable' | 'modal' | 'page'是否登录才能评论
   meta: ['nick', 'mail']
   requiredMeta: ['nick', 'mail']
   commentSorting: 'latest'
   wordLimit: 100
   imageUploader: true #您可以将其设置为禁用图像上传
   pageSize: 10 #评论分页
-  serverURL: 'https://waline-comment-jet-two.vercel.app/ ' # 填写服务端地址
+  serverURL: 'https://waline-38ge.vercel.app/ ' # 填写服务端地址
 
 #waline 评论插件
 
