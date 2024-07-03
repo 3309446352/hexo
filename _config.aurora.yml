@@ -231,7 +231,7 @@ site_meta:
 # see https://waline.js.org/guide/get-started/
 waline: #服务端部署
   enable: true
-  recentComment: true
+  recentComment: fasle
   reaction: true
   login: 'page' # 'disable' | 'modal' | 'page'是否登录才能评论
   meta: ['nick', 'mail']
