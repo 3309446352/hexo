@@ -139,9 +139,9 @@ theme:
    # color_2: '#8BC6EC'
    # color_3: '#80D0C7'
    
-   # color_1: '#7F8c8c'
-   # color_2: '#60FCA2'
-   # color_3: '#34D0B2'
+    color_1: '#7F8c8c'
+    color_2: '#60FCA2'
+    color_3: '#34D0B2'
 
 #! ---------------------------------------------------------------
 #! Social Configs
