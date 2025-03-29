@@ -518,6 +518,6 @@ moduleNames:
 aggregateName:
 shiki:
   enable: true
-  theme: material-theme-palenight # 主题
+  theme: monokai # 主题
   externalTheme:
-  backgroundColor: "#83bfe5"
+  backgroundColor: "#1a1a1a"
