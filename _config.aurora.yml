@@ -135,9 +135,14 @@ theme:
 #    color_2: '#5433ff'
 #    color_3: '#ff0099'
 #    配色
-    color_1: '#0093E9'
-    color_2: '#8BC6EC'
-    color_3: '#80D0C7'
+   # color_1: '#0093E9'
+   # color_2: '#8BC6EC'
+   # color_3: '#80D0C7'
+   
+   # color_1: '#7F8c8c'
+   # color_2: '#60FCA2'
+   # color_3: '#34D0B2'
+
 #! ---------------------------------------------------------------
 #! Social Configs
 #! @docs https://aurora.tridiamond.tech/guide/social.html
