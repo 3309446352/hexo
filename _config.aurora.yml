@@ -520,4 +520,4 @@ shiki:
   enable: true
   theme: rose-pine-dawn
   externalTheme:
-  backgroundColor: '#1a1a1a'
+  backgroundColor: ''
