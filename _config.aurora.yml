@@ -518,6 +518,6 @@ moduleNames:
 aggregateName:
 shiki:
   enable: true
-  theme: material-theme-palenight # 主题
+  theme: one-dark-pro # 主题
   externalTheme:
-  backgroundColor: "#1a1a1a"
+  backgroundColor: "#83bfe5"
