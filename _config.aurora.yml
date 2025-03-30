@@ -19,12 +19,12 @@ site:
   logo: /svg/prwe.jpg
   theme: aurora
   avatar: /svg/logo.jpg #头像
-  beian:  #备案信息
+  beian: #备案信息
     number: 粤ICP44580300211号 #备案号
-    link: 'page/about' #备案链接
+    link: "page/about" #备案链接
   police_beian: #公安备案信息
     number: 粤公网备445803209456号 #备案号
-    link: 'page/about' #备案链接
+    link: "page/about" #备案链接
   # Start date of the blog YYY-MM-DD
   # 博客开始运行日期
   started_date: 2014-3-20
@@ -32,35 +32,35 @@ site:
   # uid: use unique ID
   # slug: use generated slug base on title
   # (Default is 'slug')
-  pathSlug: 'slug' #
+  pathSlug: "slug" #
 
 #! ---------------------------------------------------------------
 #! Authors Configs
 #！ @docs https://aurora.tridiamond.tech/guide/authors.html
 #! ---------------------------------------------------------------
 authors:
-##! example
+  ##! example
   TriDiamond:
-      name: Zmchttps://raw.githubusercontent.com/3309446352/Images/main/img/屏幕截图(1).png
-      avatar:
-      link: https://github.com/TriDiamond
-      description: '像艺术家一样思考，像工匠一样编码.'
-      socials:
-        github: https://tridiamond.tech
+    name: Zmchttps://raw.githubusercontent.com/3309446352/Images/main/img/屏幕截图(1).png
+    avatar:
+    link: https://github.com/TriDiamond
+    description: "像艺术家一样思考，像工匠一样编码."
+    socials:
+      github: https://tridiamond.tech
   author-1:
     name: TriDiamond
     link: https://tridiamond.tech
     avatar: https://avatar.png
-    description: 'Think like an artist, code like an artisan.'
+    description: "Think like an artist, code like an artisan."
     socials:
       github: https://github.com/tridiamond
   author-2:
-      name: Jerry
-      avatar: https://Jerry.png
-      link: https://github.com/TriDiamond
-      description: 'I am Jerry, how are you?'
-      socials:
-        github: https://github.com/Jerry
+    name: Jerry
+    avatar: https://Jerry.png
+    link: https://github.com/TriDiamond
+    description: "I am Jerry, how are you?"
+    socials:
+      github: https://github.com/Jerry
 #! ---------------------------------------------------------------
 #! Menu Configs
 #！ @docs https://aurora.tridiamond.tech/guide/menu.html
@@ -72,25 +72,25 @@ menu:
   Categories: true
   Links:
     i18n:
-      zh-CN: '友链'
-      en: 'Links' #此页面将显示您所有朋友的博客列表。
+      zh-CN: "友链"
+      en: "Links" #此页面将显示您所有朋友的博客列表。
   # ChasingFan:
   #   name: 'ChasingFan'
   #   path: '/page/ChasingFan'
   #   i18n:
   #     zh-CN: '追番'
   #     en: 'ChasingFan'
-  pages-menus:  # 个人链接
-    name: 'Message Board'
-    path: '/page/message-board'
+  pages-menus: # 个人链接
+    name: "Message Board"
+    path: "/page/message-board"
     i18n:
-      zh-CN: '留言'
-      en: 'Message Board'
+      zh-CN: "留言"
+      en: "Message Board"
   projects:
-    name: '我的'
+    name: "我的"
     i18n:
-      zh-CN: '我的'
-      en: '我的'
+      zh-CN: "我的"
+      en: "我的"
     children:
       # RuiXin:
       #   name: 'RuiXin'
@@ -131,21 +131,21 @@ theme:
   profile_shape: diamond # support `circle`, `diamond`, `rounded`
   feature: true
   gradient:
-#    color_1: '#24c6dc'
-#    color_2: '#5433ff'
-#    color_3: '#ff0099'
-#    配色
-#    color_1: '#0093E9'
-#    color_2: '#8BC6EC'
-#    color_3: '#80D0C7'
-   
-#    color_1: '#7F8c8c'
-#    color_2: '#60FCA2'
-#    color_3: '#34D0B2'
+    #    color_1: '#24c6dc'
+    #    color_2: '#5433ff'
+    #    color_3: '#ff0099'
+    #    配色
+    #    color_1: '#0093E9'
+    #    color_2: '#8BC6EC'
+    #    color_3: '#80D0C7'
 
-     color_1: '#2c92ce'
-     color_2: '#89c4e9'
-     color_3: '#7ecec5'
+    #    color_1: '#7F8c8c'
+    #    color_2: '#60FCA2'
+    #    color_3: '#34D0B2'
+
+    color_1: "#2c92ce"
+    color_2: "#89c4e9"
+    color_3: "#7ecec5"
 
 #! ---------------------------------------------------------------
 #! Social Configs
@@ -153,14 +153,14 @@ theme:
 #! ---------------------------------------------------------------
 socials:
   #个人链接
-  github: 'https://github.com/3309446352'
-  twitter: 'https://twitter.com/xinggu98'
-  csdn: 'https://blog.csdn.net/qq_52246780?spm=1000.2115.3001.5343'
-  juejin: 'https://juejin.cn/user/center/signin?avatar_menu'
+  github: "https://github.com/3309446352"
+  twitter: "https://twitter.com/xinggu98"
+  csdn: "https://blog.csdn.net/qq_52246780?spm=1000.2115.3001.5343"
+  juejin: "https://juejin.cn/user/center/signin?avatar_menu"
   #个人链接
-  customs:  #自定义社交链接
-  #! Example:
-  #! --- Using SVG
+  customs: #自定义社交链接
+    #! Example:
+    #! --- Using SVG
     bilibili:
       icon: /svg/blibli.svg
       link: https://space.bilibili.com/272466600
@@ -170,7 +170,6 @@ socials:
   #! --- Using FontAwesome
 #  自定义社交链接
 
-
 #! ---------------------------------------------------------------
 #! Site Meta Configs
 #! @docs https://aurora.tridiamond.tech/guide/theme.html
@@ -178,9 +177,9 @@ socials:
 site_meta:
   cdn: cn
   favicon:
-  description: '一位正在重塑知识的技术人 公众号：技术银河'
-  keywords: 'Frontend, Web development, Blog, Aurora Theme, TriDiamond'
-  author: 'TriDiamond'
+  description: "一位正在重塑知识的技术人 公众号：技术银河"
+  keywords: "Frontend, Web development, Blog, Aurora Theme, TriDiamond"
+  author: "TriDiamond"
 
 #! ---------------------------------------------------------------
 #! Plugins
@@ -205,7 +204,7 @@ site_meta:
 #  recentComment: true
 #  proxy: ''
 
-  #详情请看教程https://luiyang08.github.io/post/Edit%20Blog-1#%E6%96%87%E4%B8%AD%E5%9B%BE%E7%89%87%E3%80%81%E8%B7%B3%E8%BD%AC
+#详情请看教程https://luiyang08.github.io/post/Edit%20Blog-1#%E6%96%87%E4%B8%AD%E5%9B%BE%E7%89%87%E3%80%81%E8%B7%B3%E8%BD%AC
 # Valine comment plugin (recommended!)
 # see https://valine.js.org/quickstart.html 无后端评论系统
 #valine:
@@ -242,17 +241,16 @@ waline: #服务端部署
   enable: true
   recentComment: true
   reaction: true
-  login: 'page' # 'disable' | 'modal' | 'page'是否登录才能评论
-  meta: ['nick', 'mail']
-  requiredMeta: ['nick', 'mail']
-  commentSorting: 'latest'
+  login: "page" # 'disable' | 'modal' | 'page'是否登录才能评论
+  meta: ["nick", "mail"]
+  requiredMeta: ["nick", "mail"]
+  commentSorting: "latest"
   wordLimit: 100
   imageUploader: true #您可以将其设置为禁用图像上传
   pageSize: 10 #评论分页
-  serverURL: 'https://waline-ecru-xi-18.vercel.app' # 填写服务端地址
+  serverURL: "https://waline-ecru-xi-18.vercel.app" # 填写服务端地址
 
 #waline 评论插件
-
 
 # Enable Busuanzi statistic plugin
 # see http://ibruce.info/2015/04/04/busuanzi/
@@ -305,7 +303,7 @@ aurora_bot:
     messages:
       - 你好，我是 <span>Dia</span>，好高兴遇见你～
       - 好久不见，日子过得好快呢……
-      - '<span>大坏蛋！</span>你都多久没理人家了呀，嘤嘤嘤～'
+      - "<span>大坏蛋！</span>你都多久没理人家了呀，嘤嘤嘤～"
       - 嗨～快来逗我玩吧！
       - 拿小拳拳锤你胸口！
       - 学习使我们快乐，快乐使我们更想学习～
@@ -339,14 +337,14 @@ aurora_bot:
     # 与相应的消息。
     # ======================================================
     welcome:
-      '24': 你是夜猫子呀？这么晚还不睡觉，明天起的来嘛？
-      '5_7': 早上好！一日之计在于晨，美好的一天就要开始了。
-      '7_11': 上午好！工作顺利嘛，不要久坐，多起来走动走动哦！
-      '11_13': 中午了，工作了一个上午，现在是午餐时间！
-      '13_17': 午后很容易犯困呢，今天的运动目标完成了吗？
-      '17_19': 傍晚了！窗外夕阳的景色很美丽呢，最美不过夕阳红～
-      '19_21': 晚上好，今天过得怎么样？
-      '21_23':
+      "24": 你是夜猫子呀？这么晚还不睡觉，明天起的来嘛？
+      "5_7": 早上好！一日之计在于晨，美好的一天就要开始了。
+      "7_11": 上午好！工作顺利嘛，不要久坐，多起来走动走动哦！
+      "11_13": 中午了，工作了一个上午，现在是午餐时间！
+      "13_17": 午后很容易犯困呢，今天的运动目标完成了吗？
+      "17_19": 傍晚了！窗外夕阳的景色很美丽呢，最美不过夕阳红～
+      "19_21": 晚上好，今天过得怎么样？
+      "21_23":
         - 已经这么晚了呀，早点休息吧，晚安～
         - 深夜时要爱护眼睛呀！
 
@@ -378,11 +376,11 @@ aurora_bot:
     #  ======================================================
     mouseover:
       # 悬浮在 Dia 上
-      - selector: '#Aurora-Dia'
+      - selector: "#Aurora-Dia"
         text:
           - 哇啊啊啊啊啊啊... <span>你想干嘛</span>? O.O
           - 请您轻一点，我是<span>很昂贵</span>的机器人哦! O.O
-          - '<span>领导，我在呢!</span> 我有什么可以帮到你呢? O.O'
+          - "<span>领导，我在呢!</span> 我有什么可以帮到你呢? O.O"
       # 悬浮在 Home 菜单
       - selector: "[data-menu='Home']"
         text:
@@ -441,14 +439,14 @@ aurora_bot:
           - 您的选择真的不错哦！好好享受这篇文章吧～
           - 希望您能从 <span>「{text}」</span>这篇文章中学到点东西。
       # 鼠标点击跳转评论输入框（Gitalk）
-      - selector: '.gt-header-textarea'
+      - selector: ".gt-header-textarea"
         text:
           - 要吐槽些什么呢？
           - 一定要认真填写喵～
           - 有什么想说的吗？
           - 如果觉得文章不错的话，就给博主留个言吧～
       # 鼠标点击跳转评论输入框（Valine）
-      - selector: '.veditor'
+      - selector: ".veditor"
         text:
           - 要吐槽些什么呢？
           - 一定要认真填写喵～
@@ -465,7 +463,7 @@ aurora_bot:
     # ======================================================
     events:
       - date: 01/01
-        text: '<span>元旦</span>了呢，新的一年又开始了，今年是{year}年～'
+        text: "<span>元旦</span>了呢，新的一年又开始了，今年是{year}年～"
       - date: 02/14
         text: 又是一年<span>情人节</span>，{year}年找到对象了嘛～
       - date: 03/08
@@ -477,13 +475,13 @@ aurora_bot:
       - date: 05/01
         text: 今天是<span>五一劳动节</span>，计划好假期去哪里了吗～
       - date: 06/01
-        text: '<span>儿童节</span>了呢，快活的时光总是短暂，要是永远长不大该多好啊…'
-      - date: '09/03'
-        text: '<span>中国人民抗日战争胜利纪念日</span>，铭记历史、缅怀先烈、珍爱和平、开创未来。'
-      - date: '09/10'
-        text: '<span>教师节</span>，在学校要给老师问声好呀～'
+        text: "<span>儿童节</span>了呢，快活的时光总是短暂，要是永远长不大该多好啊…"
+      - date: "09/03"
+        text: "<span>中国人民抗日战争胜利纪念日</span>，铭记历史、缅怀先烈、珍爱和平、开创未来。"
+      - date: "09/10"
+        text: "<span>教师节</span>，在学校要给老师问声好呀～"
       - date: 10/01
-        text: '<span>国庆节</span>到了，为祖国母亲庆生！'
+        text: "<span>国庆节</span>到了，为祖国母亲庆生！"
       - date: 11/05-11/12
         text: 今年的<span>双十一</span>是和谁一起过的呢～
       - date: 12/20-12/31
@@ -500,11 +498,11 @@ injects:
     - <canvas id="universe.css"></canvas> # 创建画布
     - <script src="/js/universe.css.js"></script> # 引入js
   scripts:
-#    - <script src="https://cdn.jsdelivr.net/gh/Fan223/live2d-widget@latest/autoload.js"></script> #看板娘
+    #    - <script src="https://cdn.jsdelivr.net/gh/Fan223/live2d-widget@latest/autoload.js"></script> #看板娘
     - <script rel="preload" src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script> #音乐播放器
     - <script rel="preload" src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script> #音乐播放器
   css:
-#    - <link rel="stylesheet" href="/css/style.css?1">
+    #    - <link rel="stylesheet" href="/css/style.css?1">
     - <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"> #音乐播放器
 #    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"> #看板娘
 
@@ -529,4 +527,4 @@ shiki:
   enable: true
   theme: rose-pine-dawn
   externalTheme:
-  backgroundColor: ''
+  backgroundColor: ""
