@@ -128,8 +128,8 @@ menu:
 #! ---------------------------------------------------------------
 theme:
   dark_mode: false
-  profile_shape: diamond # support `circle`, `diamond`, `rounded`
-  feature: false
+  profile_shape: rounded # support `circle`, `diamond`, `rounded`
+  feature: true
   gradient:
 #    color_1: '#24c6dc'
 #    color_2: '#5433ff'
