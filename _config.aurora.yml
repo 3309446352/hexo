@@ -74,12 +74,12 @@ menu:
     i18n:
       zh-CN: '友链'
       en: 'Links' #此页面将显示您所有朋友的博客列表。
-  ChasingFan:
-    name: 'ChasingFan'
-    path: '/page/ChasingFan'
-    i18n:
-      zh-CN: '追番'
-      en: 'ChasingFan'
+  # ChasingFan:
+  #   name: 'ChasingFan'
+  #   path: '/page/ChasingFan'
+  #   i18n:
+  #     zh-CN: '追番'
+  #     en: 'ChasingFan'
   pages-menus:  # 个人链接
     name: 'Message Board'
     path: '/page/message-board'
@@ -92,42 +92,42 @@ menu:
       zh-CN: '我的'
       en: '我的'
     children:
-      RuiXin:
-        name: 'RuiXin'
-        path: 'https://mlicktea.vercel.app/#/main/home'
-        i18n:
-          zh-CN: '瑞幸咖啡'
-          en: 'RuiXin Coffee'
-  AuroraTheme:
-    name: 'Aurora'
-    i18n:
-      zh-CN: '极光'
-      en: 'Aurora '
-    children:
-      AuroraThemeDocs:
-        name: 'Aurora Theme Docs'
-        path: 'https://aurora.tridiamond.tech/en/guide/getting-started.html'
-        i18n:
-          zh-CN: '极光 主题文档'
-          en: 'Aurora Theme Docs'
-      HexoTheme:
-        name: 'Hexo 文档'
-        path: 'https://hexo.io/zh-cn/docs/writing'
-        i18n:
-          zh-CN: 'Hexo 文档'
-          en: 'Hexo document'
-      Qexo:
-        name: 'Qexo'
-        path: 'https://qexohexoblog.vercel.app/'
-        i18n:
-          zh-CN: 'Qexo'
-          en: 'Qexo background'
+      # RuiXin:
+      #   name: 'RuiXin'
+      #   path: 'https://mlicktea.vercel.app/#/main/home'
+      #   i18n:
+      #     zh-CN: '瑞幸咖啡'
+      #     en: 'RuiXin Coffee'
+  # AuroraTheme:
+  #   name: 'Aurora'
+  #   i18n:
+  #     zh-CN: '极光'
+  #     en: 'Aurora '
+  #   children:
+  #     AuroraThemeDocs:
+  #       name: 'Aurora Theme Docs'
+  #       path: 'https://aurora.tridiamond.tech/en/guide/getting-started.html'
+  #       i18n:
+  #         zh-CN: '极光 主题文档'
+  #         en: 'Aurora Theme Docs'
+  #     HexoTheme:
+  #       name: 'Hexo 文档'
+  #       path: 'https://hexo.io/zh-cn/docs/writing'
+  #       i18n:
+  #         zh-CN: 'Hexo 文档'
+  #         en: 'Hexo document'
+  #     Qexo:
+  #       name: 'Qexo'
+  #       path: 'https://qexohexoblog.vercel.app/'
+  #       i18n:
+  #         zh-CN: 'Qexo'
+  #         en: 'Qexo background'
 #! ---------------------------------------------------------------
 #! Theme Config
 #! @docs https://aurora.tridiamond.tech/guide/theme.html
 #! ---------------------------------------------------------------
 theme:
-  dark_mode: true
+  dark_mode: false
   profile_shape: diamond # support `circle`, `diamond`, `rounded`
   feature: true
   gradient:
@@ -135,9 +135,18 @@ theme:
 #    color_2: '#5433ff'
 #    color_3: '#ff0099'
 #    配色
-    color_1: '#0093E9'
-    color_2: '#8BC6EC'
-    color_3: '#80D0C7'
+#    color_1: '#0093E9'
+#    color_2: '#8BC6EC'
+#    color_3: '#80D0C7'
+   
+#    color_1: '#7F8c8c'
+#    color_2: '#60FCA2'
+#    color_3: '#34D0B2'
+
+     color_1: '#2c92ce'
+     color_2: '#89c4e9'
+     color_3: '#7ecec5'
+
 #! ---------------------------------------------------------------
 #! Social Configs
 #! @docs https://aurora.tridiamond.tech/guide/social.html
@@ -240,7 +249,7 @@ waline: #服务端部署
   wordLimit: 100
   imageUploader: true #您可以将其设置为禁用图像上传
   pageSize: 10 #评论分页
-  serverURL: 'https://waline-38ge.vercel.app/' # 填写服务端地址
+  serverURL: 'https://waline-ecru-xi-18.vercel.app' # 填写服务端地址
 
 #waline 评论插件
 
@@ -518,6 +527,6 @@ moduleNames:
 aggregateName:
 shiki:
   enable: true
-  theme: material-theme-palenight # 主题
+  theme: rose-pine-dawn
   externalTheme:
-  backgroundColor: "#1a1a1a"
+  backgroundColor: ''

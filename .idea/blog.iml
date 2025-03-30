@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/.tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/temp" />
+      <excludeFolder url="file://$MODULE_DIR$/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/Hexo-aurora" />
+      <excludeFolder url="file://$MODULE_DIR$/themes/cola" />
+      <excludeFolder url="file://$MODULE_DIR$/themes/hexo-theme-flexblock-master" />
+      <excludeFolder url="file://$MODULE_DIR$/themes/kagome" />
+      <excludeFolder url="file://$MODULE_DIR$/themes/landscape" />
+      <excludeFolder url="file://$MODULE_DIR$/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/themes/hexo-theme-aurora" />
+    </content>
+    <content url="file://$MODULE_DIR$/node_modules" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
