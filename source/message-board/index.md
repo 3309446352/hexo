@@ -5,5 +5,3 @@ tags: message-board
 favicon: favicon.ico
 ---
 # 留言板
-## 感谢我的朋友
-```

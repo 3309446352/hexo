@@ -27,7 +27,7 @@
   <template v-if="isMobile">
     <MobileMenu />
   </template>
-  <!-- <Navigator /> -->
+  <Navigator />
   <Dia v-if="!isMobile && configReady" />
   <teleport to="head">
     <title>{{ title }}</title>

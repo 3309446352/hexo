@@ -44,8 +44,8 @@ data:
     siteshot: https://www.yizhicheng.com/img/siteshot.jpg
     label: links-badge-tech
 ---
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -59,12 +59,16 @@ data:
 </html>
 
 <script src="https://cdn.jsdelivr.net/npm/qexo-static@1.6.0/hexo/friends.js"></script>
+
 <script>loadQexoFriends("qexo-friends", "https://qexohexoblog.vercel.app")</script>
 
 :::tip Hello
+
 # 添加友链格式
+
 这里是zmc的博客，欢迎各位大佬光临！
 来访的朋友，你好！这里是我的友链页面，欢迎来交换友链哦！
+
 - 博客名称：好名字都是狗起的
 - 博客简介：古来圣贤皆寂寞，惟有饮者留其名。
 - 博客地址：https://hexo-git-test-3309446352s-projects.vercel.app/ or https://3309446352.github.io/
@@ -72,6 +76,3 @@ data:
 - 交换方式：在下方的gitalk留言板留言即可！
 
 :::
-
-
-

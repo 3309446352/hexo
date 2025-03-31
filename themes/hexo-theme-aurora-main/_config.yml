@@ -56,7 +56,8 @@ menu:
   Tags: true
   Archives: true
   Friends: false
-
+  bangumis: true
+  Music: true
 #! ---------------------------------------------------------------
 #! Theme Config
 #! @docs https://aurora.tridiamond.tech/guide/theme.html

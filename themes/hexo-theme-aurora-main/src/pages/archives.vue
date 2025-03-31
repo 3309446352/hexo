@@ -4,13 +4,11 @@
     <div class="post-header">
       <h1 class="post-title text-white uppercase">{{ pageTitle }}</h1>
     </div>
-    <div
-      class="bg-ob-deep-800 px-14 py-16 rounded-2xl shadow-xl block min-h-screen"
-    >
+    <!-- 标题 -->
+    <div class="bg-ob-deep-800 px-14 py-16 rounded-2xl shadow-xl block min-h-screen">
       <ul class="timeline timeline-centered">
         <template
-          v-for="posts in archives"
-          :key="`${posts.month}-${posts.year}}`"
+          v-for="posts in archives" :key="`${posts.month}-${posts.year}}`"
         >
           <li class="timeline-item period">
             <div class="timeline-info"></div>
@@ -44,14 +42,11 @@
               </p>
             </div>
           </li>
-        </template>
+        </template> 
+        <!-- 归档进度条 -->
       </ul>
-      <Paginator
-        :pageSize="12"
-        :pageTotal="pagination.pageTotal"
-        :page="pagination.page"
-        @pageChange="pageChangeHandler"
-      />
+      <Paginator :pageSize="12" :pageTotal="pagination.pageTotal" :page="pagination.page" @pageChange="pageChangeHandler"/> 
+      <!-- 分页条 -->
     </div>
   </div>
 </template>

@@ -127,6 +127,24 @@ export class ThemeMenu implements ObMenu {
           'zh-TW': '友情鏈接',
           en: 'Friend Links'
         }
+      },
+      bangumis: {
+        name: 'bangumis',
+        path: '/bangumis',
+        i18n: {
+          'zh-CN': '追番',
+          'zh-TW': '追番',
+          en: 'bangumis'
+        }
+      },
+      Music: {
+        name: 'Music',
+        path: '/Music',
+        i18n: {
+          'zh-CN': '音乐',
+          'zh-TW': '音乐',
+          en: 'Music'
+        }
       }
     }
 

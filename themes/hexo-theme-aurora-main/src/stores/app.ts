@@ -71,6 +71,7 @@ export const useAppStore = defineStore('app', {
   },
   actions: {
     /** Fetching Hexo and Hexo theme's config data */
+    // TODO:获取Hexo和Hexo主题的配置数据
     async fetchConfig() {
       this.configReady = false
       const { data } = await fetchHexoConfig()
@@ -81,6 +82,7 @@ export const useAppStore = defineStore('app', {
       this.configReady = true
     },
     /** Fetching blog's statistics */
+    // TODO:获取博客的统计数据
     async fetchStat() {
       const { data } = await fetchStatistic()
       return new Promise(resolve => {
@@ -89,6 +91,7 @@ export const useAppStore = defineStore('app', {
       })
     },
     /** Initializing the theme mode of the app. */
+    // TODO:初始化应用程序的主题模式。
     initializeTheme(isDarkMode?: boolean | string) {
       if (!Cookies.get('theme') && isDarkMode !== 'auto') {
         this.theme = isDarkMode ? 'theme-dark' : 'theme-light'
@@ -98,6 +101,7 @@ export const useAppStore = defineStore('app', {
       setTheme(this.theme)
     },
     /** Switch between dark and light mode */
+    // TODO:在黑暗和光模式之间切换
     toggleTheme(isDark?: boolean) {
       this.theme =
         isDark === true || this.theme === 'theme-light'
@@ -107,6 +111,7 @@ export const useAppStore = defineStore('app', {
       setTheme(this.theme)
     },
     /** Changing the local of the app */
+    /* TODO:更改应用程序的本地*/
     changeLocale(locale: Locales) {
       Cookies.set('locale', locale)
       this.locale = locale
@@ -121,6 +126,7 @@ export const useAppStore = defineStore('app', {
       this.changeLocale(locale)
     },
     /** Start the global loading status of the application */
+    // TODO;启动应用程序的全局加载状态
     startLoading() {
       if (this.appLoading === true) return
       if (this.NPTimeout !== -1) clearTimeout(this.NPTimeout)
@@ -130,6 +136,7 @@ export const useAppStore = defineStore('app', {
       this.appLoading = true
     },
     /** Stops the global loading status of the application */
+    // TODO:停止应用程序的全局加载状态
     endLoading() {
       // Leaving the timeout, so the animation have enough time to display
       // in a situation where data loads almost instantly.

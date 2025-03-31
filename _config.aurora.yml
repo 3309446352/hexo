@@ -70,65 +70,25 @@ menu:
   Tags: true
   Archives: true
   Categories: true
+  bangumis: true
+  Music: true
   Links:
     i18n:
       zh-CN: "友链"
       en: "Links" #此页面将显示您所有朋友的博客列表。
-  # ChasingFan:
-  #   name: 'ChasingFan'
-  #   path: '/page/ChasingFan'
-  #   i18n:
-  #     zh-CN: '追番'
-  #     en: 'ChasingFan'
   pages-menus: # 个人链接
     name: "Message Board"
     path: "/page/message-board"
     i18n:
       zh-CN: "留言"
       en: "Message Board"
-  projects:
-    name: "我的"
-    i18n:
-      zh-CN: "我的"
-      en: "我的"
-    children:
-      # RuiXin:
-      #   name: 'RuiXin'
-      #   path: 'https://mlicktea.vercel.app/#/main/home'
-      #   i18n:
-      #     zh-CN: '瑞幸咖啡'
-      #     en: 'RuiXin Coffee'
-  # AuroraTheme:
-  #   name: 'Aurora'
-  #   i18n:
-  #     zh-CN: '极光'
-  #     en: 'Aurora '
-  #   children:
-  #     AuroraThemeDocs:
-  #       name: 'Aurora Theme Docs'
-  #       path: 'https://aurora.tridiamond.tech/en/guide/getting-started.html'
-  #       i18n:
-  #         zh-CN: '极光 主题文档'
-  #         en: 'Aurora Theme Docs'
-  #     HexoTheme:
-  #       name: 'Hexo 文档'
-  #       path: 'https://hexo.io/zh-cn/docs/writing'
-  #       i18n:
-  #         zh-CN: 'Hexo 文档'
-  #         en: 'Hexo document'
-  #     Qexo:
-  #       name: 'Qexo'
-  #       path: 'https://qexohexoblog.vercel.app/'
-  #       i18n:
-  #         zh-CN: 'Qexo'
-  #         en: 'Qexo background'
 #! ---------------------------------------------------------------
 #! Theme Config
 #! @docs https://aurora.tridiamond.tech/guide/theme.html
 #! ---------------------------------------------------------------
 theme:
   dark_mode: false
-  profile_shape: diamond # support `circle`, `diamond`, `rounded`
+  profile_shape: rounded # support `circle`, `diamond`, `rounded`
   feature: true
   gradient:
     #    color_1: '#24c6dc'
@@ -187,22 +147,22 @@ site_meta:
 #! ---------------------------------------------------------------
 
 # For local development only!
-#gitalk:
-#  enable: true
-#  autoExpand: true
-#  clientID: 'd86b100925099c3b1c63' #appid  服务器
-##   cllintID: 'fce0f27ba88fd333fcf7'#本地
-#  clientSecret: 'efc00442a9b30cb054d43196c4c5962b00b9234d' #服务器秘钥
-##   clientSecret : 'de54ed8ed05c82b24235a6ccf4358d284a2f9875' #本地
-#  repo:  hexo  # dev-blo-comments #仓库名
-#  owner: '3309446352' ## owner name 用户名
-#  admin: ['3309446352']   #['admin_name']
-#  id: "Demo" #uid
-#  distractionFreeMode: false
-#  language: zh-CN
-#  labels: ['Gitalk']
-#  recentComment: true
-#  proxy: ''
+gitalk:
+  enable: true
+  autoExpand: true
+  clientID: "Ov23liVpR2VXRpNCyHrt" #appid  服务器
+  #   cllintID: 'fce0f27ba88fd333fcf7'#本地
+  clientSecret: "b30b868041120899aca511b859842174823301f6" #服务器秘钥
+  #   clientSecret : 'de54ed8ed05c82b24235a6ccf4358d284a2f9875' #本地
+  repo: hexo # dev-blo-comments #仓库名
+  owner: "3309446352" ## owner name 用户名
+  admin: ["3309446352"] #['admin_name']
+  id: "Demo" #uid
+  distractionFreeMode: false
+  language: zh-CN
+  labels: ["Gitalk"]
+  recentComment: true
+  proxy: ""
 
 #详情请看教程https://luiyang08.github.io/post/Edit%20Blog-1#%E6%96%87%E4%B8%AD%E5%9B%BE%E7%89%87%E3%80%81%E8%B7%B3%E8%BD%AC
 # Valine comment plugin (recommended!)
@@ -237,22 +197,19 @@ site_meta:
 
 # Waline comment plugin
 # see https://waline.js.org/guide/get-started/
-waline: #服务端部署
-  enable: true
-  recentComment: true
-  reaction: true
-  login: "page" # 'disable' | 'modal' | 'page'是否登录才能评论
-  meta: ["nick", "mail"]
-  requiredMeta: ["nick", "mail"]
-  commentSorting: "latest"
-  wordLimit: 100
-  imageUploader: true #您可以将其设置为禁用图像上传
-  pageSize: 10 #评论分页
-<<<<<<< HEAD
-  serverURL: "https://waline-ecru-xi-18.vercel.app" # 填写服务端地址
-=======
-  serverURL: 'https://waline-ecru-xi-18.vercel.app' # 填写服务端地址
->>>>>>> 987ae4ca759e1b283c084660f6b4f82066df41b5
+
+# waline: #服务端部署
+#   enable: true
+#   recentComment: true
+#   reaction: true
+#   login: "page" # 'disable' | 'modal' | 'page'是否登录才能评论
+#   meta: ["nick", "mail"]
+#   requiredMeta: ["nick", "mail"]
+#   commentSorting: "latest"
+#   wordLimit: 100
+#   imageUploader: true #您可以将其设置为禁用图像上传
+#   pageSize: 10 #评论分页
+#   serverURL: "https://waline-ecru-xi-18.vercel.app" # 填写服务端地址
 
 #waline 评论插件
 
@@ -498,27 +455,33 @@ aurora_bot:
 #! @docs https://aurora.tridiamond.tech/guide/site-meta.html#custom-meta
 #! ---------------------------------------------------------------
 injects:
-  head: #头部
-    - <canvas id="universe.css"></canvas> # 创建画布
-    - <script src="/js/universe.css.js"></script> # 引入js
   scripts:
-    #    - <script src="https://cdn.jsdelivr.net/gh/Fan223/live2d-widget@latest/autoload.js"></script> #看板娘
-    - <script rel="preload" src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script> #音乐播放器
-    - <script rel="preload" src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script> #音乐播放器
+    - <script rel="preload" src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+    - <script rel="preload" src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+    - <script defer src="/live2d-widget/autoload.js"></script>
   css:
-    #    - <link rel="stylesheet" href="/css/style.css?1">
-    - <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"> #音乐播放器
-#    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"> #看板娘
+    - <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+    - <link rel="stylesheet" href="/live2d-widget/waifu.css">
+live2d:
+  enable: true
+  scriptFrom: local
+  model: haru_01 # 你可以选择不同模型
+  display:
+    position: right
+    width: 200
+    height: 400
+  mobile:
+    show: true #
 
 #! ---------------------------------------------------------------
 #! Footer links
 #! ---------------------------------------------------------------
 footer_links: #页脚链接
-#  - title: 游戏
-#    links:
-#      - title: EPIC # link title
-#        mode: 'Games'
-#        url: ./page/Games # URL link
+  # - title: 游戏
+  #   links:
+  #     - title: EPIC # link title
+  #       mode: 'Games'
+  #       url: ./page/Games # URL link
 
 #! ---------------------------------------------------------------
 #! Highlighter Shiki
@@ -531,8 +494,4 @@ shiki:
   enable: true
   theme: rose-pine-dawn
   externalTheme:
-<<<<<<< HEAD
   backgroundColor: ""
-=======
-  backgroundColor: ''
->>>>>>> 987ae4ca759e1b283c084660f6b4f82066df41b5

@@ -1,4 +1,7 @@
 <template>
+  <!-- <div class="comment">
+    <button>切换组件</button>
+  </div> -->
   <p :id="id" :class="titleClasses">
     <SvgIcon
       v-if="icon"
@@ -71,3 +74,14 @@ export default defineComponent({
   }
 })
 </script>
+
+<style scoped>
+.comment {
+  display: flex;
+  justify-content: center;
+}
+button {
+  background-color: #4caf50;
+  border-radius: 5px;
+}
+</style>

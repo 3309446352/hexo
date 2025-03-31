@@ -1,19 +1,12 @@
 <template>
-  <div
-    id="Ob-Navigator"
-    :class="{
-      'Ob-Navigator--open': openNavigator,
-      'Ob-Navigator--scrolling': scrolling
-    }"
-  >
+  <div id="Ob-Navigator" :class="{
+    'Ob-Navigator--open': openNavigator,
+    'Ob-Navigator--scrolling': scrolling
+  }">
     <transition name="fade-bounce-y" mode="out-in">
-      <div
-        v-if="!openNavigator && showProgress"
-        @click.stop.prevent="handleBackToTop"
-        class="Ob-Navigator-btt"
-      >
+      <div v-if="!openNavigator && showProgress" @click.stop.prevent="handleBackToTop" class="Ob-Navigator-btt">
         <div>
-          <SvgIcon icon-class="back-to-top" class-name="text-ob-bright" />
+          <SvgIcon icon-class="nav-back-to-top" class-name="text-ob-bright" />
         </div>
         <span class="Ob-Navigator-tips">
           {{ t('settings.tips-back-to-top') }}
@@ -24,11 +17,7 @@
     <div class="Ob-Navigator-ball" @click.stop.prevent="handleNavigatorToggle">
       <div :style="gradient">
         <transition name="fade-bounce-y" mode="out-in">
-          <SvgIcon
-            v-if="openNavigator"
-            class="text-base stroke-2"
-            icon-class="close"
-          />
+          <SvgIcon v-if="openNavigator" class="text-base stroke-2" icon-class="close" />
           <SvgIcon v-else-if="!showProgress" icon-class="dots" />
           <span class="text-sm" v-else>{{ progress }}%</span>
         </transition>
@@ -36,36 +25,16 @@
     </div>
 
     <ul class="Ob-Navigator-submenu">
-      <li
-        id="Ob-Navigator-top"
-        :style="gradient"
-        @click.stop.prevent="handleBackToTop"
-      >
+      <li id="Ob-Navigator-top" :style="gradient" @click.stop.prevent="handleBackToTop">
         <div>
-          <SvgIcon icon-class="back-to-top" class-name="text-ob-bright" />
+          <SvgIcon icon-class="nav-back-to-top" class-name="text-ob-bright" />
         </div>
         <span class="Ob-Navigator-tips">
           {{ t('settings.tips-back-to-top') }}
         </span>
       </li>
-      <li
-        id="Ob-Navigator-menu"
-        :style="gradient"
-        @click.stop.prevent="handleOpenMenu"
-        v-if="isMobile"
-      >
-        <div>
-          <SvgIcon icon-class="nav-menu" class-name="text-ob-bright" />
-        </div>
-        <span class="Ob-Navigator-tips">
-          {{ t('settings.tips-open-menu') }}
-        </span>
-      </li>
-      <li
-        id="Ob-Navigator-home"
-        :style="gradient"
-        @click.stop.prevent="handleGoHome"
-      >
+
+      <li id="Ob-Navigator-home" :style="gradient" @click.stop.prevent="handleGoHome">
         <div>
           <SvgIcon icon-class="nav-home" class-name="text-ob-bright" />
         </div>
@@ -73,17 +42,9 @@
           {{ t('settings.tips-back-to-home') }}
         </span>
       </li>
-      <li
-        id="Ob-Navigator-search"
-        :style="gradient"
-        @click.stop.prevent="handleSearch"
-      >
+      <li id="Ob-Navigator-search" :style="gradient" @click.stop.prevent="handleSearch">
         <div>
-          <SvgIcon
-            icon-class="nav-search"
-            class-name="text-ob-bright"
-            :svg-type="SvgTypes.stroke"
-          />
+          <SvgIcon icon-class="nav-search" class-name="text-ob-bright" :svg-type="SvgTypes.stroke" />
         </div>
         <span class="Ob-Navigator-tips">
           {{ t('settings.tips-open-search') }}
@@ -239,47 +200,59 @@ export default defineComponent({
   @apply fixed flex justify-center items-center bottom-4 right-4 w-12 h-12 rounded-full z-40 shadow-lg text-white text-2xl stroke-0 border-2 border-ob-deep-900 cursor-pointer;
   transition: all 0.55s cubic-bezier(0, 1.8, 1, 1.2);
   opacity: 1;
+
   svg {
     pointer-events: none;
   }
+
   .Ob-Navigator-submenu {
     @apply absolute top-0 left-0 m-0 p-0 list-none;
+
     li {
       @apply flex justify-center items-center bg-ob-deep-900 absolute rounded-full w-12 h-12 p-0.5;
       opacity: 0;
       transition: all 0.55s cubic-bezier(0, 1.8, 1, 1.2);
+
       &:hover {
         .Ob-Navigator-tips {
           opacity: 1;
           transform: translateX(-15%);
         }
       }
+
       div {
         @apply flex justify-center items-center bg-ob-deep-800 w-full h-full rounded-full;
       }
     }
   }
+
   &.Ob-Navigator--open .Ob-Navigator-submenu {
     li {
       opacity: 1;
+
       &:first-of-type {
         transform: translateX(calc(3rem * -1.6));
       }
+
       &:nth-of-type(2) {
         transform: translate(calc(3rem * -1.2), calc(3rem * -1.2));
       }
+
       &:nth-of-type(3) {
         transform: translateY(calc(3rem * -1.6));
       }
+
       &:nth-of-type(4) {
         transform: translateY(calc(3rem * -2.8));
       }
     }
   }
+
   &.Ob-Navigator--scrolling {
     transform: translateX(calc(3rem * 0.8));
     opacity: 0.6;
   }
+
   .Ob-Navigator-tips {
     @apply absolute bg-ob-deep-800 py-1 px-1.5 z-50 text-xs text-ob-bright whitespace-nowrap rounded-md shadow;
     pointer-events: none;
@@ -287,16 +260,19 @@ export default defineComponent({
     right: 60%;
     transition: all 0.55s cubic-bezier(0, 1.8, 1, 1.2);
   }
+
   .Ob-Navigator-ball {
     @apply relative flex justify-center items-center bg-ob-deep-800 w-full h-full p-0.5 rounded-full;
     box-shadow:
       0 2px 4px rgba(0, 0, 0, 0.1),
       0 12px 28px rgba(0, 0, 0, 0.2);
     z-index: 200;
+
     div {
       @apply flex justify-center items-center w-full h-full rounded-full;
     }
   }
+
   .Ob-Navigator-btt {
     @apply absolute flex justify-center items-center bg-ob-deep-800 w-full h-full p-0.5 rounded-full;
     box-shadow:
@@ -304,6 +280,7 @@ export default defineComponent({
       0 12px 28px rgba(0, 0, 0, 0.2);
     top: calc(3rem * -1.1);
     left: 0;
+
     div {
       @apply flex justify-center items-center w-full h-full rounded-full;
     }
