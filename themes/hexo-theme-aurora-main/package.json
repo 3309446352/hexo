@@ -76,5 +76,6 @@
     "vue-easy-lightbox": "^1.16.0",
     "vue-jest": "^3.0.7",
     "vue3-scroll-spy": "^1.0.8"
-  }
+  },
+  "__npminstall_done": false
 }
