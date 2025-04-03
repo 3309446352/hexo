@@ -91,21 +91,22 @@ theme:
   profile_shape: rounded # support `circle`, `diamond`, `rounded`
   feature: true
   gradient:
-    #    color_1: '#24c6dc'
-    #    color_2: '#5433ff'
-    #    color_3: '#ff0099'
+    # color_1: '#24c6dc' #默认颜色 深紫色
+    # color_2: '#5433ff' #默认颜色 深紫色
+    # color_3: '#ff0099' #默认颜色 深紫色
     #    配色
-    #    color_1: '#0093E9'
-    #    color_2: '#8BC6EC'
-    #    color_3: '#80D0C7'
 
-    #    color_1: '#7F8c8c'
-    #    color_2: '#60FCA2'
-    #    color_3: '#34D0B2'
+    #color_1: '#7F8c8c' #绿色
+    #color_2: '#60FCA2' #绿色
+    #color_3: '#34D0B2' #绿色
 
-    color_1: "#2c92ce"
-    color_2: "#89c4e9"
-    color_3: "#7ecec5"
+    # color_1: "#2c92ce" #浅蓝色
+    # color_2: "#89c4e9" #浅蓝色
+    # color_3: "#7ecec5" #浅蓝色
+
+    color_1: "#9deaf5" #深蓝色
+    color_2: "#014ed1" #深蓝色
+    color_3: "#0f2191" #深蓝色
 
 #! ---------------------------------------------------------------
 #! Social Configs

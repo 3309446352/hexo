@@ -32,7 +32,7 @@
   <teleport to="head">
     <title>{{ title }}</title>
   </teleport>
-
+  <Aplayer></Aplayer>
   <VueEasyLightbox
     :visible="lightBoxVisible"
     :imgs="lightBoxImages"
@@ -41,7 +41,9 @@
     :rotateDisabled="true"
     :scrollDisabled="false"
     @hide="onHideLightBox"
-  ></VueEasyLightbox>
+  >
+  </VueEasyLightbox>
+
 </template>
 
 <script lang="ts">
@@ -69,7 +71,7 @@ import defaultCover from '@/assets/default-cover.jpg'
 import { useI18n } from 'vue-i18n'
 import VueEasyLightbox from 'vue-easy-lightbox'
 import FooterLink from './components/Footer/FooterLink.vue'
-
+import Aplayer from '@/components/Aplayer.vue'
 export default defineComponent({
   name: 'App',
   components: {
@@ -79,7 +81,8 @@ export default defineComponent({
     MobileMenu,
     Dia,
     VueEasyLightbox,
-    FooterLink
+    FooterLink,
+    Aplayer
   },
   setup() {
     const appStore = useAppStore()

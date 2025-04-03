@@ -6,7 +6,7 @@
     <transition name="fade-bounce-y" mode="out-in">
       <div v-if="!openNavigator && showProgress" @click.stop.prevent="handleBackToTop" class="Ob-Navigator-btt">
         <div>
-          <SvgIcon icon-class="back-to-top" class-name="text-ob-bright" />
+          <SvgIcon icon-class="back-to-top-name" class-name="text-ob-bright" />
         </div>
         <span class="Ob-Navigator-tips">
           {{ t('settings.tips-back-to-top') }}
@@ -27,7 +27,7 @@
     <ul class="Ob-Navigator-submenu">
       <li id="Ob-Navigator-top" :style="gradient" @click.stop.prevent="handleBackToTop">
         <div>
-          <SvgIcon icon-class="back-to-top" class-name="text-ob-bright" />
+          <SvgIcon icon-class="back-to-top-name" class-name="text-ob-bright" />
         </div>
         <span class="Ob-Navigator-tips">
           {{ t('settings.tips-back-to-top') }}

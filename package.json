@@ -23,7 +23,10 @@
     "hexo-renderer-marked": "^6.0.0",
     "hexo-renderer-stylus": "^2.1.0",
     "hexo-server": "^3.0.0",
-    "hexo-theme-aurora": "^2.5.3",
+    "hexo-theme-aurora": "file:hexo-theme-aurora",
     "hexo-theme-landscape": "^1.0.0"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7"
   }
 }

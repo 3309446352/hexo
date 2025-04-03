@@ -75,7 +75,7 @@ export default defineComponent({
 #bot-container {
   position: fixed;
   left: 20px;
-  bottom: 0;
+  bottom: 50px;
   z-index: 1000;
   width: 70px;
   height: 60px;

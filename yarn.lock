@@ -1114,9 +1114,9 @@
     "picocolors" "^1.0.0"
     "serve-static" "^1.14.1"
 
-"hexo-theme-aurora@^2.5.3":
+"hexo-theme-aurora@file:hexo-theme-aurora-2.5.3.tgz":
   "integrity" "sha512-XYe7kcXSGp+cJIWgkKn0Uv/RwY1bIJdQAtJFC+KZRsodHhw1sfsQ4zrroX+07tNy0Z0DG5rObzGzPDWfrCuNUA=="
-  "resolved" "https://registry.npmmirror.com/hexo-theme-aurora/-/hexo-theme-aurora-2.5.3.tgz"
+  "resolved" "file:hexo-theme-aurora-2.5.3.tgz"
   "version" "2.5.3"
   dependencies:
     "axios" "^1.5.0"
@@ -1275,6 +1275,11 @@
   dependencies:
     "agent-base" "6"
     "debug" "4"
+
+"husky@^9.1.7":
+  "integrity" "sha512-5gs5ytaNjBrh5Ow3zrvdUUY+0VxIuWVL4i9irt6friV+BqdCfmV11CQTWMiBYWHbXhco+J1kHfTOUkePhCDvMA=="
+  "resolved" "https://registry.npmmirror.com/husky/-/husky-9.1.7.tgz"
+  "version" "9.1.7"
 
 "iconv-lite@0.6.3":
   "integrity" "sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw=="
