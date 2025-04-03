@@ -494,6 +494,6 @@ moduleNames:
 aggregateName:
 shiki:
   enable: true
-  theme: rose-pine-dawn
+  theme: material-theme-palenight
   externalTheme:
-  backgroundColor: ""
+  backgroundColor: '#2c92ce'

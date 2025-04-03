@@ -1,11 +1,11 @@
 ---
 title: {{ title }}
 date: {{ date }}
-tags: 
-categories:
+tags: #看情况可不写
+categories: #看情况可不写
 cover: 
-description: {{ description }}
-abstracts: {{ abstracts }} #摘要
+description: {{ description }} #里面简介可不写
+abstracts: {{ abstracts }} #图片摘要简介可不写
 author: Zmc
 ---
 #  {{ title }}
