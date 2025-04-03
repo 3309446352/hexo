@@ -41,8 +41,8 @@ site:
 authors:
   ##! example
   TriDiamond:
-    name: Zmchttps://raw.githubusercontent.com/3309446352/Images/main/img/屏幕截图(1).png
-    avatar:
+    name: Zmc
+    avatar: https://raw.githubusercontent.com/3309446352/Images/main/img/屏幕截图(1).png
     link: https://github.com/TriDiamond
     description: "像艺术家一样思考，像工匠一样编码."
     socials:

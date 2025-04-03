@@ -1,5 +1,4 @@
 ---
-abbrlink: 爬取小说章节
 abstracts: Redis是一个由 Salvatore Sanfilippo 写的 key-value 存储系统，是跨平台的非关系型数据库。
 author:
   avatar: https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg
