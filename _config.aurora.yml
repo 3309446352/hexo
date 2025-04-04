@@ -78,7 +78,7 @@ menu:
       en: "Links" #此页面将显示您所有朋友的博客列表。
   pages-menus: # 个人链接
     name: "Message Board"
-    path: "/page/message-board"
+    path: "https://qexo-zmc.vercel.app/"
     i18n:
       zh-CN: "留言"
       en: "Message Board"
@@ -492,8 +492,16 @@ boundedContextName:
 moduleName:
 moduleNames:
 aggregateName:
+
 shiki:
   enable: true
-  theme: material-theme-palenight
+  # theme: material-theme-palenight
+  # dracula
+  # material-theme
+  # material-theme-darker
+  theme: aurora-future
+  customTheme: '/shiki/aurora-future.json'
   externalTheme:
-  backgroundColor: '#2c92ce'
+  backgroundColor: ' #1a1a1a'
+  #232323
+  #efefefb6
