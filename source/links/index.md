@@ -43,6 +43,11 @@ data:
     description: 一个程序猿的日常
     siteshot: https://www.yizhicheng.com/img/siteshot.jpg
     label: links-badge-tech
+  - nick: Kidwen #昵称
+    avatar: https://avatars.githubusercontent.com/u/38277891?v=4 # 你的头像
+    description: Think like an artist, develop like an artisan. # 简单的自我描述
+    link: https://kidwen.top # 博客链接
+    label: 技术 #
 ---
 <!DOCTYPE html>
 

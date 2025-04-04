@@ -1,9 +1,9 @@
 <template>
   <div class="Aplayer">
     <meting-js
-      server="tencent"
+      server="netease"
       type="playlist"
-      id="8574171521"
+      id="13539075345"
       fixed="true"
       autoplay="true"
       loop="all"
@@ -14,7 +14,6 @@
       lrc-type="1"
     >
     </meting-js>
-    <h1>wwwwwwwww</h1>
   </div>
 </template>
 

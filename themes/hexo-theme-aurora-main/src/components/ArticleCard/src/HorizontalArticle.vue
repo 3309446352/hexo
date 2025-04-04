@@ -1,4 +1,5 @@
 <template>
+  <TimeList />
   <div class="article-container" @click="handleCardClick(post?.slug)">
     <div class="feature-article">
       <div class="feature-thumbnail">
@@ -129,6 +130,7 @@ import { useCommonStore } from '@/stores/common'
 import { useI18n } from 'vue-i18n'
 import SvgIcon from '@/components/SvgIcon/index.vue'
 import { useRouter } from 'vue-router'
+import TimeList from '@/components/TimeList.vue'
 
 enum TagLimit {
   forMobile = '2',
@@ -137,7 +139,7 @@ enum TagLimit {
 
 export default defineComponent({
   name: 'ObHorizontalArticle',
-  components: { SvgIcon },
+  components: { TimeList, SvgIcon },
   props: {
     data: {
       type: Object,
