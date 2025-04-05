@@ -171,7 +171,7 @@ gitalk:
   autoExpand: true
   clientID: "Ov23liVpR2VXRpNCyHrt" #appid  服务器
   #   cllintID: 'fce0f27ba88fd333fcf7'#本地
-  clientSecret: "b30b868041120899aca511b859842174823301f6" #服务器秘钥
+  clientSecret: "584b4a787c9bd483ee42d08bc381d3a8b86b0a58" #服务器秘钥
   #   clientSecret : 'de54ed8ed05c82b24235a6ccf4358d284a2f9875' #本地
   repo: hexo # dev-blo-comments #仓库名
   owner: "3309446352" ## owner name 用户名
