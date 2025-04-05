@@ -70,18 +70,36 @@ menu:
   Tags: true
   Archives: true
   Categories: true
-  bangumis: true
-  Music: true
+  bangumis: true #无效节点
+  Music: true #无效节点
   Links:
     i18n:
       zh-CN: "友链"
       en: "Links" #此页面将显示您所有朋友的博客列表。
   pages-menus: # 个人链接
     name: "Message Board"
-    path: "https://qexo-zmc.vercel.app/"
+    path: "/page/message-board"
     i18n:
       zh-CN: "留言"
-      en: "Message Board"
+      en: "MessageBoard"
+  MySQl:
+    name: 'My'
+    i18n:
+          zh-CN: "我的"
+          en: "My"
+    children:
+      Music Player:
+        name: 'Music Player'
+        path: '/MusicPlayer'
+        i18n:
+          zh-CN: "音乐编辑"
+          en: "MusicPlayer"
+      Aurora:
+        name: 'Aurora Theme'
+        path: 'https://github.com/Aurora/hexo-theme-Aurora'
+        i18n:
+            zh-CN: "Aurora"
+            en: "Aurora Theme"
 #! ---------------------------------------------------------------
 #! Theme Config
 #! @docs https://aurora.tridiamond.tech/guide/theme.html

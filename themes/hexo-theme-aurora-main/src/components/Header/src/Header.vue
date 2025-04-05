@@ -21,10 +21,12 @@ import { computed, defineComponent, ref } from 'vue'
 import { Logo, Navigation, Controls, Notification } from '../index'
 import Sticky from '@/components/Sticky.vue'
 import { useNavigatorStore } from '@/stores/navigator'
+import SvgIcon from '@/components/SvgIcon/index.vue'
 
 export default defineComponent({
   name: 'ArHeader',
   components: {
+    SvgIcon,
     Logo,
     Navigation,
     Controls,
