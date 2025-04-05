@@ -169,9 +169,9 @@ site_meta:
 gitalk:
   enable: true
   autoExpand: true
-  clientID: "d86b100925099c3b1c63" #appid  服务器
+  clientID: "Ov23lizUlSXLkPsd8BMW" #appid  服务器
   #   cllintID: 'fce0f27ba88fd333fcf7'#本地
-  clientSecret: "3c66b1b24ffdeb4906766f411d2fe81bc121ae52" #服务器秘钥
+  clientSecret: "ce1dc32dbf9fe4b10e4049a43b504dadf215bb00" #服务器秘钥
   #   clientSecret : 'de54ed8ed05c82b24235a6ccf4358d284a2f9875' #本地
   repo: hexo # dev-blo-comments #仓库名
   owner: "3309446352" ## owner name 用户名
