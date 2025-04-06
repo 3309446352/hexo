@@ -171,13 +171,13 @@ gitalk:
   autoExpand: true
   clientID: "Ov23lia8uzw82PGS9JyvOv23lia8uzw82PGS9Jyv" #appid  服务器
   #   cllintID: 'fce0f27ba88fd333fcf7'#本地
-  clientSecret: "f31268a1645edf53125f09e6f910e76ca7e55fea" #服务器秘钥
+  clientSecret: "2afd4f3ff40fbfb4da721eee2c7434bb739f605d" #服务器秘钥
   #   clientSecret : 'de54ed8ed05c82b24235a6ccf4358d284a2f9875' #本地
   repo: hexo # dev-blo-comments #仓库名
   owner: "3309446352" ## owner name 用户名
   admin: ["3309446352"] #['admin_name']
   id: "Demo" #uid
-  distractionFreeMode: false
+  distractionFreeMode: true #专注模式
   language: zh-CN
   labels: ["Gitalk"]
   recentComment: true
