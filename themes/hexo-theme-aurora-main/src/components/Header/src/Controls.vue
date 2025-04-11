@@ -17,7 +17,7 @@
           width="1.2rem"
           height="1.2rem"
         />
-      </span>
+     </span>  <!-- 搜索-->
       <Dropdown
         v-if="enableMultiLanguage"
         @command="handleClick"
@@ -70,7 +70,7 @@
         class="ob-drop-shadow hidden lg:flex"
         data-dia="light-switch"
       >
-        <ThemeToggle />
+       <ThemeToggle /> <!-- #TODO: 模式转换-->
       </span>
 
       <span

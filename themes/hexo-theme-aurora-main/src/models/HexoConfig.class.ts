@@ -121,6 +121,9 @@ export class Writing {
   }
 }
 
+/*
+类别和标签
+ */
 export class CategoryAndTags {
   default_category = '' // 默认分类
   category_map = '' // 分类别名

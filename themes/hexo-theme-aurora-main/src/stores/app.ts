@@ -14,7 +14,7 @@ NProgress.configure({
   parent: '#loading-bar-wrapper'
 }) // NProgress Configuration
 
-/** Fetching the default color-scheme from the OPSystem */
+/** Fetching the default color-scheme from the OPSystem 从OPSystem获取默认配色方案*/
 const getSystemMode = (): string => {
   // dark-mode media query matched or not
   const matched = window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -34,7 +34,7 @@ const setTheme = (theme: string) => {
 }
 
 /**
- * Storing the core data of the application
+ * Storing the core data of the application 存储应用程序的核心数据
  */
 export const useAppStore = defineStore('app', {
   // id is the name of the store
@@ -46,21 +46,21 @@ export const useAppStore = defineStore('app', {
       : getSystemMode(),
     /** Current locale of the application */
     locale: (Cookies.get('locale') as Locales) ?? 'en',
-    /** Hexo theme config data */
+    /** Hexo theme config data 做主题配置数据*/
     themeConfig: new ThemeConfig(),
     /** Hexo engine's config data */
     hexoConfig: new HexoConfig(),
     /** HeaderGradient css property */
     headerGradient: '',
-    /** Statistic data base on the blog posts and pages */
+    /** Statistic data base on the blog posts and pages 博客文章和页面的统计数据库*/
     statistic: new Statistic(),
     /** Loading status of the App */
     appLoading: false,
     /** Nprogress's timeout timer id number */
     NPTimeout: -1,
-    /** Loading status' timeout timer id number */
+    /** Loading status' timeout timer id number 跟踪博客配置是否就绪*/
     loadingTimeout: -1,
-    /** Tracking if the blog config is ready */
+    /** Tracking if the blog config is ready 跟踪博客配置是否就绪*/
     configReady: false,
     /** Is search modal opened */
     openSearchModal: false
@@ -110,7 +110,7 @@ export const useAppStore = defineStore('app', {
       Cookies.set('theme', this.theme)
       setTheme(this.theme)
     },
-    /** Changing the local of the app */
+    /** Changing the local of the app 更改应用程序的本地*/
     /* TODO:更改应用程序的本地*/
     changeLocale(locale: Locales) {
       Cookies.set('locale', locale)
@@ -151,9 +151,11 @@ export const useAppStore = defineStore('app', {
     changeOpenModal(status: boolean) {
       this.openSearchModal = status
     },
+    //关闭搜索模态框。
     handleEscKey() {
       if (this.openSearchModal) this.openSearchModal = false
     },
+    //打开搜索模态框。
     handleSearchOpen() {
       if (!this.openSearchModal) this.openSearchModal = true
     }

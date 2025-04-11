@@ -8,7 +8,7 @@
       height="2rem"
       @click="fetchNews"
     />
-    <div class="timelist-list">
+    <div class="timelist-list" @click="Convert">
       <h1 v-if="loading">{{ newsList }}</h1>
       <h1 v-else-if="error">{{ currentItem[currentIndex].desc }}</h1>
       <h1 v-else>加载失败，请重试</h1>
@@ -25,7 +25,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted, onBeforeUnmount } from 'vue'
+import { defineComponent, ref, onMounted } from 'vue'
 import SvgIcon from '@/components/SvgIcon/index.vue'
 import { useRouter } from 'vue-router'
 import axios from 'axios'
@@ -35,15 +35,15 @@ export default defineComponent({
   setup() {
     const newsList = ref([])
     const currentIndex = ref(0)
-    const loading = ref(true)
-    const error = ref(false)
-    const router = useRouter()
+    const loading = ref(false)
+    const error = ref(true)
     let timer: number | null = null
+    const content = ref("")
     // 获取新闻数据
     // 数据获取与处理
     const currentItem = [
       {
-        desc: '一日不思量，也攒眉千度。\t\t——柳永《昼夜乐·洞房记得初相遇》',
+        desc: '一日不思量，也攒眉千度。\t\t——柳永《昼夜乐·洞房记得初相遇》'
       },
       {
         desc: '一朝春尽红颜老，花落人亡两不知。\t\t——李清照《如梦令·常记溪亭日暮》'
@@ -79,18 +79,29 @@ export default defineComponent({
       try {
         const res = await axios.get('https://oiapi.net/API/Sentences')
         newsList.value = res.data.message
-        console.log(newsList.value)
+        content.value = res.data.data.content
       } catch (error) {
         error.value = true
       }
     }
     // 处理点击事件
     const Getpoem = () => {
-      router.push('https://www.gushiwen.cn/search.aspx')
+      const str = content.value.split('')[0]
+      console.log(str)
+      window.location.href =
+        'https://www.gushiwen.cn/search.aspx?value=' +
+        content.value +
+        '&valuej=' +
+        str
     }
+
+    const Convert = () => {
+      loading.value = !loading.value
+      error.value = !error.value
+    }
+
     // 生命周期钩子
     onMounted(() => {
-      fetchNews()
       startRotation()
     })
 
@@ -100,6 +111,7 @@ export default defineComponent({
       loading,
       error,
       currentItem,
+      Convert,
       startRotation,
       Getpoem,
       fetchNews
@@ -119,7 +131,7 @@ export default defineComponent({
   display: flex;
   align-items: center;
   gap: 1rem;
-  background-color: #fefefe;
+  background-color: var(--background-secondary);
   transition: all 0.3s ease;
 
   .arrow-icon {
@@ -130,6 +142,7 @@ export default defineComponent({
 
     &:hover {
       transform: scale(1.1);
+      color: #2196f3;
     }
   }
 
@@ -159,7 +172,7 @@ export default defineComponent({
     }
 
     h1:hover {
-      color: #2196F3;
+      color: #2196f3;
       transform: scale(1.05);
       /* 放大效果 */
       box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);

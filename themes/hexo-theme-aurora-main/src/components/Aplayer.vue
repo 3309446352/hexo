@@ -1,9 +1,9 @@
 <template>
-  <div class="Aplayer">
+  <div class="aplayer">
     <meting-js
-      server="netease"
-      type="playlist"
-      id="13539075345"
+      :server="Server"
+      :type="type"
+      :id="Id"
       fixed="true"
       autoplay="true"
       loop="all"
@@ -18,13 +18,34 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { computed, defineComponent, onMounted, onUnmounted, watch } from 'vue'
+import { usePlayerStore } from '@/stores/MusicPlayer'
 
 export default defineComponent({
-  // eslint-disable-next-line vue/multi-word-component-names
-  name: ' APlayer'
+  name: ' APlayer',
+  setup() {
+    const playerStore = usePlayerStore()
+    const Server = computed(() => playerStore.Music.Server)
+    const type = computed(() => playerStore.Music.type)
+    const Id = computed(() => playerStore.Music.Id)
+    onMounted(() => {
+      console.log('Aplayer', Server, type, Id)
+    })
+    // 监听音乐播放器的状态变化
+    computed(() => {
+      return {
+        playerStore
+      }
+    })
+    return {
+      playerStore,
+      Server,
+      type,
+      Id
+    }
+  }
 })
 </script>
 
-<style>
+<style scoped>
 </style>

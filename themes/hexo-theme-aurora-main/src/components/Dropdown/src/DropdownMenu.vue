@@ -2,7 +2,7 @@
   <transition name="dropdown-content">
     <div
       v-if="!expand && active"
-      class="origin-top-right absolute right-0 mt-2 w-48 bg-ob-deep-900 rounded-lg py-2 shadow-md"
+      class="origin-top-right absolute -right-10 mt-2 w-48 bg-ob-deep-900 rounded-lg py-2 shadow-md"
     >
       <slot />
     </div>
@@ -57,5 +57,8 @@ export default defineComponent({
 .dropdown-content-leave-to {
   opacity: 0;
   transform: translateY(-5px);
+}
+.dropdown-content:hover {
+  border: solid 3px #188bfd;
 }
 </style>

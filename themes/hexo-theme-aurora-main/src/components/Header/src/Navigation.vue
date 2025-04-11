@@ -27,11 +27,12 @@
             {{ route.i18n[locale] }}
           </span>
           <span class="relative z-50" v-else>{{ route.name }}</span>
-          <DropdownMenu>
+          <DropdownMenu class="hover:border-blue-300 border-2">
             <DropdownItem
               v-for="sub in route.children"
               :key="sub.path"
               :name="sub.path"
+              class=""
             >
               <span class="relative z-50" v-if="locale">
                 {{ sub.i18n[locale] }}

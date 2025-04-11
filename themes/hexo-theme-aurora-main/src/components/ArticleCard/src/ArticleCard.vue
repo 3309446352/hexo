@@ -3,7 +3,7 @@
     <div class="article">
       <div class="article-thumbnail">
         <img v-if="post.cover" v-lazy="post.cover" alt="" />
-        <img v-else src="@/assets/default-cover.jpg" />
+        <img v-else src="@/assets/w.png" />
         <span class="thumbnail-screen" :style="gradientBackground" />
       </div>
       <div class="article-content">
@@ -138,26 +138,26 @@ export default defineComponent({
   },
   setup(props) {
     const router = useRouter()
-    const appStore = useAppStore()
+    const appStore = useAppStore() //用于获取应用程序配置的存储实例。
     const { t } = useI18n()
 
     const handleCardClick = (slug?: string) => {
       if (!slug) return
       router.push({ name: 'post-slug', params: { slug } })
-    }
+    } //用于跳转到文章详情页。
 
     const handleAuthorClick = (link: string) => {
       if (link === '') link = window.location.href
       window.location.href = link
-    }
+    } //用于跳转到作者链接。
 
     const navigateToTag = (slug: string) => {
       router.push({ name: 'post-search', query: { tag: slug } })
-    }
+    } //用于根据标签筛选文章列表。
 
     const navigateToCategory = (slug: string) => {
       router.push({ name: 'post-search', query: { category: slug } })
-    }
+    } //用于根据分类筛选文章列表。
 
     return {
       avatarClasses: computed(() => ({

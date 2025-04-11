@@ -81,6 +81,30 @@ export default ({ mode }) => {
           target: 'http://localhost:4000/assets',
           changeOrigin: true,
           rewrite: path => path.replace(/^\/assets/, '')
+        },
+        '/ImageUrl': {
+          target: 'https://www.dmoe.cc/random.php',
+          changeOrigin: true,
+          pathRewrite: { '^/ImageUrl': '' },
+          secure: false,
+          onProxyReq: (proxyReq, req, res) => {
+            console.log('代理转发路径:', proxyReq.path) // 验证路径
+          },
+          onProxyRes: proxyRes => {
+            proxyRes.headers['Access-Control-Allow-Origin'] = '*' // 强制跨域
+          }
+        },
+        '/wallpaper': {
+          target: 'https://v2.xxapi.cn/api/random4kPic?',
+          changeOrigin: true,
+          pathRewrite: { '^/ImageUrl': '' },
+          secure: false,
+          onProxyReq: (proxyReq, req, res) => {
+            console.log('代理转发路径:', proxyReq.path) // 验证路径
+          },
+          onProxyRes: proxyRes => {
+            proxyRes.headers['Access-Control-Allow-Origin'] = '*' // 强制跨域
+          }
         }
       }
     }
