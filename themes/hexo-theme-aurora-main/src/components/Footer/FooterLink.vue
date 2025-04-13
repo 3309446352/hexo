@@ -1,9 +1,5 @@
 <template>
-  <div
-    v-if="links && links.length > 0"
-    id="footer-link"
-    class="flex flex-col items-center py-8 bg-ob-deep-900"
-  >
+  <div v-if="links && links.length > 0" id="footer-link" class="flex flex-col items-center py-8 bg-ob-deep-900">
     <div class="footer-link-divider" :style="gradientBackground">
       <div class="footer-link-img-wrapper">
         <img v-show="avatar" :class="avatarClass" :src="avatar" alt="avatar" />
@@ -11,47 +7,26 @@
     </div>
 
     <div
-      class="flex flex-row flex-wrap justify-center bg-ob-deep-900 rounded-lg max-w-10/12 lg:max-w-screen-2xl text-normal text-ob-normal w-full py-6 px-6 items-start gap-8 md:gap-10 xl:gap-16"
-    >
-      <div
-        v-for="[i, link] of links.entries()"
-        class="flex flex-col items-center md:items-start"
-        :key="i"
-      >
+      class="flex flex-row flex-wrap justify-center bg-ob-deep-900 rounded-lg max-w-10/12 lg:max-w-screen-2xl text-normal text-ob-normal w-full py-6 px-6 items-start gap-8 md:gap-10 xl:gap-16">
+      <div v-for="[i, link] of links.entries()" class="flex flex-col items-center md:items-start" :key="i">
         <div class="flex mb-4 items-center">
           <h3 class="text-ob-dim font-bold mr-2">{{ link.title }}</h3>
-          <SvgIcon
-            v-if="link.mode === 'links'"
-            @click="refreshLinkData"
-            icon-class="reload"
-            :class="loadingSvgClasses"
-          />
+          <SvgIcon v-if="link.mode === 'links'" @click="refreshLinkData" icon-class="reload" :class="loadingSvgClasses" />
         </div>
-        <ul
-          v-if="!link.mode"
-          class="flex flex-col gap-1 items-center md:items-start"
-        >
-          <li
-            v-for="[i, sub] of link.links.entries()"
-            class="cursor-pointer"
-            :key="i"
-          >
+        <ul v-if="!link.mode" class="flex flex-col gap-1 items-center md:items-start">
+          <li v-for="[i, sub] of link.links.entries()" class="cursor-pointer" :key="i">
             <a :href="sub.url" target="_blank">{{ sub.title }}</a>
           </li>
         </ul>
+
         <ul v-if="link.mode === 'links' && linksData" class="flex flex-col">
-          <li
-            v-for="[i, avatar] of linksData.entries()"
-            class="cursor-pointer"
-            :key="i"
-          >
+
+          <li v-for="[i, avatar] of linksData.entries()" class="cursor-pointer" :key="i">
             <a :href="avatar.link" target="_blank">{{ avatar.nick }}</a>
           </li>
         </ul>
-        <ul
-          v-if="link.mode === 'links' && loadingLinks"
-          class="flex flex-col items-center md:items-start"
-        >
+        <ul v-if="link.mode === 'links' && loadingLinks" class="flex flex-col items-center md:items-start">
+
           <li v-for="i in 5" class="cursor-pointer" :key="i">
             <ob-skeleton :count="1" height="22px" width="7.5rem" />
           </li>
@@ -69,6 +44,7 @@ import { useArticleStore } from '@/stores/article'
 import { PropType, computed, defineComponent, onMounted, ref, watch } from 'vue'
 import SvgIcon from '@/components/SvgIcon/index.vue'
 import { shuffleArray } from '@/utils'
+import ObSkeleton from '@/components/LoadingSkeleton/Skeleton.vue'
 
 enum FriendLinkRandomMode {
   'RANDOM' = 'random',
@@ -77,7 +53,7 @@ enum FriendLinkRandomMode {
 
 export default defineComponent({
   name: 'ARFooterLink',
-  components: { SvgIcon },
+  components: { ObSkeleton, SvgIcon },
   props: {
     links: Array as PropType<FooterLink[]>
   },
@@ -174,6 +150,7 @@ export default defineComponent({
 <style lang="scss">
 .footer-link-divider {
   @apply flex h-1 w-2/3 lg:w-2/5 mt-4 mb-8 relative opacity-70 rounded-full shadow-xl;
+
   .footer-link-img-wrapper {
     @apply m-0 h-10 w-10 shadow-xl absolute rounded-full box-content;
     left: 50%;

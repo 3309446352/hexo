@@ -157,4 +157,8 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+li:hover {
+  border: solid 3px #2fd8d8;
+}
+</style>

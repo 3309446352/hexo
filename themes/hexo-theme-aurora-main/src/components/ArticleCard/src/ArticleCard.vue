@@ -10,13 +10,6 @@
         <span>
           <b v-if="post.pinned" class="article-tag">
             <span>
-              <SvgIcon
-                icon-class="hot"
-                width="1.rem"
-                height="1.05rem"
-                class="-mb-0.5"
-                stroke="currentColor"
-              />
               <span>{{ t('settings.pinned') }}</span>
             </span>
           </b>

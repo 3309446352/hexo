@@ -434,12 +434,4 @@ export default defineComponent({
 .carousel-indicators span.active {
   background: black;
 }
-.article-tag-nav {
-  background-color: #7aa2f7;
-  border-radius: 3px;
-  border: #fefefe solid 6px;
-  position: absolute;
-  top: -10px;
-  left: 60px;
-}
 </style>

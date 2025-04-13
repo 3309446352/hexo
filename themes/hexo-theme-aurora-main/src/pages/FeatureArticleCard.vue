@@ -30,6 +30,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 export default {
+  name: 'C',
   setup() {
     const localList = ref([
       'https://raw.githubusercontent.com/3309446352/Images/main/img/andrian-luchian-rsi-apollo-landed-backview-03-al.jpg',
@@ -104,7 +105,7 @@ export default {
 
 <style scoped>
 .feature-article-nav {
-  height: 26rem;
+  width: 100%;
   //width: 100%;
   //grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: none;
