@@ -94,18 +94,12 @@ menu:
         i18n:
           zh-CN: "音乐"
           en: "MusicPlayer"
-      Aurora:
-        name: 'HideAside'
-        path: '/HideAside'
-        i18n:
-            zh-CN: "待办清单"
-            en: "Aurora Theme"
-      mlik:
-        name: 'Aurora Theme'
-        path: '/FeatureArticleCard'
-        i18n:
-            zh-CN: "Aurora"
-            en: "Aurora Theme"                  
+      Qexo:
+          name: 'Qexo'
+          path: 'https://qexo-zmc.vercel.app/'  
+          i18n:
+            zh-CN: "后台"
+            en: "background"        
 #! ---------------------------------------------------------------
 #! Theme Config
 #! @docs https://aurora.tridiamond.tech/guide/theme.html
@@ -487,10 +481,10 @@ injects:
   scripts:
     - <script rel="preload" src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
     - <script rel="preload" src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
-    - <script defer src="/live2d-widget/autoload.js"></script> #live2d-widget
+    - <script defer type="javascript" src="/live2d-widget/autoload.js"></script> #live2d-widget
   css:
     - <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
-    - <link rel="stylesheet" href="/live2d-widget/waifu.css"> #live2d-widget
+    - <link rel="stylesheet" type="css" href="/live2d-widget/waifu.css"> #live2d-widget
 
 live2d:
   enable: true

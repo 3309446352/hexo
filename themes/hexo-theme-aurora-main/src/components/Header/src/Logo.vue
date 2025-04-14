@@ -32,21 +32,6 @@
         </span>
       </div>
     </div>
-
-    <DropdownMenu>
-      <DropdownItem name="en" v-for="(item, index) in SvgList" :key="index">
-        <div style="padding: 0 40px 0 40px">
-          <SvgIcon
-            :icon-class="item.icon"
-            width="1.2rem"
-            height="1.2rem"
-            class="-mb-0.5"
-            stroke="currentColor"
-          />
-          <span style="font-size: 18px">{{ item.name }}</span>
-        </div>
-      </DropdownItem>
-    </DropdownMenu>
   </Dropdown>
 </template>
 
@@ -71,6 +56,10 @@ export default defineComponent({
       {
         name: 'docker',
         icon: 'Docker'
+      },
+      {
+        name: '后台',
+        icon: 'BackgroundMenu'
       }
     ]
     return {

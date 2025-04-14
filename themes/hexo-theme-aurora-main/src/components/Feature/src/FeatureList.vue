@@ -6,6 +6,13 @@
       <div
         class="ob-gradient-plate opacity-90 relative z-10 bg-ob-deep-900 rounded-2xl flex justify-start items-end px-6 pb-10 shadow-md"
       >
+        <div class="divimg">
+          <img
+            style="width: 100%; height: 100%; border-radius: 10px"
+            src="https://raw.githubusercontent.com/3309446352/Images/main/img/react.svg"
+            alt=""
+          />
+        </div>
         <h2 class="text-3xl pb-8 lg:pb-14">
           <p :style="gradientText">EDITOR'S SELECTION</p>
           <span class="relative text-lg text-ob-bright font-semibold">
@@ -74,4 +81,19 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.divimg {
+  position: absolute;
+  margin: 5px 5px -5px -5px;
+  padding: 10px;
+  top: 10px;
+  width: 80%;
+  height: 50%;
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .divimg {
+    display: none;
+  }
+}
+</style>

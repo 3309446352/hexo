@@ -138,7 +138,7 @@
       </div>
       <br />
     </div>
-    <div class="feature-article-nav" :style="{ height: currentHeight }">
+    <div class="feature-article-nav">
       <img :src="ImgList[currentIndex]" class="ob-hz-thumbnail" alt="" />
 
       <!-- 指示器 -->
@@ -162,7 +162,6 @@ import {
   onUnmounted,
   ref,
   toRefs,
-  watch
 } from 'vue'
 import { useAppStore } from '@/stores/app'
 import { useCommonStore } from '@/stores/common'
@@ -237,6 +236,8 @@ export default defineComponent({
           return ImgCover.value
         })
         .catch(error => {
+          ImgCover.value =
+            'https://raw.githubusercontent.com/3309446352/Images/main/img/Snipaste_2023-03-19_17-56-24.png'
           console.error('Error fetching image:', error)
         })
     }
@@ -266,14 +267,12 @@ export default defineComponent({
         })
         .then(response => {
           ImageUrl.value = response.data.imgurl
-          if (ImageUrl.value == '') {
-            ImageUrl.value =
-              'https://raw.githubusercontent.com/3309446352/Images/main/img/1949847037.jpg'
-          }
           console.log('ImageUrl:', ImageUrl.value)
           return ImageUrl.value
         })
         .catch(error => {
+          ImageUrl.value =
+            'https://raw.githubusercontent.com/3309446352/Images/main/img/1949847037.jpg'
           console.error('未获取到:', error)
         })
     }
