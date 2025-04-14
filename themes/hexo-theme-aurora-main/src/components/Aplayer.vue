@@ -1,51 +1,87 @@
 <template>
-  <div class="aplayer">
-    <meting-js
-      :server="Server"
-      :type="type"
-      :id="Id"
-      fixed="true"
-      autoplay="true"
-      loop="all"
-      order="list"
-      preload="auto"
-      list-folded="true"
-      list-max-height="500px"
-      lrc-type="1"
-    >
-    </meting-js>
-  </div>
+  <div ref="playerContainer"></div>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent, onMounted, onUnmounted, watch } from 'vue'
-import { usePlayerStore } from '@/stores/MusicPlayer'
+<script setup>
+import { onMounted, onBeforeUnmount, ref } from 'vue'
 
-export default defineComponent({
-  name: ' APlayer',
-  setup() {
-    const playerStore = usePlayerStore()
-    const Server = computed(() => playerStore.Music.Server)
-    const type = computed(() => playerStore.Music.type)
-    const Id = computed(() => playerStore.Music.Id)
-    onMounted(() => {
-      console.log('Aplayer', Server, type, Id)
-    })
-    // 监听音乐播放器的状态变化
-    computed(() => {
-      return {
-        playerStore
-      }
-    })
-    return {
-      playerStore,
-      Server,
-      type,
-      Id
-    }
+const props = defineProps({
+  server: {
+    type: String,
+    required: true,
+    validator: v =>
+      ['netease', 'tencent', 'kugou', 'xiami', 'baidu'].includes(v)
+  },
+  type: {
+    type: String,
+    default: 'playlist',
+    validator: (v) => ['song', 'playlist', 'album', 'search', 'artist'].includes(v)
+  },
+  id: {
+    type: String,
+    required: true
+  },
+  theme: {
+    type: String,
+    default: '#2980b9'
+  },
+  fixed: {
+    type: Boolean,
+    default: false
+  },
+  autoplay: {
+    type: Boolean,
+    default: false
   }
+})
+
+const playerContainer = ref(null)
+let playerInstance = null
+
+onMounted(() => {
+  // 动态加载本地脚本
+  const loadScripts = async () => {
+    await import('/src/components/Aplayer/APlayer.min.js')
+    await import('/src/components/Aplayer/APlayer.min.css')
+    initPlayer()
+  }
+
+  loadScripts()
+})
+
+const initPlayer = () => {
+  playerInstance = new Meting({
+    container: playerContainer.value,
+    server: props.server,
+    type: props.type,
+    id: props.id,
+    theme: props.theme,
+    fixed: props.fixed,
+    autoplay: props.autoplay,
+    loop: 'all',
+    order: 'list',
+    preload: 'auto',
+    mutex: true
+  })
+}
+
+onBeforeUnmount(() => {
+  if (playerInstance) playerInstance.destroy()
 })
 </script>
 
 <style scoped>
+/* 覆盖默认样式 */
+.aplayer {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.aplayer-info {
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+}
+
+.aplayer-lrc-lyric {
+  color: #c0c0c0 !important;
+}
 </style>
