@@ -3,12 +3,12 @@ abbrlink: Vue
 abstracts: v-if是Vue.js中常用的条件渲染指令，根据表达式的值来动态控制元素的显示或隐藏。
 author: Zmc
 categories: []
-cover: https://gitee.com/Testcss_qweer/Images/raw/main/img/TS.png
+cover: https://raw.githubusercontent.com/3309446352/Images/main/img/四月是你的谎言.jpg
 date: '2025-04-06T02:20:35.919487+08:00'
 description: v-if是Vue.js中常用的条件渲染指令，根据表达式的值来动态控制元素的显示或隐藏。
 tags: []
 title: v-if的用法
-updated: '2025-04-06T02:24:51.642+08:00'
+updated: '2025-04-14T15:22:59.872+08:00'
 ---
 #  {{ title }}
 
