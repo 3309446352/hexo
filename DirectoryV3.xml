@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?> 
- <trees>
-     <tree path="/scaffolds/draft.md" title="草稿"/>
-     <tree path="/scaffolds/page.md" title="页面"/>
-     <tree path="/scaffolds/post.md" title="文章"/>
- </trees>

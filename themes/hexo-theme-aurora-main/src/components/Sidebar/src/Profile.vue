@@ -16,6 +16,7 @@
             :class="avatarClass"
             :src="authorData.avatar"
             alt="avatar"
+            @click="toggleComponent"
           />
           <ob-skeleton v-else width="6.4rem" height="6.4rem" circle />
 
@@ -79,6 +80,7 @@ import { useAuthorStore } from '@/stores/author'
 import { computed, defineComponent, onMounted, ref, toRefs, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import Social from '@/components/Social.vue'
+import { useArticleStore } from '@/stores/article'
 
 export default defineComponent({
   name: 'ObProfile',
@@ -94,6 +96,7 @@ export default defineComponent({
   setup(props) {
     const appStore = useAppStore()
     const authorStore = useAuthorStore()
+    const articleStore = useArticleStore()
     const { t } = useI18n()
 
     const author = toRefs(props).author
@@ -109,6 +112,10 @@ export default defineComponent({
       await authorStore.fetchAuthorData(author.value).then(data => {
         authorData.value = data
       })
+    }
+
+    const toggleComponent = () => {
+      articleStore.toggleComponent()
     }
 
     watch(
@@ -138,7 +145,8 @@ export default defineComponent({
       }),
       statistic: computed(() => appStore.statistic),
       authorData,
-      t
+      t,
+      toggleComponent
     }
   }
 })

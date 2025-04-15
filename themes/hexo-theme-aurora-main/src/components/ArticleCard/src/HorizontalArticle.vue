@@ -18,7 +18,7 @@
           <img
             v-else
             class="ob-hz-thumbnail"
-            src="@/assets/default-cover.jpg"
+            src="../../../assets/default-cover.jpg"
             alt=""
           />
           <span class="thumbnail-screen" :style="bannerHoverGradient" />

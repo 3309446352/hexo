@@ -49,7 +49,28 @@
           />
         </span>
 
-        <ul class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div class="list-none flex flex-col gap-6" v-if="showComponent">
+          <template v-if="posts.data.length === 0">
+            <li v-for="n in 6" :key="n">
+              <Article :data="{}" />
+            </li>
+          </template>
+
+          <template v-else-if="!themeConfig.theme.feature">
+            <template v-for="(post, key) in posts.data" :key="post.slug">
+              <li v-if="key !== 0">
+                <Article :data="post" />
+              </li>
+            </template>
+          </template>
+
+          <template v-else>
+            <li v-for="post in posts.data" :key="post.slug">
+              <Article :data="post" />
+            </li>
+          </template>
+        </div>
+        <ul class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" v-else>
           <template v-if="posts.data.length === 0">
             <li v-for="n in 6" :key="n">
               <ArticleCard :data="{}" />
@@ -111,10 +132,12 @@ import { useMetaStore } from '@/stores/meta'
 import SvgIcon from '@/components/SvgIcon/index.vue'
 import usePageTitle from '@/hooks/usePageTitle'
 import Sticky from '@/components/Sticky.vue'
-
+import Article from '@/components/ArticleCard/src/acticle.vue'
+import { useArticleStore } from '@/stores/article'
 export default defineComponent({
   name: 'ARHome',
   components: {
+    Article,
     Feature,
     FeatureList,
     ArticleCard,
@@ -142,6 +165,12 @@ export default defineComponent({
     const topFeature = ref(new FeaturePosts().top_feature)
     const featurePosts = ref(new FeaturePosts().features)
     const posts = ref(new PostList())
+    const articleStore = useArticleStore()
+
+    const showComponent = computed(() => {
+      return articleStore.showComponent
+    })
+
     const expanderClass = ref({
       'tab-expander': true,
       expanded: false
@@ -271,7 +300,8 @@ export default defineComponent({
       activeTab,
       pagination,
       pageChangeHandler,
-      t
+      t,
+      showComponent
     }
   }
 })

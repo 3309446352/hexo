@@ -104,9 +104,6 @@ menu:
 #! Theme Config
 #! @docs https://aurora.tridiamond.tech/guide/theme.html
 #! ---------------------------------------------------------------
-aurora:
-  enable: true
-  opacity: 1
 
 theme:
   dark_mode: false
@@ -122,13 +119,13 @@ theme:
     #color_2: '#60FCA2' #绿色
     #color_3: '#34D0B2' #绿色
 
-    # color_1: "#2c92ce" #浅蓝色
-    # color_2: "#89c4e9" #浅蓝色
-    # color_3: "#7ecec5" #浅蓝色
+    color_1: "#2c92ce" #浅蓝色
+    color_2: "#89c4e9" #浅蓝色
+    color_3: "#7ecec5" #浅蓝色
 
-    color_1: "#9deaf5" #深蓝色
-    color_2: "#014ed1" #深蓝色
-    color_3: "#0f2191" #深蓝色
+    # color_1: "#9deaf5" #深蓝色
+    # color_2: "#014ed1" #深蓝色
+    # color_3: "#0f2191" #深蓝色
 
 #! ---------------------------------------------------------------
 #! Social Configs

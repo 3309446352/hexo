@@ -3,7 +3,7 @@
     <div class="article">
       <div class="article-thumbnail">
         <img v-if="avatar" v-lazy="avatar" alt="" />
-        <img v-else src="@/assets/default-cover.jpg" />
+        <img v-else src="../../assets/default-cover.jpg" />
         <span class="thumbnail-screen" :style="gradientBackground" />
       </div>
 

@@ -42,10 +42,10 @@
               </p>
             </div>
           </li>
-        </template> 
+        </template>
         <!-- 归档进度条 -->
       </ul>
-      <Paginator :pageSize="12" :pageTotal="pagination.pageTotal" :page="pagination.page" @pageChange="pageChangeHandler"/> 
+      <Paginator :pageSize="12" :pageTotal="pagination.pageTotal" :page="pagination.page" @pageChange="pageChangeHandler"/>
       <!-- 分页条 -->
     </div>
   </div>

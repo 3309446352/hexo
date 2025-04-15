@@ -6,8 +6,11 @@ export const useArticleStore = defineStore({
   // id is the name of the store
   // it is used in devtools and allows restoring state
   id: 'articleStore',
-  state: () => ({}),
-  getters: {},
+  state: () => ({
+    showComponent: false
+  }),
+  getters: {
+  },
   actions: {
     async fetchArticle(
       source: string
@@ -18,6 +21,9 @@ export const useArticleStore = defineStore({
           resolve(new Page(data))
         }, 200)
       )
+    },
+    toggleComponent() {
+      this.showComponent = !this.showComponent;
     }
   }
 })

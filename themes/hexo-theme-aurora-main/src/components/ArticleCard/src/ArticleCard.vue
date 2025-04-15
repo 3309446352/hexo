@@ -15,20 +15,11 @@
           </b>
           <b v-if="post.feature" class="article-tag">
             <span>
-              <SvgIcon
-                icon-class="hot"
-                width="1.05rem"
-                height="1.05rem"
-                class="-mb-0.5"
-                stroke="currentColor"
-              />
+              <SvgIcon icon-class="hot" width="1.05rem" height="1.05rem" class="-mb-0.5" stroke="currentColor" />
               <span>{{ t('settings.featured') }}</span>
             </span>
           </b>
-          <b
-            v-if="post.categories && post.categories.length > 0"
-            @click="navigateToCategory(post.categories[0].slug)"
-          >
+          <b v-if="post.categories && post.categories.length > 0" @click="navigateToCategory(post.categories[0].slug)">
             {{ post.categories[0].name }}
           </b>
           <b v-else-if="post.categories && post.categories.length <= 0">
@@ -36,14 +27,9 @@
           </b>
           <ob-skeleton v-else tag="b" height="20px" width="35px" />
         </span>
-
         <span class="flex flex-wrap">
           <ul v-if="post.tags && post.tags.length > 0">
-            <li
-              v-for="tag in post.min_tags"
-              :key="tag.slug"
-              @click="navigateToTag(tag.slug)"
-            >
+            <li v-for="tag in post.min_tags" :key="tag.slug" @click="navigateToTag(tag.slug)">
               <em># </em><span>{{ tag.name }}</span>
             </li>
           </ul>
@@ -53,20 +39,11 @@
             </li>
           </ul>
           <ul v-else>
-            <ob-skeleton
-              v-if="!post.tags"
-              :count="2"
-              tag="li"
-              height="16px"
-              width="35px"
-            />
+            <ob-skeleton v-if="!post.tags" :count="2" tag="li" height="16px" width="35px" />
           </ul>
         </span>
 
-        <router-link
-          v-if="post.title"
-          :to="{ name: 'post-slug', params: { slug: post.slug } }"
-        >
+        <router-link v-if="post.title" :to="{ name: 'post-slug', params: { slug: post.slug } }">
           <h1 data-dia="article-link">{{ post.title }}</h1>
         </router-link>
         <ob-skeleton v-else tag="h1" height="3rem" />
@@ -76,17 +53,11 @@
 
         <div class="article-footer" v-if="post.author && post.date">
           <div class="flex flex-row items-center">
-            <img
-              :class="avatarClasses"
-              :src="post.author.avatar"
-              :alt="`avatar-${post.author.name}`"
-              @click="handleAuthorClick(post.author.link)"
-            />
+            <img :class="avatarClasses" :src="post.author.avatar" :alt="`avatar-${post.author.name}`"
+              @click="handleAuthorClick(post.author.link)" />
             <span class="text-ob-dim">
-              <strong
-                class="text-ob-normal pr-1.5 hover:text-ob hover:opacity-50 cursor-pointer"
-                @click="handleAuthorClick(post.author.link)"
-              >
+              <strong class="text-ob-normal pr-1.5 hover:text-ob hover:opacity-50 cursor-pointer"
+                @click="handleAuthorClick(post.author.link)">
                 {{ post.author.name }}
               </strong>
               {{ t('settings.shared-on') }} {{ t(post.date.month) }}
@@ -97,12 +68,7 @@
 
         <div class="article-footer" v-else>
           <div class="flex flex-row items-center mt-6">
-            <ob-skeleton
-              class="mr-2"
-              height="28px"
-              width="28px"
-              :circle="true"
-            />
+            <ob-skeleton class="mr-2" height="28px" width="28px" :circle="true" />
             <span class="text-ob-dim mt-1">
               <ob-skeleton height="20px" width="150px" />
             </span>
