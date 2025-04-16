@@ -1,7 +1,13 @@
 ---
 abbrlink: ''
-abstracts: Spring Boot 中有许多常用的注解，这些注解用于配置、管理和定义 Spring Boot 应用程序的各个方面。
-author: ZMC
+abstracts: Spring Boot 中有许多常用的注解，这些注解用于配置、管理和定义 Spring Boot 应用程序的各个方面。
+author:
+  avatar: https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg
+  description: 古来圣贤皆寂寞，惟有饮者留其名。
+  link: https://hexo-git-test-3309446352s-projects.vercel.app/
+  name: 好名字都是狗起的
+  socials:
+    github: https://github.com/3309446352
 categories:
 - - 后端
 cover: https://raw.githubusercontent.com/3309446352/Images/main/img/Anime.jpg
@@ -10,12 +16,11 @@ description: description
 tags:
 - SpringBoot
 title: Spring Boot 常用注解大全
-updated: '2025-04-16T22:27:51.945+08:00'
+updated: '2025-04-16T22:39:45.089+08:00'
 ---
 #  {{title}}
 
 ## 简介 : {{description}}
-
 
 Spring Boot 中有许多常用的注解，这些注解用于配置、管理和定义 Spring Boot 应用程序的各个方面。以下是这些注解按大类和小类的方式分类，并附有解释和示例。
 
