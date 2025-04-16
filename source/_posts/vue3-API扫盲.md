@@ -1,11 +1,5 @@
-#  {{ title }}
-
-## 简介 : {{ description}}
-
-# 
-
-```
-abbrlink: ""
+---
+abbrlink: ''
 abstracts: vue3文档中API模块的所有内容
 author:
   avatar: https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg
@@ -15,19 +9,20 @@ author:
   socials:
     github: https://github.com/3309446352
 categories:
-  - - 前端
+- - 前端
 cover: https://raw.githubusercontent.com/3309446352/Images/main/img/seqin.jpg
-date: "2025-04-16T15:03:27.905083+08:00"
+date: '2025-04-16T15:03:27.905083+08:00'
 description: vue3文档中API模块的所有内容
 tags:
-  - Vue
+- Vue
 title: vue3所有API盲点
-updated: "2025-04-16T15:03:29.156+08:00"
-```
-
+updated: '2025-04-17T01:28:02.248+08:00'
+---
 #  {{ title }}
 
 ## 简介 : {{ description}}
+
+ ](https://juejin.cn/post/7164159759619194893)
 
 # 📍 前言
 
@@ -203,7 +198,3 @@ updated: "2025-04-16T15:03:29.156+08:00"
 # 引入
 
 [花了一天的时间，地板式扫盲了 vue3 所有 API 盲点 📍 前言 最近在一次理解 vue 项目的代码时，发现周一对好多 API 都不太 - 掘金](https://juejin.cn/post/7164159759619194893)
-
-# 引入
-
-[花了一天的时间，地板式扫盲了vue3所有API盲点📍前言 最近在一次理解vue项目的代码时，发现周一对好多API都不太 - 掘金](https://juejin.cn/post/7164159759619194893)
