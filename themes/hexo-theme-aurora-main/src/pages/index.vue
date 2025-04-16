@@ -70,23 +70,23 @@
             </li>
           </template>
         </div>
-        <ul class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" v-else>
-          <template v-if="posts.data.length === 0">
-            <li v-for="n in 6" :key="n">
+        <ul class="flex flex-wrap -mx-3 gap-y-6" v-else>
+          <template v-if="posts.data.length === 0" >
+            <li v-for="n in 6" :key="n" class="w-full md:w-1/2 px-3">
               <ArticleCard :data="{}" />
             </li>
           </template>
 
           <template v-else-if="!themeConfig.theme.feature">
             <template v-for="(post, key) in posts.data" :key="post.slug">
-              <li v-if="key !== 0">
+              <li v-if="key !== 0" class="w-full md:w-1/2 px-3">
                 <ArticleCard :data="post" />
               </li>
             </template>
           </template>
 
           <template v-else>
-            <li v-for="post in posts.data" :key="post.slug">
+            <li v-for="post in posts.data" :key="post.slug" class="w-full md:w-1/2 px-3">
               <ArticleCard :data="post" />
             </li>
           </template>
