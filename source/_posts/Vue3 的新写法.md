@@ -2,7 +2,7 @@
 abbrlink: ''
 abstracts: 让已经有 Vue2 开发经验的 人 ，快速掌握 Vue3 的写法。
 author:
-  avatar: https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg,
+  avatar: https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg
   description: 古来圣贤皆寂寞，惟有饮者留其名。
   link: https://hexo-git-test-3309446352s-projects.vercel.app/
   name: 好名字都是狗起的,
