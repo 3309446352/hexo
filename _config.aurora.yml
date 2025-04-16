@@ -40,13 +40,13 @@ site:
 #! ---------------------------------------------------------------
 authors:
   ##! example
-  TriDiamond:
-    name: Zmc
-    avatar: https://raw.githubusercontent.com/3309446352/Images/main/img/屏幕截图(1).png
-    link: https://github.com/TriDiamond
-    description: "像艺术家一样思考，像工匠一样编码."
+  ZMC: #作者
+    name: 好名字都是狗起的,
+    avatar: https://raw.githubusercontent.com/3309446352/Images/main/img/preview.jpg,
+    description: 古来圣贤皆寂寞，惟有饮者留其名。,
+    link: https://hexo-git-test-3309446352s-projects.vercel.app/",
     socials:
-      github: https://tridiamond.tech
+      github":"https://github.com/3309446352
   author-1:
     name: TriDiamond
     link: https://tridiamond.tech

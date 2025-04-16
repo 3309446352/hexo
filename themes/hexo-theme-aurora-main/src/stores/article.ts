@@ -9,8 +9,7 @@ export const useArticleStore = defineStore({
   state: () => ({
     showComponent: false
   }),
-  getters: {
-  },
+  getters: {},
   actions: {
     async fetchArticle(
       source: string

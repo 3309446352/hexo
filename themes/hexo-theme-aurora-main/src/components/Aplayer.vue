@@ -11,7 +11,7 @@
       preload="auto"
       list-folded="true"
       list-max-height="500px"
-      lrc-type="1"
+      lrc-type="3"
     >
     </meting-js>
   </div>
