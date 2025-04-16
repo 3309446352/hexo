@@ -12,11 +12,10 @@ description: RabbitMQ是一个开源的消息代理,它通过消息队列提供�
 
 abstracts: RabbitMQ是一个开源的消息代理,它通过消息队列提供了一种异步通信机制
 ---
-# {{ title }}
+#  {{ title }}
 
- ## 简介 :
- - {{ description}}
+## 简介 :
 
-<div class="box" style="  position: relative;width: 100%;height: 350px;background: #1c1c1c;border-radius: 8px;overflow: hidden;">
-	<form autocomplete="off" style=" box-shadow: 0 0 20px 19px aqua; position: absolute;inset: 2px;background: #28292d;padding: 50px 40px;border-radius: 8px;z-index: 2;display: flex;flex-direction: column;"></form>
-</div>
+- {{ description}}
+
+![vue3 API盘点](vue3-API扫盲.assets/48d3faec9e3e4347bab736c6a56ad4c1tplv-k3u1fbpfcp-jj-mark3024000q75.webp)
