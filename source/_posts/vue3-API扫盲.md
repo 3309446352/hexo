@@ -22,7 +22,6 @@ updated: '2025-04-16T15:03:29.156+08:00'
 
 ## 简介 : {{ description}}
 
-
 # 📍前言
 
 最近在一次理解`vue`项目的代码时，发现周一对好多`API`都不太熟悉。这间接导致的问题是，代码理解速度要比平常要慢很多。于是乎，赶忙把`vue API`的学习提上了日程。
@@ -41,14 +40,14 @@ updated: '2025-04-16T15:03:29.156+08:00'
 
 `vue3 API`主要包含以下六个部分：
 
-+ 全局API —— 全局会用到的API
-+ 组合式API —— vue3所拥有的组合式API
-+ 选项式API —— vue2所拥有的选项式API
-+ 内置内容 —— 指令、组件、特殊元素和特殊属性
-+ 单文件组件 —— 语法定义、
-+ 进阶API —— 渲染函数、服务端渲染、TS工具类型和自定义渲染
++   全局API —— 全局会用到的API
++   组合式API —— vue3所拥有的组合式API
++   选项式API —— vue2所拥有的选项式API
++   内置内容 —— 指令、组件、特殊元素和特殊属性
++   单文件组件 —— 语法定义、
++   进阶API —— 渲染函数、服务端渲染、TS工具类型和自定义渲染
 
-![vue3 API盘点](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1a558d668bdb4098b5906856113fa41a~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=832&h=885&s=152545&e=png&b=ffffff)
+![vue3 API盘点](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\1a558d668bdb4098b5906856113fa41atplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 下面将依据上面提到的六大点内容，来进行相应的剖析和讲解。
 
@@ -58,11 +57,11 @@ vue3的全局API包含两个部分：应用实例和通用API。那它们各自�
 
 ## 1、应用实例
 
-![02_应用实例](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/48d3faec9e3e4347bab736c6a56ad4c1~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=2773&h=2548&s=933294&e=png&b=fffefe)
+![02_应用实例](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\48d3faec9e3e4347bab736c6a56ad4c1tplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 ## 2、通用API
 
-![02_通用](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/22e0ba81bdb0419ab7db3683e96c677e~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=1347&h=850&s=143136&e=png&b=ffffff)
+![02_通用](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\22e0ba81bdb0419ab7db3683e96c677etplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 # 三、🚲组合式API
 
@@ -70,27 +69,27 @@ vue3的全局API包含两个部分：应用实例和通用API。那它们各自�
 
 ## 1、setup
 
-![01_setup](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c40e772cbf184b75bf6e6a869f317c03~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=1275&h=771&s=111650&e=png&b=ffffff)
+![01_setup](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\c40e772cbf184b75bf6e6a869f317c03tplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 ## 2、响应式：核心
 
-![02_响应式核心](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/14078b9e9ca14b5caf2ed92692bc40a2~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=1561&h=1704&s=363182&e=png&b=fefefe)
+![02_响应式核心](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\14078b9e9ca14b5caf2ed92692bc40a2tplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 ## 3、响应式：工具函数
 
-![03_响应式工具函数](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b1b1da9b608e449ca8f21038fd761e59~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=2220&h=1003&s=269176&e=png&b=ffffff)
+![03_响应式工具函数](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\b1b1da9b608e449ca8f21038fd761e59tplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 ## 4、响应式：进阶
 
-![04_响应式进阶](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e5f1183e88624bc69a930897b47ee2ae~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=2556&h=3507&s=866142&e=png&b=ffffff)
+![04_响应式进阶](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\e5f1183e88624bc69a930897b47ee2aetplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 ## 5、生命周期钩子
 
-![05_生命周期钩子](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6d78d13c852c4a6eab6a44a6601015c9~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=3171&h=2127&s=857384&e=png&b=ffffff)
+![05_生命周期钩子](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\6d78d13c852c4a6eab6a44a6601015c9tplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 ## 6、依赖注入
 
-![06_依赖注入](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4b40f6eedb6f4046af0645c5564c09e0~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=1440&h=1045&s=214404&e=png&b=ffffff)
+![06_依赖注入](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\4b40f6eedb6f4046af0645c5564c09e0tplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 # 四、🌠选项式API
 
@@ -98,27 +97,27 @@ vue3的全局API包含两个部分：应用实例和通用API。那它们各自�
 
 ## 1、状态选项
 
-![01_状态选项](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f7209eb996134846a80afdccdc1cf88a~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=1521&h=2062&s=472595&e=png&b=ffffff)
+![01_状态选项](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\f7209eb996134846a80afdccdc1cf88atplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 ## 2、渲染选项
 
-![02_渲染选项](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c1af1316b37249dbba7add34476ba36b~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=1258&h=1059&s=189688&e=png&b=fefdfd)
+![02_渲染选项](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\c1af1316b37249dbba7add34476ba36btplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 ## 3、生命周期选项
 
-![03_生命周期选项](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a4cdbd423f5441a88535af4c9c48d45a~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=1554&h=2382&s=520868&e=png&b=fefdfd)
+![03_生命周期选项](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\a4cdbd423f5441a88535af4c9c48d45atplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 ## 4、组合选项
 
-![04_组合选项](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6b0ff576506d49dbb9a37ef0e99aba2e~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=1260&h=693&s=125285&e=png&b=ffffff)
+![04_组合选项](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\6b0ff576506d49dbb9a37ef0e99aba2etplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 ## 5、其他杂项
 
-![05_其他杂项](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5b2246ebc65344cb93f1f1d4ef024a10~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=1282&h=864&s=162038&e=png&b=ffffff)
+![05_其他杂项](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\5b2246ebc65344cb93f1f1d4ef024a10tplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 ## 6、组件实例
 
-![06_组件实例](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/037d0d3a71ea4129a64dd6c8aea93abd~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=1528&h=985&s=201092&e=png&b=ffffff)
+![06_组件实例](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\037d0d3a71ea4129a64dd6c8aea93abdtplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 # 五、🏕内置内容
 
@@ -128,19 +127,19 @@ vue3的全局API包含两个部分：应用实例和通用API。那它们各自�
 
 ## 1、指令
 
-![01_指令](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/434b8e6051904290a8d878becfa183cf~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=2701&h=2421&s=913014&e=png&b=ffffff)
+![01_指令](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\434b8e6051904290a8d878becfa183cftplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 ## 2、组件
 
-![02_组件](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d3d10419800648108118383899dd6a58~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=1726&h=2758&s=604805&e=png&b=ffffff)
+![02_组件](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\d3d10419800648108118383899dd6a58tplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 ## 3、特殊元素
 
-![03_特殊元素](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e30e4b2adbbd43508cb50d2c5b194394~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=1519&h=694&s=229198&e=png&b=fefdfd)
+![03_特殊元素](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\e30e4b2adbbd43508cb50d2c5b194394tplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 ## 4、特殊属性Attributes
 
-![04_特殊属性Attributes](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d3064e1d58d8421cb4d15026bdcea024~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=1627&h=661&s=176882&e=png&b=ffffff)
+![04_特殊属性Attributes](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\d3064e1d58d8421cb4d15026bdcea024tplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 # 六、📸单文件组件
 
@@ -148,15 +147,15 @@ vue3的全局API包含两个部分：应用实例和通用API。那它们各自�
 
 ## 1、SFC语法定义
 
-![01_SFC语法定义](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8ba637efb1d0432b9bfaf9156f2a5d67~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=1471&h=1926&s=424258&e=png&b=fefbfb)
+![01_SFC语法定义](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\8ba637efb1d0432b9bfaf9156f2a5d67tplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 ## 2、单文件组件script setup
 
-![02_单文件组setup](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/24cd675bd15f462bbf1bdea7a2fa38df~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=3706&h=1812&s=1013260&e=png&b=ffffff)
+![02_单文件组setup](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\24cd675bd15f462bbf1bdea7a2fa38dftplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 ## 3、css功能
 
-![03_CSS功能](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cb956ae4b93a433ca01be19cbc47480b~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=2026&h=1380&s=421412&e=png&b=fffefe)
+![03_CSS功能](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\cb956ae4b93a433ca01be19cbc47480btplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 # 七、📈进阶API
 
@@ -164,19 +163,19 @@ vue3的全局API包含两个部分：应用实例和通用API。那它们各自�
 
 ## 1、渲染函数
 
-![01_渲染函数](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ede9874e71314de5abaa8694e928b237~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=1852&h=1612&s=384052&e=png&b=fffefe)
+![01_渲染函数](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\ede9874e71314de5abaa8694e928b237tplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 ## 2、服务端渲染
 
-![02_服务端渲染](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0ca5312a130b41239b47e73c4da823bb~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=2182&h=1462&s=415799&e=png&b=fdf9f9)
+![02_服务端渲染](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\0ca5312a130b41239b47e73c4da823bbtplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 ## 3、TypeScript工具类型
 
-![03_TypeScript工具类型](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/814883d4d24e44c99d1d12cac9932f81~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=1815&h=1315&s=274152&e=png&b=ffffff)
+![03_TypeScript工具类型](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\814883d4d24e44c99d1d12cac9932f81tplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 ## 4、自定义渲染
 
-![04_自定义渲染](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/68153183f580470aafbb0697f640ac6c~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=855&h=832&s=77776&e=png&b=ffffff)
+![04_自定义渲染](F:\文档\Blog\Hexo-aurora\source\_posts\vue3-API扫盲.assets\68153183f580470aafbb0697f640ac6ctplv-k3u1fbpfcp-jj-mark3024000q75.webp)
 
 # 八、🛒结束语
 
@@ -194,9 +193,6 @@ vue3的全局API包含两个部分：应用实例和通用API。那它们各自�
 
 以上就是本文的全部内容，我们下期见！🍻🍻🍻
 
-# 九 引入
+# 引入
 
 [花了一天的时间，地板式扫盲了vue3所有API盲点📍前言 最近在一次理解vue项目的代码时，发现周一对好多API都不太 - 掘金](https://juejin.cn/post/7164159759619194893)
-
-</form>
-</div>
