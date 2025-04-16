@@ -1,20 +1,15 @@
 ---
 abbrlink: ''
-categories: []
-date: ''
-tags: []
-title: ''
+abstracts: Spring Boot 中有许多常用的注解，这些注解用于配置、管理和定义 Spring Boot 应用程序的各个方面。
+categories:
+- - 前端
+date: 2025-4-16-22.02
+description: Spring Boot 中有许多常用的注解，这些注解用于配置、管理和定义 Spring Boot 应用程序的各个方面。
+tags:
+- SpringBoot
+title: Spring Boot 常用注解大全
 updated: '2025-04-16T22:19:25.929+08:00'
 ---
----
-title: {{ title }}
-date: {{ date }}
-tags: #看情况可不写
-categories: #看情况可不写
-cover: #图片
-description:
----
-
 ## 一、Spring Boot 核心注解
 
 ### @SpringBootApplication
