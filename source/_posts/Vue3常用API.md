@@ -8,13 +8,16 @@ author:
   name: 好名字都是狗起的
   socials:
     github: https://github.com/3309446352
-categories: []
+categories:
+- - 前端
 cover: https://raw.githubusercontent.com/3309446352/Images/main/img/Fate.jpg
 date: '2025-04-16T14:27:56.569189+08:00'
 description: 本文详述Vue3中的关键API，包括setup、生命周期、reactive、ref、toRef、toRefs、shallowReactive、shallowRef、toRaw、markRaw、provide和inject、watch及watchEffect等。讲解了它们的使用方法、区别和应用场景，帮助开发者更好地理解和应用Vue3。                   
-tags: []
+excerpt: '} 简介 :} 一、正文 Vue2 每次都把整个 Vue 导入，例如 Vue2 的 main.js 文件中的代码 import Vue from ''vue'' import App from ''./App.vue''   Vue.config.productionTip = false   new Vue({   render: h =&gt; h(App) }).$mount(''#app'')  但很...'
+tags:
+- Vue
 title: Vue3常用API
-updated: '2025-04-16T14:31:00.113+08:00'
+updated: '2025-04-16T14:55:09.984+08:00'
 ---
 #  {{ title }}
 
