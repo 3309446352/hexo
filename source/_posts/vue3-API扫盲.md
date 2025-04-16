@@ -10,7 +10,7 @@ author:
     github: https://github.com/3309446352
 categories:
 - - 前端
-cover: https://gitee.com/Testcss_qweer/Images/raw/main/img/bac6f6088b880846b443e23c591454930e3481b6daf09d6e1422d1f4a76ba0ab.gif
+cover: https://raw.githubusercontent.com/3309446352/Images/main/img/seqin.jpg
 date: '2025-04-16T15:03:27.905083+08:00'
 description: vue3文档中API模块的所有内容
 tags:
