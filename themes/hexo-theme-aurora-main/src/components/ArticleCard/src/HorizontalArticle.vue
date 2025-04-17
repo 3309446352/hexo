@@ -8,7 +8,7 @@
           @mouseenter="showHover = true"
           @mouseleave="showHover = false"
         >
-          <img v-if="ImgCover" class="ob-hz-thumbnail" v-lazy="ImgCover" />
+          <img v-if="ImgList[currentIndex]" class="ob-hz-thumbnail" v-lazy="ImgList[currentIndex]" />
           <img
             v-else-if="post.cover"
             class="ob-hz-thumbnail"
@@ -138,7 +138,7 @@
       </div>
       <br />
     </div>
-    <div class="feature-article-nav">
+    <div class="feature-article-nav" v-if="isVisible">
       <img :src="ImgList[currentIndex]" class="ob-hz-thumbnail" alt="" />
 
       <!-- 指示器 -->
@@ -161,7 +161,7 @@ import {
   onMounted,
   onUnmounted,
   ref,
-  toRefs,
+  toRefs
 } from 'vue'
 import { useAppStore } from '@/stores/app'
 import { useCommonStore } from '@/stores/common'
@@ -170,7 +170,8 @@ import SvgIcon from '@/components/SvgIcon/index.vue'
 import { useRouter } from 'vue-router'
 import TimeList from '@/components/TimeList.vue'
 import axios from 'axios'
-
+import { useArticleStore } from '@/stores/article'
+import { storeToRefs } from 'pinia'
 enum TagLimit {
   forMobile = '2',
   default = '5'
@@ -191,7 +192,7 @@ export default defineComponent({
     const commonStore = useCommonStore()
     const { t } = useI18n()
     const post = toRefs(props).data
-
+    const articleStore = useArticleStore()
     const handleCardClick = (slug?: string) => {
       if (!slug) return
       router.push({ name: 'post-slug', params: { slug } })
@@ -209,7 +210,7 @@ export default defineComponent({
     const navigateToCategory = (slug: string) => {
       router.push({ name: 'post-search', query: { category: slug } })
     }
-    /*图片获取轮播*/
+
     const ImgCover = ref('')
     const ImgCoverTwo = ref('')
     const ImageUrl = ref('')
@@ -249,6 +250,7 @@ export default defineComponent({
           console.log('ImgCoverTwo:', response)
           ImgCoverTwo.value = response.data.data
           console.log('ImgCoverTwo:', ImgCoverTwo.value)
+          // 成功时触发[2,6](@ref)
           return ImgCoverTwo.value
         })
         .catch(error => {
@@ -282,7 +284,7 @@ export default defineComponent({
         getImgUrl()
         GetImage()
         getImgUrlTwo()
-      }, 60000) // 1分钟切换一次
+      }, 120000) // 1分钟切换一次
     }
 
     // 自动播放定时器
@@ -310,11 +312,8 @@ export default defineComponent({
     const stopAutoPlay = () => {
       if (autoPlayTimer) clearInterval(autoPlayTimer)
     }
-    /*图片获取轮播*/
-    const handleImageError = (index: number) => {
-      console.error(`图片 ${index} 加载失败`)
-      // 可添加备用图片逻辑
-    }
+    const ArticleStore = useArticleStore()
+    const { isVisible } = storeToRefs(ArticleStore)
     onMounted(() => {
       getImgUrl()
       GetImage()
@@ -331,7 +330,6 @@ export default defineComponent({
       startRotation()
       startAutoPlay()
     })
-
     return {
       avatarClass: computed(() => ({
         'hover:opacity-50 cursor-pointer': true,
@@ -354,15 +352,17 @@ export default defineComponent({
       handleAuthorClick,
       handleCardClick,
       t,
-      ImgCover,
-      ImageUrl,
-      getImgUrl,
+      articleStore,
       ImgList,
       currentIndex,
       goToSlide,
-      nextSlide,
-      handleImageError,
-      switchImage
+      switchImage,
+      startRotation,
+      getImgUrl,
+      getImgUrlTwo,
+      GetImage,
+      isVisible,
+      ImgCover
     }
   }
 })
@@ -390,20 +390,27 @@ export default defineComponent({
   box-shadow:
     var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
     var(--tw-shadow);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* 调整动画曲线 */
-  will-change: transform, box-shadow; /* 优化渲染性能 */
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  /* 调整动画曲线 */
+  will-change: transform, box-shadow;
+  /* 优化渲染性能 */
 }
+
 /* 正确写法：使用父元素自身悬停 */
 .feature-article-nav:hover {
-  transform: scale(1.02); /* 轻微放大效果 */
+  transform: scale(1.02);
+  /* 轻微放大效果 */
   transition: transform 0.3s ease;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
+
 /* 添加缓动动画 */
 .feature-article-nav:hover .nav-content-wrapper {
   opacity: 0.9;
-  transition-delay: 0.1s; /* 延迟子元素动画 */
+  transition-delay: 0.1s;
+  /* 延迟子元素动画 */
 }
+
 /* 可选：增加子元素悬停效果 */
 .feature-article-nav:hover .nav-content-wrapper {
   opacity: 0.95;
@@ -412,9 +419,12 @@ export default defineComponent({
 /* 指示器悬停增强 */
 .carousel-indicators span:hover {
   background: #fff;
-  transform: scale(1.4); /* 放大效果 */
-  transition: transform 0.4s ease; /* 单独控制指示器动画 */
+  transform: scale(1.4);
+  /* 放大效果 */
+  transition: transform 0.4s ease;
+  /* 单独控制指示器动画 */
 }
+
 .carousel-indicators {
   position: absolute;
   bottom: 15px;
@@ -423,6 +433,7 @@ export default defineComponent({
   display: flex;
   gap: 8px;
 }
+
 .carousel-indicators span {
   width: 12px;
   height: 12px;
@@ -430,6 +441,7 @@ export default defineComponent({
   background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
 }
+
 .carousel-indicators span.active {
   background: black;
 }

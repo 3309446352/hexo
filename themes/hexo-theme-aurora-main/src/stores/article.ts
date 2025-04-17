@@ -7,7 +7,8 @@ export const useArticleStore = defineStore({
   // it is used in devtools and allows restoring state
   id: 'articleStore',
   state: () => ({
-    showComponent: false
+    showComponent: false,
+    isVisible: false
   }),
   getters: {},
   actions: {
@@ -22,7 +23,11 @@ export const useArticleStore = defineStore({
       )
     },
     toggleComponent() {
-      this.showComponent = !this.showComponent;
+      this.showComponent = !this.showComponent
+    },
+    toggleIsVisible() {
+      this.isVisible = !this.isVisible
+      console.log('this.isVisible', this.isVisible)
     }
   }
 })

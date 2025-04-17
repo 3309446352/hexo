@@ -68,7 +68,12 @@
 
         <div class="article-footer" v-else>
           <div class="flex flex-row items-center mt-6">
-            <ob-skeleton class="mr-2" height="28px" width="28px" :circle="true" />
+            <ob-skeleton
+              class="mr-2"
+              height="28px"
+              width="28px"
+              :circle="true"
+            />
             <span class="text-ob-dim mt-1">
               <ob-skeleton height="20px" width="150px" />
             </span>

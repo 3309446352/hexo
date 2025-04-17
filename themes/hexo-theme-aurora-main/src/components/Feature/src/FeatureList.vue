@@ -6,7 +6,7 @@
       <div
         class="ob-gradient-plate opacity-90 relative z-10 bg-ob-deep-900 rounded-2xl flex justify-start items-end px-6 pb-10 shadow-md"
       >
-        <div class="divimg">
+        <div class="divimg" @click="toggleIsVisible">
           <img
             style="width: 100%; height: 100%; border-radius: 10px"
             src="https://raw.githubusercontent.com/3309446352/Images/main/img/react.svg"
@@ -49,6 +49,7 @@ import { PropType, StyleValue, computed, defineComponent, toRefs } from 'vue'
 import { ArticleCard } from '@/components/ArticleCard'
 import SvgIcon from '@/components/SvgIcon/index.vue'
 import { Post } from '@/models/Post.class'
+import { useArticleStore } from '@/stores/article'
 
 export default defineComponent({
   name: 'ObFeatureList',
@@ -66,7 +67,10 @@ export default defineComponent({
     const appStore = useAppStore()
     const featurePosts = toRefs(props).data
     const { t } = useI18n()
-
+    const ArticleStore = useArticleStore()
+    const toggleIsVisible = () => {
+      ArticleStore.toggleIsVisible()
+    }
     return {
       gradientBackground: computed(() => ({
         background: appStore.themeConfig.theme.header_gradient_css
@@ -75,7 +79,8 @@ export default defineComponent({
         () => appStore.themeConfig.theme.background_gradient_style as StyleValue
       ),
       featurePosts,
-      t
+      t,
+      toggleIsVisible
     }
   }
 })
