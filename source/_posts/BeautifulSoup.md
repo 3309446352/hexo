@@ -4,20 +4,19 @@ abstracts: abstracts
 author: ZMC
 categories:
 - - 爬虫
-cover: null
+cover: https://raw.githubusercontent.com/3309446352/Images/main/img/窗明几净.webp
 date: '2025-04-19T22:38:01.851434+08:00'
-description: description
+description: BeautifulSoup 是 Python 中一个常用的解析 HTML 和 XML 的第三方库，使用它可以方便地从网页中提取数据
 tags:
 - BeautifulSoup
 - 爬虫
 - python
 title: BeautifulSoup
-updated: '2025-04-19T22:38:02.836+08:00'
+updated: '2025-04-20T23:14:29.896+08:00'
 ---
 #  {{title}}
 
 ## 简介 : {{description}}
-
 
 使用它可以方便地从网页中提取数据。以下是一个简单的例子：
 
