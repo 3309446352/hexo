@@ -108,4 +108,14 @@ deploy:
   type: git
   repo: https://github.com/3309446352/3309446352.github.io.git
   branch: master
-
+# RSS 生成器配置
+feed:
+  # Generate both atom and rss2 feeds
+  type:
+    - atom
+    - rss2
+  path:
+    - atom.xml
+    - rss2.xml
+  limit: 20 # 每次显示的文章数量
+  
