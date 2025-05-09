@@ -40,12 +40,12 @@
         <span class="flex">
           <ul v-if="post.tags && post.tags.length > 0" class="w-full flex flex-nowrap">
             <li v-for="tag in post.min_tags" :key="tag.slug" @click="navigateToTag(tag.slug)" >
-              <em># </em><span>{{ tag.name }}</span>
+              <em># </em><span class="tag-name">{{ tag.name }}</span>
             </li>
           </ul>
           <ul v-else-if="post.tags && post.tags.length <= 0">
             <li>
-              <em>#</em><span>{{ t('settings.default-tag') }}</span>
+              <em>#</em><span class="tag-tag">{{ t('settings.default-tag') }}</span>
             </li>
           </ul>
           <ul v-else>
@@ -150,7 +150,7 @@ export default defineComponent({
   transform: scale(1.03);
   border: #2196f3 solid 3px;
 }
-b{
+b {
   color: #2c92ce;
 }
 </style>

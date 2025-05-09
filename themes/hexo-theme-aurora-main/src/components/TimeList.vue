@@ -72,7 +72,6 @@ export default defineComponent({
       if (timer) clearInterval(timer)
       timer = window.setInterval(() => {
         currentIndex.value = (currentIndex.value + 1) % currentItem.length
-        console.log(currentIndex.value)
       }, 30000) // 3秒切换一次
     }
     const fetchNews = async () => {

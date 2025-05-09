@@ -136,6 +136,15 @@ export class ThemeMenu implements ObMenu {
           'zh-TW': '追番',
           en: 'bangumis'
         }
+      },
+      photos: {
+        name: 'photos',
+        path: '/photos',
+        i18n: {
+          'zh-CN': '照片',
+          'zh-TW': '照片',
+          en: 'photos'
+        }
       }
     }
 

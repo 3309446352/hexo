@@ -1,34 +1,36 @@
 <template>
-  <form @submit.prevent="handleSubmit" class="custom-form">
-    <div class="form-group">
-      <label for="Server">Server:</label>
-      <input
-        v-model="formData.Server"
-        type="text"
-        placeholder="请输入平台 netease, tencent, kugou, xiami, baidu"
-      />
-    </div>
-    <div class="form-group">
-      <label for="type">type:</label>
-      <input
-        v-model="formData.type"
-        type="text"
-        placeholder="请输入类型 歌曲, 音乐播放清单, 专辑, 搜索, 艺术家"
-      />
-    </div>
-    <div class="form-group">
-      <label for="type">Id:</label>
-      <input
-        v-model="formData.Id"
-        type="number"
-        placeholder="请输入Id 歌曲, 音乐播放清单, 专辑, 搜索, 艺术家"
-      />
-    </div>
-    <!-- 提交按钮 -->
-    <button type="submit" @click="handleSubmit" :disabled="isSubmitting">
-      {{ isSubmitting ? '已提交...' : '立即提交' }}
-    </button>
-  </form>
+  <div class="MusicPlayer">
+    <form @submit.prevent="handleSubmit" class="custom-form">
+      <div class="form-group">
+        <label for="Server">Server:</label>
+        <input
+          v-model="formData.Server"
+          type="text"
+          placeholder="请输入平台 netease, tencent, kugou, xiami, baidu"
+        />
+      </div>
+      <div class="form-group">
+        <label for="type">type:</label>
+        <input
+          v-model="formData.type"
+          type="text"
+          placeholder="请输入类型 歌曲, 音乐播放清单, 专辑, 搜索, 艺术家"
+        />
+      </div>
+      <div class="form-group">
+        <label for="type">Id:</label>
+        <input
+          v-model="formData.Id"
+          type="number"
+          placeholder="请输入Id 歌曲, 音乐播放清单, 专辑, 搜索, 艺术家"
+        />
+      </div>
+      <!-- 提交按钮 -->
+      <button type="submit" @click="handleSubmit" :disabled="isSubmitting">
+        {{ isSubmitting ? '已提交...' : '立即提交' }}
+      </button>
+    </form>
+  </div>
 </template>
 
 <script setup>
@@ -50,6 +52,10 @@ const handleSubmit = () => {
 </script>
 
 <style scoped>
+.MusicPlayer {
+  width: 100%;
+  background-color: white;
+}
 .custom-form {
   max-width: 500px;
   margin: 2rem auto;

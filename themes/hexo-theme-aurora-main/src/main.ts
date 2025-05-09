@@ -11,14 +11,12 @@ import router from './router'
 import i18n from './locales'
 import VueClickAway from 'vue3-click-away'
 import VueLazyLoad from 'vue3-lazyload'
-
 import './router/guard' // router guards
 
 import 'virtual:svg-icons-register'
 import { registerObSkeleton } from '@/components/LoadingSkeleton'
 import { registerScrollSpy } from 'vue3-scroll-spy'
 import defaultCover from '@/assets/default-cover.jpg'
-
 const app = createApp(App)
   .use(createPinia())
   .use(router)

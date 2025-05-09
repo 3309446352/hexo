@@ -6,6 +6,7 @@
     <template v-else>
       <horizontal-article class="mb-8" :data="posts.data[0] || {}" />
     </template>
+    <!-- 文章列表 -->
     <div class="main-grid" id="article-list">
       <div class="flex flex-col relative">
         <ul :class="tabClass">
@@ -307,4 +308,8 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.img-main {
+
+}
+</style>

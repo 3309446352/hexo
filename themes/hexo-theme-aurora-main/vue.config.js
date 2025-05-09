@@ -25,7 +25,7 @@ module.exports = {
    * In most cases please use '/' !!!
    * Detail: https://cli.vuejs.org/config/#publicpath
    */
-  publicPath: process.env.VUE_APP_PUBLIC_PATH,
+  publicPath: process.env.VUE_APP_PUBLIC_PATH || '/',
   outputDir: 'source',
   assetsDir: 'static',
   lintOnSave: process.env.NODE_ENV === 'development',
@@ -47,6 +47,12 @@ module.exports = {
         target: 'http://localhost:4000/assets',
         changeOrigin: true,
         pathRewrite: { '^/assets': '' }
+      },
+      '/bli': {
+        target: 'https://api.bilibili.com',
+        changeOrigin: true,
+        secure: false,
+        pathRewrite: { '^/bli/': '/x/space/bangumi/follow/list' }
       }
     }
   },

@@ -247,7 +247,6 @@ export default defineComponent({
       axios
         .get('https://v2.xxapi.cn/api/random4kPic?type=wallpaper')
         .then(response => {
-          console.log('ImgCoverTwo:', response)
           ImgCoverTwo.value = response.data.data
           console.log('ImgCoverTwo:', ImgCoverTwo.value)
           // 成功时触发[2,6](@ref)
@@ -369,6 +368,7 @@ export default defineComponent({
 </script>
 
 <style>
+
 .feature-article-nav {
   height: 26rem;
   //width: 100%;

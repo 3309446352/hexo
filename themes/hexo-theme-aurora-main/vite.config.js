@@ -87,23 +87,23 @@ export default ({ mode }) => {
           changeOrigin: true,
           pathRewrite: { '^/ImageUrl': '' },
           secure: false,
-          onProxyReq: (proxyReq, req, res) => {
-            console.log('代理转发路径:', proxyReq.path) // 验证路径
-          },
           onProxyRes: proxyRes => {
             proxyRes.headers['Access-Control-Allow-Origin'] = '*' // 强制跨域
           }
         },
-        '/wallpaper': {
-          target: 'https://v2.xxapi.cn/api/random4kPic?',
+        '/bli': {
+          target: 'https://api.bilibili.com',
           changeOrigin: true,
-          pathRewrite: { '^/ImageUrl': '' },
+          ws: true,
           secure: false,
-          onProxyReq: (proxyReq, req, res) => {
-            console.log('代理转发路径:', proxyReq.path) // 验证路径
-          },
+          rewrite: path => path.replace(/^\/bli/, '/x/space/bangumi/follow/list'),
           onProxyRes: proxyRes => {
             proxyRes.headers['Access-Control-Allow-Origin'] = '*' // 强制跨域
+          },
+          headers: {
+            Origin: 'https://api.bilibili.com', // 伪装为 B 站认可的 Origin
+            Referer: 'https://api.bilibili.com', // 部分 API 需要 Referer
+            'User-Agent': 'HCLonely/hexo-bilibili-bangumi'
           }
         }
       }

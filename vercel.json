@@ -1,3 +1,36 @@
 {
-    "rewrites":[{"source":"/:path*","destination":"/index.html"}]
+    "rewrites": [
+        {
+            "source": "/bli/(.*)", 
+            "destination": "https://api.bilibili.com/x/space/bangumi/follow/list?$1" 
+        },
+    
+        {
+            "source": "/:path*",
+            "destination": "/index.html"
+        }
+    ],
+    "headers": [
+        {
+            "source": "/bli", 
+            "headers": [
+                {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "*"
+                },
+                {
+                    "key": "Origin",
+                    "value": "https://api.bilibili.com"
+                }, 
+                {
+                    "key": "Referer",
+                    "value": "https://api.bilibili.com"
+                }, 
+                {
+                    "key": "User-Agent",
+                    "value": "HCLonely/hexo-bilibili-bangumi"
+                } 
+            ]
+        }
+    ]
 }

@@ -43,7 +43,6 @@
     @hide="onHideLightBox"
   >
   </VueEasyLightbox>
-
 </template>
 
 <script lang="ts">
@@ -214,7 +213,7 @@ export default defineComponent({
         return {
           backgroundImage: `url(${commonStore.headerImage}), url(${defaultCover})`,
           backgroundColor: '#0d0b12',
-          opacity: commonStore.headerImage !== '' ? 1 : 0
+          opacity: commonStore.headerImage !== '' ? .2 : 0
         } as StyleValue
       }),
       headerBaseBackground: computed(() => {
