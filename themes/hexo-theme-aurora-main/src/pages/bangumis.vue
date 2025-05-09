@@ -30,7 +30,7 @@ export default defineComponent({
     const choseComponent = ref('BangumisData')
     function ChangeComponent() {
       choseComponent.value =
-        choseComponent.value === 'BangumisData' ? 'BangumisData' : 'BliBliData'
+        choseComponent.value === 'BangumisData' ? 'BliBliData' : 'BangumisData'
     }
     const pageTitle = '追番'
     const pageData = ref(new Page())
