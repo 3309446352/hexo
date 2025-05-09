@@ -27,7 +27,7 @@ export default defineComponent({
   name: 'BanGumis',
   components: { Comment, BangumisData, BliBliData, Breadcrumbs },
   setup() {
-    const choseComponent = ref('BliBliData')
+    const choseComponent = ref('BangumisData')
     function ChangeComponent() {
       choseComponent.value =
         choseComponent.value === 'BangumisData' ? 'BangumisData' : 'BliBliData'
