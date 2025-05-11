@@ -1,22 +1,20 @@
 ---
 abbrlink: Typescript
-abstracts: abstracts
+abstracts: TypeScript（简称：TS）是 JavaScript 的超集（JS 有的 TS 都有）。 从编程语言的动静来区分，TypeScript 属于静态类型的编程语言，JS 属于动态类型的编程语言。 
 author: ZMC
 categories:
 - - Typescript
 cover: https://raw.githubusercontent.com/3309446352/Images/main/img/Gnjux71a8AAFnRZ.webp
 date: '2025-05-12T01:14:14.086652+08:00'
-description: 'TypeScript（简称：TS）是 JavaScript 的超集（JS 有的 TS 都有）。 从编程语言的动静来区分，TypeScript
-  属于静态类型的编程语言，JS 属于动态类型的编程语言。 '
+description: TypeScript（简称：TS）是 JavaScript 的超集（JS 有的 TS 都有）。 从编程语言的动静来区分，TypeScript 属于静态类型的编程语言，JS 属于动态类型的编程语言。 
 tags:
 - 前端
 title: title
-updated: '2025-05-12T01:14:16.311+08:00'
+updated: '2025-05-12T01:25:13.970+08:00'
 ---
 #  {{title}}
 
 ## 简介 : {{description}}
-
 
 视频链接：[https://www.bilibili.com/video/BV14Z4y1u7pi?p=1](https://www.bilibili.com/video/BV14Z4y1u7pi?p=1)
 
@@ -234,7 +232,6 @@ updated: '2025-05-12T01:14:16.311+08:00'
 ![在这里插入图片描述](https://raw.githubusercontent.com/3309446352/Images/main/Content/TypeScript/c1f6a8940b9fd70b4804270560b45072.webp)
 ![在这里插入图片描述](https://raw.githubusercontent.com/3309446352/Images/main/Content/TypeScript/61332bc165e29af1ce5bd0a50f12fb1c.webp)
 ![在这里插入图片描述](https://raw.githubusercontent.com/3309446352/Images/main/Content/TypeScript/32303737702899bc56f8dcfe816c88f7.webp)
-
 
 ### 6.4  来源链接
 
