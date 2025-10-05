@@ -46,7 +46,7 @@ const formData = reactive({
 })
 // 表单提交处理
 const handleSubmit = () => {
-  playerStore.GetPlyer(formData.Server, formData.type, formData.Id)
+  playerStore.GetPlayer(formData.Server, formData.type, formData.Id)
   isSubmitting.value = true
 }
 </script>

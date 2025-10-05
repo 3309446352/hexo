@@ -140,8 +140,8 @@ export default defineComponent({
             stroke: props.stroke
               ? props.stroke
               : appStore.theme === 'theme-dark'
-              ? 'white'
-              : 'currentColor',
+                ? 'white'
+                : 'currentColor',
             width: props.width,
             height: props.height
           }

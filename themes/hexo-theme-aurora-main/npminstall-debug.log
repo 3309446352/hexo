@@ -1,21 +1,13 @@
 {
   root: 'F:\\文档\\Blog\\Hexo-aurora\\themes\\hexo-theme-aurora-main',
   registry: 'https://registry.npmmirror.com',
-  pkgs: [
-    {
-      name: 'metingjs',
-      version: 'latest',
-      type: 'tag',
-      alias: undefined,
-      arg: [Result]
-    }
-  ],
+  pkgs: [],
   production: false,
   cacheStrict: false,
   cacheDir: 'C:\\Users\\Administrator\\.npminstall_tarball',
   env: {
     npm_config_registry: 'https://registry.npmmirror.com',
-    npm_config_argv: '{"remain":[],"cooked":["--fix-bug-versions","--china","--userconfig=C:\\\\Users\\\\Administrator\\\\.cnpmrc","--disturl=https://cdn.npmmirror.com/binaries/node","--registry=https://registry.npmmirror.com","metingjs"],"original":["--fix-bug-versions","--china","--userconfig=C:\\\\Users\\\\Administrator\\\\.cnpmrc","--disturl=https://cdn.npmmirror.com/binaries/node","--registry=https://registry.npmmirror.com","metingjs"]}',
+    npm_config_argv: '{"remain":[],"cooked":["--fix-bug-versions","--china","--userconfig=C:\\\\Users\\\\Administrator\\\\.cnpmrc","--disturl=https://cdn.npmmirror.com/binaries/node","--registry=https://registry.npmmirror.com"],"original":["--fix-bug-versions","--china","--userconfig=C:\\\\Users\\\\Administrator\\\\.cnpmrc","--disturl=https://cdn.npmmirror.com/binaries/node","--registry=https://registry.npmmirror.com"]}',
     npm_config_user_agent: 'npminstall/7.12.0 npm/? node/v19.0.0 win32 x64',
     npm_config_cache: 'C:\\Users\\Administrator\\.npminstall_tarball',
     NODE: 'F:\\Program Files\\NVM\\nodejs\\node.exe',
@@ -39,6 +31,8 @@
     NWJS_URLBASE: 'https://cdn.npmmirror.com/binaries/nwjs/v',
     PUPPETEER_DOWNLOAD_HOST: 'https://cdn.npmmirror.com/binaries/chrome-for-testing',
     PUPPETEER_DOWNLOAD_BASE_URL: 'https://cdn.npmmirror.com/binaries/chrome-for-testing',
+    PUPPETEER_CHROME_DOWNLOAD_BASE_URL: 'https://cdn.npmmirror.com/binaries/chrome-for-testing',
+    PUPPETEER_CHROME_HEADLESS_SHELL_DOWNLOAD_BASE_URL: 'https://cdn.npmmirror.com/binaries/chrome-for-testing',
     PLAYWRIGHT_DOWNLOAD_HOST: 'https://cdn.npmmirror.com/binaries/playwright',
     SENTRYCLI_CDNURL: 'https://cdn.npmmirror.com/binaries/sentry-cli',
     SAUCECTL_INSTALL_BINARY_MIRROR: 'https://cdn.npmmirror.com/binaries/saucectl',
@@ -71,6 +65,8 @@
       NWJS_URLBASE: 'https://cdn.npmmirror.com/binaries/nwjs/v',
       PUPPETEER_DOWNLOAD_HOST: 'https://cdn.npmmirror.com/binaries/chrome-for-testing',
       PUPPETEER_DOWNLOAD_BASE_URL: 'https://cdn.npmmirror.com/binaries/chrome-for-testing',
+      PUPPETEER_CHROME_DOWNLOAD_BASE_URL: 'https://cdn.npmmirror.com/binaries/chrome-for-testing',
+      PUPPETEER_CHROME_HEADLESS_SHELL_DOWNLOAD_BASE_URL: 'https://cdn.npmmirror.com/binaries/chrome-for-testing',
       PLAYWRIGHT_DOWNLOAD_HOST: 'https://cdn.npmmirror.com/binaries/playwright',
       SENTRYCLI_CDNURL: 'https://cdn.npmmirror.com/binaries/sentry-cli',
       SAUCECTL_INSTALL_BINARY_MIRROR: 'https://cdn.npmmirror.com/binaries/saucectl',

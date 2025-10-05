@@ -137,6 +137,33 @@ export class ThemeMenu implements ObMenu {
           en: 'bangumis'
         }
       },
+      QuotesCard: {
+        name: 'QuotesCard',
+        path: '/QuotesCard',
+        i18n: {
+          'zh-CN': '读书',
+          'zh-TW': '讀書',
+          en: 'QuotesCard'
+        }
+      },
+      collect: {
+        name: 'collect',
+        path: '/collect',
+        i18n: {
+          'zh-CN': '收集',
+          'zh-TW': '收集',
+          en: 'collect'
+        }
+      },
+      MusicGame: {
+        name: 'MusicGame',
+        path: '/MusicGame',
+        i18n: {
+          'zh-CN': '音乐室',
+          'zh-TW': '音乐室',
+          en: 'MusicGame'
+        }
+      },
       photos: {
         name: 'photos',
         path: '/photos',

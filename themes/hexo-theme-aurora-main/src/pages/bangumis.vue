@@ -34,8 +34,7 @@ export default defineComponent({
     }
     const pageTitle = '追番'
     const pageData = ref(new Page())
-    onMounted(() => {
-    })
+    onMounted(() => {})
     return {
       pageTitle,
       ChangeComponent,

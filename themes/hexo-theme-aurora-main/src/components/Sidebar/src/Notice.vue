@@ -87,7 +87,9 @@
             stroke="var(--text-normal)"
           />
         </span>
-        <span class="flex-1 text-right text-blue-600">{{ Address || '地址加载中'}}</span>
+        <span class="flex-1 text-right text-blue-600">{{
+          Address || '地址加载中'
+        }}</span>
       </li>
     </ul>
   </div>

@@ -34,7 +34,7 @@ export const useSearchStore = defineStore({
     setOpenModal(status: boolean) {
       this.openModal = status
       let searchContainer: HTMLElement | null
-      if (status === true) {
+      if (status) {
         document.body.classList.add('modal--active')
       } else {
         searchContainer = document.getElementById('search-modal')

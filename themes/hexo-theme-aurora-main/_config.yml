@@ -59,6 +59,7 @@ menu:
   bangumis: true
   photos: true
   Music: true
+  QuotesCard: true
 #! ---------------------------------------------------------------
 #! Theme Config
 #! @docs https://aurora.tridiamond.tech/guide/theme.html

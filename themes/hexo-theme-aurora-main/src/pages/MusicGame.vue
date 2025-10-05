@@ -4,18 +4,17 @@
       :server="Server"
       :type="type"
       :id="Id"
-      fixed="true"
+      fixed="false"
       autoplay="false"
       loop="all"
       order="list"
       preload="auto"
-      list-folded="true"
+      list-folded="false"
       list-max-height="500px"
       lrc-type="3"
     >
     </meting-js>
-<!--autoplay 自动播放    -->
-<!--    loop=[all=全部循环, one=循环一次 ,none=不循环]-->
+<!--    list-folded列表折叠-->
   </div>
 </template>
 
@@ -39,7 +38,11 @@ export default defineComponent({
       }
     })
     onMounted(() => {
-      playerStore.GetPlayer(playerStore.Music.Server, playerStore.Music.type, playerStore.Music.Id)
+      playerStore.GetPlayer(
+        playerStore.Music.Server,
+        playerStore.Music.type,
+        playerStore.Music.Id
+      )
     })
     return {
       playerStore,

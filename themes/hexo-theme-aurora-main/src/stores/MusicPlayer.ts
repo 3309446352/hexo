@@ -18,14 +18,23 @@ export const usePlayerStore = defineStore({
   },
 
   actions: {
-    GetPlyer(server: string, type: string, id: number) {
-      this.Music.Server = server
-      this.Music.type = type
-      this.Music.Id = id
-      localStorage.setItem('musicServer', server)
-      localStorage.setItem('musicType', type)
-      localStorage.setItem('musicId', String(id))
-      console.log(this.Music)
+    GetPlayer(server: string | null, type: string | null, id: number | null) {
+      // 使用空值合并运算符处理参数
+      const finalServer = server ?? this.Music.Server
+      const finalType = type ?? this.Music.type
+      const finalId = id ?? this.Music.Id
+
+      // 更新 state
+      this.Music.Server = finalServer
+      this.Music.type = finalType
+      this.Music.Id = finalId
+
+      // 保存到 localStorage（自动转换类型）
+      localStorage.setItem('musicServer', finalServer)
+      localStorage.setItem('musicType', finalType)
+      localStorage.setItem('musicId', String(finalId))
+
+      console.log('Updated Music:', this.Music)
       return this.Music
     }
   }

@@ -353,7 +353,6 @@ export default defineComponent({
     const menuMaxIndex = ref(0)
     const isEmpty = ref(false)
     const { t } = useI18n()
-
     /**
      * Handlers
      */

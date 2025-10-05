@@ -191,6 +191,7 @@ export default defineComponent({
       wrapperStyle.value = {
         'min-height': wrapperHeight + 'px'
       }
+
     })
 
     /**

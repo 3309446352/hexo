@@ -70,7 +70,10 @@ menu:
   Tags: true
   Archives: true
   Categories: true
+  QuotesCard: true
+  collect: true
   bangumis: true
+  MusicGame: true,
   photos: true
   Links:
     i18n:
@@ -100,6 +103,12 @@ menu:
           i18n:
             zh-CN: "后台"
             en: "background"
+      MusicGame:
+          name: 'MusicGame'
+          path: '/MusicGame'
+          i18n:
+            zh-CN: "音乐厅"
+            en: "MusicGame"
 #! ---------------------------------------------------------------
 #! Theme Config
 #! @docs https://aurora.tridiamond.tech/guide/theme.html
