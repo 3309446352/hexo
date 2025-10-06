@@ -1,69 +1,43 @@
 {
-    "builds": [
-        {
-            "src": "vite.config.js",
-            "use": "@vercel/static-build",
-            "config": {
-                "outputDirectory": "source"
-            }
-        }
-    ],
     "rewrites": [
         {
-            "source": "/static/(.*)",
-            "headers": {
-                "Cache-Control": "public, max-age=31536000, immutable"
-            }
-        },
-
-        // Bilibili API 代理
-        {
             "source": "/bli/(.*)",
-            "destination": "https://api.bilibili.com/x/space/bangumi/follow/list?$1",
-            "headers": {
-                "Access-Control-Allow-Origin": "*",
-                "Origin": "https://api.bilibili.com",
-                "Referer": "https://api.bilibili.com",
-                "User-Agent": "HCLonely/hexo-bilibili-bangumi"
-            }
-        },
-
-        // 其他代理规则
-        {
-            "source": "/ImageUrl",
-            "destination": "https://www.dmoe.cc/random.php"
-        },
-        {
-            "source": "/ip/(.*)",
-            "destination": "https://m.ipplus360.com/$1"
-        },
-        {
-            "source": "/Address/(.*)",
-            "destination": "https://www.ipplus360.com/$1"
+            "destination": "https://api.bilibili.com/x/space/bangumi/follow/list?$1"
         },
 
         {
-            "source": "/(.*)",
+            "source": "/:path*",
             "destination": "/index.html"
         }
     ],
     "headers": [
         {
-            "source": "/(.*)\\.js",
+            "source": "/bli",
+            "headers": [
+                {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "*"
+                },
+                {
+                    "key": "Origin",
+                    "value": "https://api.bilibili.com"
+                },
+                {
+                    "key": "Referer",
+                    "value": "https://api.bilibili.com"
+                },
+                {
+                    "key": "User-Agent",
+                    "value": "HCLonely/hexo-bilibili-bangumi"
+                }
+            ]
+        },
+        {
+            "source": "/(.*).js",
             "headers": [
                 {
                     "key": "Content-Type",
                     "value": "application/javascript"
-                }
-            ]
-        },
-
-        {
-            "source": "/*",
-            "headers": [
-                {
-                    "key": "Content-Type",
-                    "value": "text/html"
                 }
             ]
         }
