@@ -1,43 +1,61 @@
 {
+    "builds": [
+        {
+            "src": "vite.config.js",
+            "use": "@vercel/static-build",
+            "config": {
+                "outputDirectory": "source"
+            }
+        }
+    ],
     "rewrites": [
         {
-            "source": "/bli/(.*)",
-            "destination": "https://api.bilibili.com/x/space/bangumi/follow/list?$1"
+            "source": "/static/(.*)",
+            "destination": ""
         },
 
         {
-            "source": "/:path*",
+            "source": "/bli/(.*)",
+            "destination": "https://api.bilibili.com/x/space/bangumi/follow/list?$1",
+        },
+
+        {
+            "source": "/ImageUrl",
+            "destination": "https://www.dmoe.cc/random.php"
+        },
+        {
+            "source": "/ip/(.*)",
+            "destination": "https://m.ipplus360.com/$1"
+        },
+        {
+            "source": "/Address/(.*)",
+            "destination": "https://www.ipplus360.com/$1"
+        },
+
+        // SPA 路由规则（必须放在最后）
+        {
+            "source": "/(.*)",
             "destination": "/index.html"
         }
     ],
     "headers": [
+
         {
-            "source": "/bli",
-            "headers": [
-                {
-                    "key": "Access-Control-Allow-Origin",
-                    "value": "*"
-                },
-                {
-                    "key": "Origin",
-                    "value": "https://api.bilibili.com"
-                },
-                {
-                    "key": "Referer",
-                    "value": "https://api.bilibili.com"
-                },
-                {
-                    "key": "User-Agent",
-                    "value": "HCLonely/hexo-bilibili-bangumi"
-                }
-            ]
-        },
-        {
-            "source": "/(.*).js",
+            "source": "/(.*)\\.js",
             "headers": [
                 {
                     "key": "Content-Type",
                     "value": "application/javascript"
+                }
+            ]
+        },
+
+        {
+            "source": "/*",
+            "headers": [
+                {
+                    "key": "Content-Type",
+                    "value": "text/html"
                 }
             ]
         }
