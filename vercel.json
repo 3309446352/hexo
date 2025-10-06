@@ -1,4 +1,13 @@
 {
+    "builds": [
+        {
+            "src": "vite.config.js",
+            "use": "@vercel/static-build",
+            "config": {
+                "outputDirectory": "source"
+            }
+        }
+    ],
     "rewrites": [
         {
             "source": "/bli/(.*)",
@@ -38,6 +47,15 @@
                 {
                     "key": "Content-Type",
                     "value": "application/javascript"
+                }
+            ]
+        },
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "Content-Type",
+                    "value": "text/html"
                 }
             ]
         }

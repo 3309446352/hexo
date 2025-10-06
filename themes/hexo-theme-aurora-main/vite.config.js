@@ -18,6 +18,7 @@ export default ({ mode }) => {
       : 'templates/index.html'
 
   return defineConfig({
+    // 关键修复：设置基础路径
     base: '/',
     build: {
       outDir: 'source',
