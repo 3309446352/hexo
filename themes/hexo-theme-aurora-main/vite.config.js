@@ -18,6 +18,7 @@ export default ({ mode }) => {
       : 'templates/index.html'
 
   return defineConfig({
+    base: '/',
     build: {
       outDir: 'source',
       assetsDir: 'static',
