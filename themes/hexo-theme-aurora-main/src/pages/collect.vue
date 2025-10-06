@@ -170,11 +170,173 @@
         </div>
       </div>
     </div>
+
+    <div class="flex justify-between">
+      <h2 style="margin-bottom: 12px">📚 音乐 {{ MusicsData.length }}</h2>
+      <SvgIcon
+        icon-class="CollectRight"
+        height="2rem"
+        width="2rem"
+        fill="currentColor"
+        @click="GetCollectArtcle('GamesData')"
+      />
+    </div>
+    <div class="collect-list">
+      <div
+        v-for="(item, index) in MusicsData"
+        :key="index"
+        title=""
+        referrerpolicy="no-referrer"
+        class="collect_box"
+        :style="{ backgroundImage: `url(${item.url})` }"
+      >
+        <!-- 新增：黑色半透明遮罩层 -->
+        <div class="dark-overlay"></div>
+        <div class="collect_top">
+          <i class="fa-solid fa-book">
+            <SvgIcon
+              icon-class="books"
+              height="1.25rem"
+              width="1.25rem"
+              fill="var(--text-normal)"
+              stroke="var(--text-normal)"
+            />
+          </i>
+          <span @click="DeleteData('GameData', item.title)">
+            <SvgIcon
+              icon-class="delete"
+              height="1.25rem"
+              width="1.25rem"
+              fill="var(--text-normal)"
+              stroke="var(--text-normal)"
+            />
+          </span>
+        </div>
+        <div class="collect_content">
+          <span>{{ item.title }}</span>
+          <div>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-between">
+      <h2 style="margin-bottom: 12px">📚 影视 {{ playlist.length }}</h2>
+      <SvgIcon
+        icon-class="CollectRight"
+        height="2rem"
+        width="2rem"
+        fill="currentColor"
+        @click="GetCollectArtcle('GamesData')"
+      />
+    </div>
+    <div class="collect-list">
+      <div
+        v-for="(item, index) in playlist"
+        :key="index"
+        title=""
+        referrerpolicy="no-referrer"
+        class="collect_box"
+        :style="{ backgroundImage: `url(${item.url})` }"
+      >
+        <!-- 新增：黑色半透明遮罩层 -->
+        <div class="dark-overlay"></div>
+        <div class="collect_top">
+          <i class="fa-solid fa-book">
+            <SvgIcon
+              icon-class="books"
+              height="1.25rem"
+              width="1.25rem"
+              fill="var(--text-normal)"
+              stroke="var(--text-normal)"
+            />
+          </i>
+          <span @click="DeleteData('GameData', item.title)">
+            <SvgIcon
+              icon-class="delete"
+              height="1.25rem"
+              width="1.25rem"
+              fill="var(--text-normal)"
+              stroke="var(--text-normal)"
+            />
+          </span>
+        </div>
+        <div class="collect_content">
+          <span>{{ item.title }}</span>
+          <div>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-between">
+      <h2 style="margin-bottom: 12px">📚 其他 {{ others.length }}</h2>
+      <SvgIcon
+        icon-class="CollectRight"
+        height="2rem"
+        width="2rem"
+        fill="currentColor"
+        @click="GetCollectArtcle('GamesData')"
+      />
+    </div>
+    <div class="collect-list">
+      <div
+        v-for="(item, index) in others"
+        :key="index"
+        title=""
+        referrerpolicy="no-referrer"
+        class="collect_box"
+        :style="{ backgroundImage: `url(${item.url})` }"
+      >
+        <!-- 新增：黑色半透明遮罩层 -->
+        <div class="dark-overlay"></div>
+        <div class="collect_top">
+          <i class="fa-solid fa-book">
+            <SvgIcon
+              icon-class="books"
+              height="1.25rem"
+              width="1.25rem"
+              fill="var(--text-normal)"
+              stroke="var(--text-normal)"
+            />
+          </i>
+          <span @click="DeleteData('GameData', item.title)">
+            <SvgIcon
+              icon-class="delete"
+              height="1.25rem"
+              width="1.25rem"
+              fill="var(--text-normal)"
+              stroke="var(--text-normal)"
+            />
+          </span>
+        </div>
+        <div class="collect_content">
+          <span>{{ item.title }}</span>
+          <div>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, reactive, ref, toRef } from 'vue'
+import { defineComponent, onMounted, reactive, ref} from 'vue'
 import SupabaseTool from '@/Supabase/SupabaseTool'
 import SvgIcon from '@/components/SvgIcon/index.vue'
 import router from '@/router'
@@ -185,18 +347,14 @@ export default defineComponent({
       id: string
       title: string
       author: string
-      progress: number
       url: string
     }
     const NovelData = ref<BookItem[]>([])
     const BookData = ref<BookItem[]>([])
     const GamesData = ref<BookItem[]>([])
-    interface Book {
-      category: string
-      url: string
-      title: string
-    }
-    const bookList = ref<Book[]>([])
+    const MusicsData = ref<BookItem[]>([])
+    const playlist = ref<BookItem[]>([])
+    const others = ref<BookItem[]>([])
     const refreshTimer = ref<NodeJS.Timeout | null>(null)
     // 新书籍表单数据
     const newBook = reactive({
@@ -216,7 +374,9 @@ export default defineComponent({
       const tableMapping: Record<string, string> = {
         书籍: 'BookData',
         小说: 'NovelData',
-        游戏: 'GameData'
+        游戏: 'GameData',
+        影视: 'playlist',
+        其他: 'others'
       }
 
       const tableName = tableMapping[newBook.category]
@@ -229,7 +389,6 @@ export default defineComponent({
       const newData = {
         id: SupabaseTool.generateUUID(), // 使用工具类中的方法
         title: newBook.title,
-        author: newBook.url, // 根据需求，author字段使用封面URL
         url: newBook.url
       }
 
@@ -268,7 +427,7 @@ export default defineComponent({
 
       // 如果有任何数据为空，从数据库重新加载
       if (hasEmptyData) {
-        console.log('部分缓存数据为空，从数据库加载...');
+        console.log('部分缓存数据为空，从数据库加载...')
         await GetAllList()
       }
     }
@@ -295,6 +454,15 @@ export default defineComponent({
         } else if (item.TextCn === '游戏') {
           GamesData.value = reversedData
           localStorage.setItem('cache_GamesData', JSON.stringify(reversedData))
+        } else if (item.TextCn === '音乐') {
+          MusicsData.value = reversedData
+          localStorage.setItem('cache_MusicsData', JSON.stringify(reversedData))
+        } else if (item.TextCn === '影视') {
+          playlist.value = reversedData
+          localStorage.setItem('cache_playlist', JSON.stringify(reversedData))
+        } else if (item.TextCn === '其他') {
+          others.value = reversedData
+          localStorage.setItem('cache_others', JSON.stringify(reversedData))
         }
       }
     }
@@ -338,7 +506,8 @@ export default defineComponent({
         refreshTimer.value = null
       }
 
-      refreshTimer.value = setInterval(() => {
+      refreshTimer.value = setInterval(
+        () => {
           // 检查网络连接
           if (navigator.onLine) {
             console.log('网络连接正常，自动刷新数据...')
@@ -358,15 +527,16 @@ export default defineComponent({
       BookData,
       NovelData,
       GamesData,
+      MusicsData,
+      others,
+      playlist,
       InsertData,
       DeleteData,
       GetCollectArtcle,
-      bookList,
       newBook,
-      addBook,
+      addBook
     }
   }
-
 })
 </script>
 
