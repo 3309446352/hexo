@@ -10,47 +10,46 @@
     ],
     "rewrites": [
         {
-            "source": "/static/(.*)",
-            "destination": "/static/$1"
-        },
-
-        // API 代理路由
-        {
             "source": "/bli/(.*)",
-            "destination": "https://api.bilibili.com/x/space/bangumi/follow/list?$1",
-            "headers": {
-                "Access-Control-Allow-Origin": "*",
-                "Origin": "https://api.bilibili.com",
-                "Referer": "https://api.bilibili.com",
-                "User-Agent": "HCLonely/hexo-bilibili-bangumi"
-            }
-        },
-        {
-            "source": "/ImageUrl",
-            "destination": "https://www.dmoe.cc/random.php"
+            "destination": "https://api.bilibili.com/x/space/bangumi/follow/list?$1"
         },
 
-
         {
-            "source": "/(.*)",
+            "source": "/:path*",
             "destination": "/index.html"
         }
     ],
     "headers": [
         {
-            "source": "/static/js/(.*)\\.js",
+            "source": "/bli",
+            "headers": [
+                {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "*"
+                },
+                {
+                    "key": "Origin",
+                    "value": "https://api.bilibili.com"
+                },
+                {
+                    "key": "Referer",
+                    "value": "https://api.bilibili.com"
+                },
+                {
+                    "key": "User-Agent",
+                    "value": "HCLonely/hexo-bilibili-bangumi"
+                }
+            ]
+        },
+        {
+            "source": "/(.*).js",
             "headers": [
                 {
                     "key": "Content-Type",
                     "value": "application/javascript"
-                },
-                {
-                    "key": "Cache-Control",
-                    "value": "public, max-age=31536000, immutable"
                 }
             ]
         },
-
         {
             "source": "/(.*)",
             "headers": [
