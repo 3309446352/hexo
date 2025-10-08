@@ -1,0 +1,66 @@
+name: Sync Docs
+
+on:
+  # 允许手动push触发
+  push:
+    branches:
+      - master
+  # 允许外部仓库事件触发
+  schedule:
+    - cron: '0 */6 * * *'  # 每6小时检查一次 (UTC时间)
+  # 允许在GitHub界面上手动触发工作流
+  workflow_dispatch:  # 允许手动触发
+  # 允许通过API调用（如Vercel Serverless）触发
+  repository_dispatch:
+    types:
+      - deploy
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: 检查分支
+        uses: actions/checkout@master
+
+      - name: 安装node环境
+        uses: actions/setup-node@master
+        with:
+          node-version: "16.x"
+
+      - name: 安装依赖
+        run: |
+          export TZ='Asia/Shanghai'
+          export HUSKY=0
+          npm install --prod --ignore-scripts
+
+      - name: 拉取文档
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        run: |
+          npm run sync
+      - name: 配置Git用户名邮箱
+        run: |
+          git config --global user.name "3309446352"
+          git config --global user.email "xuechengdugu@gmail.com"
+      - name: 提交拉取的文档到GitHub仓库
+        run: |
+          echo `date +"%Y-%m-%d %H:%M:%S"` begin > time.txt
+          git add .
+          git commit -m "Refresh elog.cache.json" -a
+
+      - name: 推送文档到仓库
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: 调试信息
+        run: |
+          echo "事件类型: ${{ github.event_name }}"
+          echo "触发者: ${{ github.actor }}"
+          echo "仓库: ${{ github.repository }}"
+          echo "分支: ${{ github.ref }}"
+          echo "事件负载:"
+          echo "${{ toJson(github.event) }}"
+          echo "环境变量:"
+          printenv
