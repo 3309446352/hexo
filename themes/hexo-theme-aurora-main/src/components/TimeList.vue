@@ -27,7 +27,6 @@
 <script lang="ts">
 import { defineComponent, ref, onMounted } from 'vue'
 import SvgIcon from '@/components/SvgIcon/index.vue'
-import { useRouter } from 'vue-router'
 import axios from 'axios'
 export default defineComponent({
   name: 'TimeList',
@@ -38,7 +37,7 @@ export default defineComponent({
     const loading = ref(false)
     const error = ref(true)
     let timer: number | null = null
-    const content = ref("")
+    const content = ref('')
     // 获取新闻数据
     // 数据获取与处理
     const currentItem = [
@@ -86,7 +85,6 @@ export default defineComponent({
     // 处理点击事件
     const Getpoem = () => {
       const str = content.value.split('')[0]
-      console.log(str)
       window.location.href =
         'https://www.gushiwen.cn/search.aspx?value=' +
         content.value +
@@ -102,6 +100,7 @@ export default defineComponent({
     // 生命周期钩子
     onMounted(() => {
       startRotation()
+      fetchNews()
     })
 
     return {
