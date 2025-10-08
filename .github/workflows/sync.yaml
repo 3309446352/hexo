@@ -4,7 +4,7 @@ on:
   # 允许手动push触发
   push:
     branches:
-      - master
+      - Test
   # 允许外部仓库事件触发
   schedule:
     - cron: '0 */6 * * *'  # 每6小时检查一次 (UTC时间)
@@ -22,11 +22,14 @@ jobs:
     steps:
       - name: 检查分支
         uses: actions/checkout@master
+        with:
+          ref: Test  # 明确指定分支
 
       - name: 安装node环境
         uses: actions/setup-node@master
         with:
-          node-version: "16.x"
+          node-version: "20.x"  # 更新到更现代的Node.js版本
+          cache: 'npm'  # 启用npm缓存加速安装
 
       - name: 安装依赖
         run: |
