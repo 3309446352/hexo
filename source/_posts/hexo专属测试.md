@@ -1,13 +1,9 @@
 ---
-categories: 问题记录
-tags:
-  - hexo
-description: 随便写点什么
 permalink: ''
-title: hexo专属测试
 date: '2025-10-09 08:00:00'
 cover: /images/db9e969544fc528abc752fa8dfd84c3b.jpg
-updated: '2025-10-09 00:28:00'
+title: hexo专属测试
+updated: '2025-10-10 23:02:00'
 ---
 
 ## Notion 和 Hexo 集成对比表
