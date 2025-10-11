@@ -14,6 +14,21 @@
       "realName": "hexo专属测试",
       "relativePath": "/hexo专属测试.md",
       "docPath": "./source/_posts"
+    },
+    {
+      "id": "28962f35-ece7-80d0-b5c0-fb731b667ad0",
+      "doc_id": "28962f35-ece7-80d0-b5c0-fb731b667ad0",
+      "updated": 1760169360000,
+      "properties": {
+        "permalink": "",
+        "date": "2025-10-11 15:38:00",
+        "cover": "/images/ed96f5daf90dd688028a20369ffc1d24.jpg",
+        "title": "MySql 基本语法对照表",
+        "updated": "2025-10-11 15:56:00"
+      },
+      "realName": "MySql 基本语法对照表",
+      "relativePath": "/MySql 基本语法对照表.md",
+      "docPath": "./source/_posts"
     }
   ],
   "catalog": [
@@ -48,13 +63,61 @@
       "in_trash": false,
       "is_locked": false,
       "properties": {
+        "类别": "问题记录",
+        "标签": [
+          "hexo"
+        ],
+        "feature": "",
+        "作者": "",
+        "status": "已发布",
+        "描述": "随便写点什么",
         "permalink": "",
+        "标题": "hexo专属测试",
         "date": "2025-10-09 08:00:00",
-        "cover": "/images/db9e969544fc528abc752fa8dfd84c3b.jpg",
+        "类型": "",
+        "cover": "https://www.notion.so/images/page-cover/woodcuts_1.jpg",
         "title": "hexo专属测试",
+        "urlname": "28662f35-ece7-8084-8e93-c9afb203061b",
         "updated": "2025-10-10 23:02:00"
       },
       "url": "https://www.notion.so/hexo-28662f35ece780848e93c9afb203061b",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "28962f35-ece7-80d0-b5c0-fb731b667ad0",
+      "created_time": "2025-10-11T07:34:00.000Z",
+      "last_edited_time": "2025-10-11T07:56:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "f04da5d6-e3fa-44e9-8b2e-5c672b46c03c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "f04da5d6-e3fa-44e9-8b2e-5c672b46c03c"
+      },
+      "cover": {
+        "type": "external",
+        "external": {
+          "url": "https://www.notion.so/images/page-cover/rijksmuseum_mignons_1660.jpg"
+        }
+      },
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "28562f35-ece7-80c9-98cd-f92cb771d176"
+      },
+      "archived": false,
+      "in_trash": false,
+      "is_locked": false,
+      "properties": {
+        "permalink": "",
+        "date": "2025-10-11 15:38:00",
+        "cover": "/images/ed96f5daf90dd688028a20369ffc1d24.jpg",
+        "title": "MySql 基本语法对照表",
+        "updated": "2025-10-11 15:56:00"
+      },
+      "url": "https://www.notion.so/MySql-28962f35ece780d0b5c0fb731b667ad0",
       "public_url": null
     }
   ]
