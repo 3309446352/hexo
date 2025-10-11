@@ -18,22 +18,42 @@
     {
       "id": "28962f35-ece7-80d0-b5c0-fb731b667ad0",
       "doc_id": "28962f35-ece7-80d0-b5c0-fb731b667ad0",
-      "updated": 1760170860000,
+      "updated": 1760171460000,
       "properties": {
         "categories": "",
         "tags": [
           "数据库",
           "hexo"
         ],
-        "description": "Mysql函数是指对每一行数据进行处理并返回一个结果的函数",
+        "description": "‘Mysql函数是指对每一行数据进行处理并返回一个结果的函数’",
         "permalink": "",
         "title": "MySql 基本语法对照表",
         "date": "2025-10-11 15:38:00",
         "cover": "/images/ed96f5daf90dd688028a20369ffc1d24.jpg",
-        "updated": "2025-10-11 16:21:00"
+        "updated": "2025-10-11 16:31:00"
       },
       "realName": "MySql 基本语法对照表",
       "relativePath": "/MySql 基本语法对照表.md",
+      "docPath": "./source/_posts"
+    },
+    {
+      "id": "28962f35-ece7-80d3-a548-f9b0580cbde8",
+      "doc_id": "28962f35-ece7-80d3-a548-f9b0580cbde8",
+      "updated": 1760175540000,
+      "properties": {
+        "categories": "读书笔记",
+        "tags": [
+          "读书笔记"
+        ],
+        "description": "",
+        "permalink": "",
+        "title": "黑镜",
+        "date": "2025-10-11 08:00:00",
+        "cover": "/images/45f6f25a9da522a6ef5a22f3db82a331.S-1bzVEjcV8wSXYIZUabDgHaEK",
+        "updated": "2025-10-11 17:39:00"
+      },
+      "realName": "黑镜",
+      "relativePath": "/黑镜.md",
       "docPath": "./source/_posts"
     }
   ],
@@ -73,8 +93,6 @@
         "tags": [
           "hexo"
         ],
-        "feature": "",
-        "author": "",
         "status": "已发布",
         "description": "随便写点什么",
         "permalink": "",
@@ -92,7 +110,7 @@
       "object": "page",
       "id": "28962f35-ece7-80d0-b5c0-fb731b667ad0",
       "created_time": "2025-10-11T07:34:00.000Z",
-      "last_edited_time": "2025-10-11T08:21:00.000Z",
+      "last_edited_time": "2025-10-11T08:31:00.000Z",
       "created_by": {
         "object": "user",
         "id": "f04da5d6-e3fa-44e9-8b2e-5c672b46c03c"
@@ -121,14 +139,56 @@
           "数据库",
           "hexo"
         ],
-        "description": "Mysql函数是指对每一行数据进行处理并返回一个结果的函数",
+        "description": "‘Mysql函数是指对每一行数据进行处理并返回一个结果的函数’",
         "permalink": "",
         "title": "MySql 基本语法对照表",
         "date": "2025-10-11 15:38:00",
         "cover": "/images/ed96f5daf90dd688028a20369ffc1d24.jpg",
-        "updated": "2025-10-11 16:21:00"
+        "updated": "2025-10-11 16:31:00"
       },
       "url": "https://www.notion.so/MySql-28962f35ece780d0b5c0fb731b667ad0",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "28962f35-ece7-80d3-a548-f9b0580cbde8",
+      "created_time": "2025-10-11T09:36:00.000Z",
+      "last_edited_time": "2025-10-11T09:39:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "f04da5d6-e3fa-44e9-8b2e-5c672b46c03c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "f04da5d6-e3fa-44e9-8b2e-5c672b46c03c"
+      },
+      "cover": {
+        "type": "external",
+        "external": {
+          "url": "https://www.bing.com/th/id/OIP.S-1bzVEjcV8wSXYIZUabDgHaEK?w=270&h=180&c=7&r=0&o=7&cb=12&dpr=1.3&pid=1.7&rm=3"
+        }
+      },
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "28562f35-ece7-80c9-98cd-f92cb771d176"
+      },
+      "archived": false,
+      "in_trash": false,
+      "is_locked": false,
+      "properties": {
+        "categories": "读书笔记",
+        "tags": [
+          "读书笔记"
+        ],
+        "description": "",
+        "permalink": "",
+        "title": "黑镜",
+        "date": "2025-10-11 08:00:00",
+        "cover": "/images/45f6f25a9da522a6ef5a22f3db82a331.S-1bzVEjcV8wSXYIZUabDgHaEK",
+        "updated": "2025-10-11 17:39:00"
+      },
+      "url": "https://www.notion.so/28962f35ece780d3a548f9b0580cbde8",
       "public_url": null
     }
   ]

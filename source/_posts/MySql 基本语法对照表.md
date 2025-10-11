@@ -3,12 +3,12 @@ categories: ''
 tags:
   - 数据库
   - hexo
-description: Mysql函数是指对每一行数据进行处理并返回一个结果的函数
+description: ‘Mysql函数是指对每一行数据进行处理并返回一个结果的函数’
 permalink: ''
 title: MySql 基本语法对照表
 date: '2025-10-11 15:38:00'
 cover: /images/ed96f5daf90dd688028a20369ffc1d24.jpg
-updated: '2025-10-11 16:21:00'
+updated: '2025-10-11 16:31:00'
 ---
 
 # **MySql 基本语法对照表**
