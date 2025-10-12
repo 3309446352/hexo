@@ -1,6 +1,6 @@
 ---
 abbrlink: ''
-abstracts: abstracts
+abstracts: GitHubActions是一个集成和持续交付的平台，它可以帮助你通过自动化的构建（包括编译、发布、自动化测试）来验证你的代码，从而尽快地发现集成错误。
 author: ZMC
 categories: []
 cover: https://i.ytimg.com/vi/jtKrINOzQ3A/maxresdefault.jpg
@@ -9,19 +9,10 @@ description: GitHubActions是一个集成和持续交付的平台，它可以帮
 tags:
 - GitHubActions
 - Github自动化
-title: title
-updated: '2025-10-12T13:34:16.666+08:00'
+title: GitHubActions详解
+updated: '2025-10-12T13:40:08.904+08:00'
 ---
-#  {{title}}
-
-## 简介 : {{description}}
-
-
 # GitHubActions详解
-
-## 文章摘要
-
-**文章浏览阅读1.8w次，点赞27次，收藏101次。本文详细介绍了如何利用GitHub Actions在代码推送时自动发送邮件通知，涉及事件触发、工作流配置、Action使用和敏感信息管理。**
 
 ### 一.GitHubAction简介
 
