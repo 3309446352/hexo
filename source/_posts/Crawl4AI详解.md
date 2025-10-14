@@ -1,15 +1,15 @@
 ---
 abbrlink: ''
-abstracts: 个专门为大型语言模型和 AI 应用设计的开源网络爬虫工具，旨在为 AI 训练、RAG、知识库构建等场景提供高效、智能的数据采集解决方案。它结合了现代爬虫技术与 AI 处理能力，能够直接输出适配 LLM 的结构化数据（Markdown、JSON 等），并支持动态页面渲染、反爬对抗、分布式部署等高级功能  
+abstracts: 个专门为大型语言模型和 AI 应用设计的开源网络爬虫工具，旨在为 AI 训练、RAG、知识库构建等场景提供高效、智能的数据采集解决方案。
 author: ZMC
 categories:
 - - 爬虫
 cover: https://www.bing.com/th/id/OIP.x-KATgTL-jyMqssFNrfotgHaEK?w=302&h=180&c=7&r=0&o=7&cb=12&dpr=1.3&pid=1.7&rm=3
 date: '2025-10-14T16:15:38.979784+08:00'
-description: 个专门为大型语言模型和 AI 应用设计的开源网络爬虫工具，旨在为 AI 训练、RAG、知识库构建等场景提供高效、智能的数据采集解决方案。它结合了现代爬虫技术与 AI 处理能力，能够直接输出适配 LLM 的结构化数据（Markdown、JSON 等），并支持动态页面渲染、反爬对抗、分布式部署等高级功能
+description: 个专门为大型语言模型和 AI 应用设计的开源网络爬虫工具，旨在为 AI 训练、RAG、知识库构建等场景提供高效、智能的数据采集解决方案。
 tags: []
 title: Crawl4AI详解
-updated: '2025-10-14T16:41:24.978+08:00'
+updated: '2025-10-14T21:36:58.696+08:00'
 ---
 #  {{title}}
 
