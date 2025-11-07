@@ -30,7 +30,7 @@
     "hexo-server": "^3.0.0",
     "hexo-plugin-aurora": "^1.8.4",
     "hexo-theme-aurora": "file:hexo-theme-aurora",
-    "hexo-theme-butterfly": "^5.3.5",
+    "hexo-theme-butterfly": "^5.5.2",
     "hexo-theme-landscape": "^1.0.0"
   },
   "devDependencies": {
