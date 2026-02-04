@@ -9,6 +9,7 @@
     <!-- 文章列表 -->
     <div>
       <ArticleList :title="'titles.articles'" icon="article" />
+      <!--TODO:titles.可以引入titles-->
       <div class="main-grid" id="article-list">
         <div class="flex flex-col relative">
           <ul :class="tabClass">
@@ -17,8 +18,8 @@
               @click="handleTabChange('')"
             >
             <span class="first-tab" :style="activeTabStyle('')">
-              {{ t('settings.button-all') }}
-            </span>
+                {{ t('settings.button-all') }}
+              </span>
             </li>
             <template v-if="categories && categories.length > 0">
               <li

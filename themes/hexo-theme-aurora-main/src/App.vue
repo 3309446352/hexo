@@ -2,13 +2,8 @@
   <div id="App-Wrapper" :class="[appWrapperClass, theme]" :style="wrapperStyle">
     <HeaderMain />
     <div id="loading-bar-wrapper" :class="loadingBarClass"></div>
-    <div
-      id="App-Container"
-      class="app-container lg:max-w-screen-2xl px-3 lg:px-8"
-      @keydown.meta.k.stop.prevent="handleOpenModal"
-      tabindex="-1"
-      :style="cssVariables"
-    >
+    <div id="App-Container" class="app-container lg:max-w-screen-2xl px-3 lg:px-8"
+      @keydown.meta.k.stop.prevent="handleOpenModal" tabindex="-1" :style="cssVariables">
       <div class="app-banner bg-ob-screen" />
       <div class="app-banner app-banner-image" :style="headerImage" />
       <div class="app-banner app-banner-screen" :style="headerBaseBackground" />
@@ -22,7 +17,7 @@
       </div>
     </div>
   </div>
-  <FooterLink :links="themeConfig.footerLinks.data"  class="outer-container"/>
+  <FooterLink :links="themeConfig.footerLinks.data" class="outer-container" />
   <FooterContainer :style="cssVariables" />
   <template v-if="isMobile">
     <MobileMenu />
@@ -33,15 +28,8 @@
     <title>{{ title }}</title>
   </teleport>
   <Aplayer></Aplayer>
-  <VueEasyLightbox
-    :visible="lightBoxVisible"
-    :imgs="lightBoxImages"
-    :index="lightBoxIndex"
-    :moveDisabled="true"
-    :rotateDisabled="true"
-    :scrollDisabled="false"
-    @hide="onHideLightBox"
-  >
+  <VueEasyLightbox :visible="lightBoxVisible" :imgs="lightBoxImages" :index="lightBoxIndex" :moveDisabled="true"
+    :rotateDisabled="true" :scrollDisabled="false" @hide="onHideLightBox">
   </VueEasyLightbox>
 </template>
 
@@ -66,7 +54,7 @@ import FooterContainer from '@/components/Footer/FooterContainer.vue'
 import Navigator from '@/components/Navigator.vue'
 import MobileMenu from '@/components/MobileMenu.vue'
 import Dia from '@/components/Dia.vue'
-import defaultCover from '@/assets/default-cover.jpg'
+import defaultCover from '@/assets/default-cover.webp'
 import { useI18n } from 'vue-i18n'
 import VueEasyLightbox from 'vue-easy-lightbox'
 import Aplayer from '@/components/Aplayer.vue'
@@ -265,12 +253,14 @@ body {
 
 #app {
   @apply relative min-w-full min-h-screen h-full;
+
   .app-wrapper {
     @apply bg-ob-deep-900 min-w-full h-full pb-12;
     transition-property: transform, border-radius;
     transition-duration: 350ms;
     transition-timing-function: ease;
     transform-origin: 0 42%;
+
     .app-container {
       color: var(--text-normal);
       margin: 0 auto;

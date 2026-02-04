@@ -7,14 +7,8 @@
     <div class="bg-ob-deep-800 px-14 py-16 rounded-2xl shadow-xl block">
       <TagList>
         <template v-if="tags && tags.length > 0">
-          <TagItem
-            v-for="tag in tags"
-            :key="tag.slug"
-            :name="tag.name"
-            :slug="tag.slug"
-            :count="tag.count"
-            size="large"
-          />
+          <TagItem v-for="tag in tags" :key="tag.slug" :name="tag.name" :slug="tag.slug" :count="tag.count"
+            size="large" />
         </template>
         <template v-else-if="tags">
           <ob-skeleton tag="li" :count="10" height="20px" width="3rem" />
@@ -38,7 +32,7 @@ import { useTagStore } from '@/stores/tag'
 import { TagList, TagItem } from '@/components/Tag'
 import { useCommonStore } from '@/stores/common'
 import SvgIcon from '@/components/SvgIcon/index.vue'
-import defaultCover from '@/assets/default-cover.jpg'
+import defaultCover from '@/assets/default-cover.webp'
 import usePageTitle from '@/hooks/usePageTitle'
 
 export default defineComponent({

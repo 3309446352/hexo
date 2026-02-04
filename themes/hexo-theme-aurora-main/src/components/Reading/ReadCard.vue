@@ -8,7 +8,10 @@
         <button class="btn" @click="addBook">添加</button>
       </div>
     </div>
-    <h2 id="quotes-title">作家名言 · 精选</h2>
+    <div style="display: flex;justify-content: space-between;align-items: center">
+      <h2 id="quotes-title">作家名言 · 精选</h2>
+      <SvgIcon @click="clearAutoRefresh()" icon-class="article-menu" height="2.15rem" width="2.15rem" fill="var(--text-accent)" stroke="var(--text-accent)"></SvgIcon>
+    </div>
     <div class="grid cols-2">
       <div class="card flex justify-between" v-for="(item, index) in QuotesCard" :key="index">
         <blockquote>
@@ -30,7 +33,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, reactive, ref } from 'vue'
+import { defineComponent, onMounted, onUnmounted, reactive, ref } from 'vue'
 import SupabaseTool from '@/Supabase/SupabaseTool'
 import SvgIcon from '@/components/SvgIcon/index.vue'
 export default defineComponent({
@@ -100,15 +103,67 @@ export default defineComponent({
           window.alert('删除失败' + err.message)
         })
     }
+
+    // 添加定时获取方法
+    const startAutoRefresh = () => {
+      // 12小时 = 12 * 60 * 60 * 1000 毫秒
+      const twelveHours = 24 * 60 * 60 * 1000;
+
+      // 立即执行一次获取
+      refreshFromDatabase();
+
+      // 设置定时器，每12小时执行一次
+      const intervalId = setInterval(refreshFromDatabase, twelveHours);
+
+      // 在组件卸载时清除定时器
+      // onUnmounted(() => {
+      //   clearInterval(intervalId);
+      // });
+    };
+    const clearAutoRefresh = () =>{
+      clearInterval(setInterval(refreshFromDatabase, 24 * 60 * 60 * 1000));
+      alert('12小时定时刷新器已清除')
+    }
+   // 从数据库刷新数据的方法
+    const refreshFromDatabase = async () => {
+      try {
+        console.log('开始定时刷新名言数据...');
+
+        // 先清除本地缓存
+        localStorage.removeItem('FamousQuote');
+
+        // 从数据库获取最新数据
+        await SupabaseTool.GetAllData('FamousQuote')
+          .then((res: any) => {
+            if (res && res.length > 0) {
+              // 更新 QuotesCard
+              QuotesCard.value = [...res].reverse();
+              // 更新本地缓存
+              localStorage.setItem('FamousQuote', JSON.stringify(QuotesCard.value));
+              console.log(`已更新 ${res.length} 条名言数据`);
+            } else {
+              console.log('未获取到新数据');
+            }
+          })
+          .catch(error => {
+            console.error('定时刷新数据失败:', error);
+          });
+
+      } catch (error) {
+        console.error('刷新过程出错:', error);
+      }
+    };
     onMounted(() => {
       GetlocalStorage()
+      startAutoRefresh()
     })
     return {
       addBook,
       GetFamousQuote,
       QuotesCard,
       NewFamousQuote,
-      DeleteData
+      DeleteData,
+      clearAutoRefresh
     }
   }
 })

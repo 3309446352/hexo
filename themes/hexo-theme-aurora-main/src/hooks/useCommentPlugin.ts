@@ -12,11 +12,11 @@ import {
   walinePageViewInit
 } from '@/utils/comments/waline-api'
 import { computed, ref } from 'vue'
-
+// <--!TODO:评论插件属性-->
 export default function useCommentPlugin() {
   const appStore = useAppStore()
-  const commentPluginLoading = ref(true)
-  const recentComments = ref<RecentComment[]>([])
+  const commentPluginLoading = ref(true) // 加载状态
+  const recentComments = ref<RecentComment[]>([]) // 最近评论列表
 
   const enabledCommentPlugin = computed(() => {
     const plugins = appStore.themeConfig.plugins
@@ -55,6 +55,7 @@ export default function useCommentPlugin() {
   /**
    * Fetching page view stats base on plugin
    */
+  // TODO: 页面统计功能
   const intiCommentPluginPageView = (path: string) => {
     const plugins = appStore.themeConfig.plugins
     switch (enabledCommentPlugin.value.plugin) {
@@ -67,6 +68,7 @@ export default function useCommentPlugin() {
   /**
    * Fetching comment count base on plugin
    */
+  //评论数量获取
   const initCommentPluginCommentCount = async (path: string) => {
     const plugins = appStore.themeConfig.plugins
     switch (enabledCommentPlugin.value.plugin) {
@@ -82,6 +84,9 @@ export default function useCommentPlugin() {
 
   /**
    * Fetching recent comments data base on comment plugin
+   */
+  /*
+    TODO:RecentComment 最近评论获取方法
    */
   const fetchRecentComment = async () => {
     const enabledPlugin = computed<string | undefined>(() => {
@@ -150,7 +155,7 @@ export default function useCommentPlugin() {
             lang: appStore.locale ?? 'en'
           })
 
-          recentComments.value = await walineComments.getRecentComments(7)
+          recentComments.value = await walineComments.getRecentComments(4)
           commentPluginLoading.value = false
         }
         break

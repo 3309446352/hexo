@@ -14,16 +14,16 @@
       lrc-type="3"
     >
     </meting-js>
-<!--    list-folded列表折叠-->
+    <!--    list-folded列表折叠-->
   </div>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent, onMounted } from 'vue'
 import { usePlayerStore } from '@/stores/MusicPlayer'
-import '/public/aplayer/APlayer.min.js'
-import '/public/aplayer/Meting.min.js'
-import '/public/aplayer/APlayer.min.css'
+import '../assets/aplayer/APlayer.min.js'
+import '../assets/aplayer/Meting.min.js'
+import '../assets/APlayer.min.css'
 export default defineComponent({
   name: ' APlayer',
   setup() {

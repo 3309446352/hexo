@@ -7,9 +7,7 @@
     <!-- 标题 -->
     <div class="bg-ob-deep-800 px-14 py-16 rounded-2xl shadow-xl block min-h-screen">
       <ul class="timeline timeline-centered">
-        <template
-          v-for="posts in archives" :key="`${posts.month}-${posts.year}}`"
-        >
+        <template v-for="posts in archives" :key="`${posts.month}-${posts.year}}`">
           <li class="timeline-item period">
             <div class="timeline-info"></div>
             <div class="timeline-marker"></div>
@@ -19,11 +17,7 @@
               </h2>
             </div>
           </li>
-          <li
-            class="timeline-item"
-            v-for="post in posts.posts"
-            :key="post.slug"
-          >
+          <li class="timeline-item" v-for="post in posts.posts" :key="post.slug">
             <div class="timeline-info">
               <span>
                 {{ t(post.date.month) }} {{ post.date.day }},
@@ -32,9 +26,7 @@
             </div>
             <div class="timeline-marker"></div>
             <div class="timeline-content">
-              <router-link
-                :to="{ name: 'post-slug', params: { slug: post.slug } }"
-              >
+              <router-link :to="{ name: 'post-slug', params: { slug: post.slug } }">
                 <h3 class="timeline-title">{{ post.title }}</h3>
               </router-link>
               <p>
@@ -45,7 +37,8 @@
         </template>
         <!-- 归档进度条 -->
       </ul>
-      <Paginator :pageSize="12" :pageTotal="pagination.pageTotal" :page="pagination.page" @pageChange="pageChangeHandler"/>
+      <Paginator :pageSize="12" :pageTotal="pagination.pageTotal" :page="pagination.page"
+        @pageChange="pageChangeHandler" />
       <!-- 分页条 -->
     </div>
   </div>
@@ -59,7 +52,7 @@ import { useI18n } from 'vue-i18n'
 import Breadcrumbs from '@/components/Breadcrumbs.vue'
 import Paginator from '@/components/Paginator.vue'
 import { useCommonStore } from '@/stores/common'
-import defaultCover from '@/assets/default-cover.jpg'
+import defaultCover from '@/assets/default-cover.webp'
 import usePageTitle from '@/hooks/usePageTitle'
 
 export default defineComponent({
@@ -135,6 +128,7 @@ export default defineComponent({
 .timeline-item {
   padding-left: 40px;
   position: relative;
+
   &:last-child {
     padding-bottom: 0;
   }
@@ -151,6 +145,7 @@ export default defineComponent({
   text-transform: uppercase;
   white-space: nowrap;
 }
+
 /*----- TIMELINE MARKER -----*/
 
 .timeline-marker {
@@ -159,6 +154,7 @@ export default defineComponent({
   bottom: 0;
   left: 0;
   width: 15px;
+
   &:before {
     background: var(--text-accent);
     border: 3px solid transparent;
@@ -174,6 +170,7 @@ export default defineComponent({
       background 0.3s ease-in-out,
       border 0.3s ease-in-out;
   }
+
   &:after {
     content: '';
     width: 3px;
@@ -184,10 +181,12 @@ export default defineComponent({
     bottom: 0;
     left: 6px;
   }
+
   .timeline-item:last-child &:after {
     content: none;
   }
 }
+
 .timeline-item:not(.period):hover .timeline-marker:before {
   background: transparent;
   border: 3px solid var(--text-accent);
@@ -197,6 +196,7 @@ export default defineComponent({
 
 .timeline-content {
   padding-bottom: 40px;
+
   p:last-child {
     margin-bottom: 0;
   }
@@ -205,6 +205,7 @@ export default defineComponent({
 .timeline-title {
   @apply pb-2 mb-4 text-ob-bright relative text-2xl;
   font-weight: 600;
+
   &:after {
     @apply absolute bottom-0 h-1 w-24 rounded-full;
     content: '';
@@ -217,9 +218,11 @@ export default defineComponent({
 
 .period {
   padding: 0;
+
   .timeline-info {
     display: none;
   }
+
   .timeline-marker {
     &:before {
       background: transparent;
@@ -234,17 +237,21 @@ export default defineComponent({
       border-top: 3px solid var(--text-normal);
       border-bottom: 3px solid var(--text-normal);
     }
+
     &:after {
       content: '';
       height: 32px;
       top: auto;
     }
   }
+
   .timeline-content {
     padding: 40px 0 70px;
   }
+
   .timeline-title {
     margin: 0;
+
     &:after {
       content: none;
     }
@@ -260,10 +267,12 @@ export default defineComponent({
     .timeline {
       display: table;
     }
+
     .timeline-item {
       display: table-row;
       padding: 0;
     }
+
     .timeline-info,
     .timeline-marker,
     .timeline-content,
@@ -271,15 +280,19 @@ export default defineComponent({
       display: table-cell;
       vertical-align: top;
     }
+
     .timeline-marker {
       position: relative;
     }
+
     .timeline-content {
       padding-left: 30px;
     }
+
     .timeline-info {
       padding-right: 30px;
     }
+
     .period .timeline-title {
       position: relative;
       left: -45px;
@@ -293,7 +306,9 @@ export default defineComponent({
 
 .timeline-centered {
   @extend .timeline-split;
+
   @media (min-width: 992px) {
+
     &,
     .timeline-item,
     .timeline-info,
@@ -303,28 +318,34 @@ export default defineComponent({
       margin: 0;
       padding: 0;
     }
+
     .timeline-item {
       padding-bottom: 40px;
       overflow: hidden;
     }
+
     .timeline-marker {
       position: absolute;
       left: 50%;
       margin-left: -7.5px;
     }
+
     .timeline-info,
     .timeline-content {
       width: 50%;
     }
-    > .timeline-item:nth-child(odd) .timeline-info {
+
+    >.timeline-item:nth-child(odd) .timeline-info {
       float: left;
       text-align: right;
       padding-right: 30px;
     }
-    > .timeline-item:nth-child(odd) .timeline-content {
+
+    >.timeline-item:nth-child(odd) .timeline-content {
       float: right;
       text-align: left;
       padding-left: 30px;
+
       .timeline-title {
         &:after {
           left: 0;
@@ -332,15 +353,18 @@ export default defineComponent({
         }
       }
     }
-    > .timeline-item:nth-child(even) .timeline-info {
+
+    >.timeline-item:nth-child(even) .timeline-info {
       float: right;
       text-align: left;
       padding-left: 30px;
     }
-    > .timeline-item:nth-child(even) .timeline-content {
+
+    >.timeline-item:nth-child(even) .timeline-content {
       float: left;
       text-align: right;
       padding-right: 30px;
+
       .timeline-title {
         &:after {
           right: 0;
@@ -348,20 +372,24 @@ export default defineComponent({
         }
       }
     }
-    > .timeline-item.period .timeline-content {
+
+    >.timeline-item.period .timeline-content {
       float: none;
       padding: 0;
       width: 100%;
       text-align: center;
     }
+
     .timeline-item.period {
       padding: 50px 0 90px;
     }
+
     .period .timeline-marker:after {
       height: 30px;
       bottom: 0;
       top: auto;
     }
+
     .period .timeline-title {
       left: auto;
     }

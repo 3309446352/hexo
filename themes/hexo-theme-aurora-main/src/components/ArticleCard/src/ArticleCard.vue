@@ -9,7 +9,7 @@
     <div class="article">
       <div class="article-thumbnail">
         <img v-if="post.cover" v-lazy="post.cover" />
-        <img v-else src="@/assets/w.png" />
+        <img v-else src="@/assets/w.webp" />
         <span class="thumbnail-screen" :style="gradientBackground" />
       </div>
       <div class="article-content">
@@ -182,5 +182,4 @@ export default defineComponent({
     transition: transform 200ms ease-in-out;
   }
 }
-
 </style>

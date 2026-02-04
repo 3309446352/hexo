@@ -1,6 +1,6 @@
 <template>
   <div class="collect">
-    <div class="page-top-card">
+    <div class="page-top-card" @click="clearAutoRefresh()">
       <div class="content-item-tips">收藏</div>
       <span class="content-item-title">藏宝阁</span>
       <div class="content-bottom">
@@ -336,7 +336,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, reactive, ref} from 'vue'
+import { defineComponent, onMounted, onUnmounted, reactive, ref } from 'vue'
 import SupabaseTool from '@/Supabase/SupabaseTool'
 import SvgIcon from '@/components/SvgIcon/index.vue'
 import router from '@/router'
@@ -355,7 +355,6 @@ export default defineComponent({
     const MusicsData = ref<BookItem[]>([])
     const playlist = ref<BookItem[]>([])
     const others = ref<BookItem[]>([])
-    const refreshTimer = ref<NodeJS.Timeout | null>(null)
     // 新书籍表单数据
     const newBook = reactive({
       category: '',
@@ -408,6 +407,7 @@ export default defineComponent({
           alert('插入失败: ' + error.message)
         })
     }
+    //尝试加载本地缓存的书籍、小说、游戏等数据，以实现快速展示
     const GetlocalStorage = async () => {
       BookData.value = JSON.parse(
         localStorage.getItem('cache_BookData') || '[]'
@@ -499,29 +499,78 @@ export default defineComponent({
       localStorage.removeItem('cache_GamesData')
       console.log('所有缓存已清理')
     }
-    //定一小时刷新一次
-    const setupAutoRefresh = () => {
-      if (refreshTimer.value) {
-        clearInterval(refreshTimer.value)
-        refreshTimer.value = null
-      }
+    // 12小时自动刷新数据的方法
+    const startTwelveHourRefresh = () => {
+      // 12小时 = 12 * 60 * 60 * 1000 毫秒
+      const twelveHours = 12 * 60 * 60 * 1000
 
-      refreshTimer.value = setInterval(
-        () => {
-          // 检查网络连接
-          if (navigator.onLine) {
-            console.log('网络连接正常，自动刷新数据...')
-            GetAllList()
-          } else {
-            console.log('网络断开，跳过刷新')
-          }
-        },
-        60 * 60 * 1000
-      ) // 1小时
+      // 立即执行一次获取（可选）
+      refreshDataFromDatabase();
+
+      // 设置定时器，每12小时执行一次
+      const intervalId = setInterval(refreshDataFromDatabase, twelveHours)
+
+      // 在组件卸载时清除定时器
+      // onUnmounted(() => {
+      //   if (intervalId) {
+      //     clearInterval(intervalId)
+      //     console.log('12小时定时刷新器已清除')
+      //   }
+      // })
     }
+    const clearAutoRefresh = () =>{
+      clearInterval(setInterval(refreshDataFromDatabase, 24 * 60 * 60 * 1000))
+      alert('12小时定时刷新器已清除')
+    }
+    // 从数据库刷新数据的方法
+    const refreshDataFromDatabase = async () => {
+      try {
+        console.log('开始12小时定时刷新数据...', new Date().toLocaleString())
+
+        // 清除所有本地缓存
+        clearAllCache()
+
+        // 从数据库获取最新数据
+        const tagData = await SupabaseTool.GetAllData('Tag')
+        if (tagData) {
+          localStorage.setItem('cache_Tag', JSON.stringify(tagData))
+
+          // 处理每个分类的数据获取
+          for (const item of tagData) {
+            const data = await SupabaseTool.GetAllData(item.TagUs);
+            const reversedData = [...data].reverse();
+
+            // 根据分类类型存储数据
+            if (item.TextCn === '书籍') {
+              BookData.value = reversedData;
+              localStorage.setItem('cache_BookData', JSON.stringify(reversedData));
+            } else if (item.TextCn === '小说') {
+              NovelData.value = reversedData;
+              localStorage.setItem('cache_NovelData', JSON.stringify(reversedData));
+            } else if (item.TextCn === '游戏') {
+              GamesData.value = reversedData;
+              localStorage.setItem('cache_GamesData', JSON.stringify(reversedData));
+            } else if (item.TextCn === '音乐') {
+              MusicsData.value = reversedData;
+              localStorage.setItem('cache_MusicsData', JSON.stringify(reversedData));
+            } else if (item.TextCn === '影视') {
+              playlist.value = reversedData;
+              localStorage.setItem('cache_playlist', JSON.stringify(reversedData));
+            } else if (item.TextCn === '其他') {
+              others.value = reversedData;
+              localStorage.setItem('cache_others', JSON.stringify(reversedData))
+            }
+          }
+
+          console.log('12小时数据刷新完成');
+        }
+      } catch (error) {
+        console.error('12小时刷新过程出错:', error);
+      }
+    };
     onMounted(() => {
       GetlocalStorage()
-      setupAutoRefresh()
+      startTwelveHourRefresh() // 新增的12小时刷新
     })
     return {
       BookData,
@@ -534,7 +583,8 @@ export default defineComponent({
       DeleteData,
       GetCollectArtcle,
       newBook,
-      addBook
+      addBook,
+      clearAutoRefresh
     }
   }
 })

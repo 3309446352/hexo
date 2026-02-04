@@ -14,17 +14,17 @@
       lrc-type="3"
     >
     </meting-js>
-<!--autoplay 自动播放    -->
-<!--    loop=[all=全部循环, one=循环一次 ,none=不循环]-->
+    <!--autoplay 自动播放    -->
+    <!--    loop=[all=全部循环, one=循环一次 ,none=不循环]-->
   </div>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent, onMounted } from 'vue'
 import { usePlayerStore } from '@/stores/MusicPlayer'
-import '/public/aplayer/APlayer.min.js'
-import '/public/aplayer/Meting.min.js'
-import '/public/aplayer/APlayer.min.css'
+import '../assets/aplayer/APlayer.min.js'
+import '../assets/aplayer/Meting.min.js'
+import '../assets/aplayer/APlayer.min.css'
 export default defineComponent({
   name: ' APlayer',
   setup() {
@@ -52,7 +52,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.Aplayer{
 
-}
 </style>

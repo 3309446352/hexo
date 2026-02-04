@@ -14,7 +14,7 @@ import Breadcrumbs from '@/components/Breadcrumbs.vue'
 import { useI18n } from 'vue-i18n'
 import usePageTitle from '@/hooks/usePageTitle'
 import { useCommonStore } from '@/stores/common'
-import defaultCover from '@/assets/default-cover.jpg'
+import defaultCover from '@/assets/default-cover.webp'
 
 export default defineComponent({
   name: 'ARAbout',
@@ -47,6 +47,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

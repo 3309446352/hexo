@@ -2,7 +2,7 @@
   <div class="Article-Card flex rounded-2xl " @click="handleCardClick(post?.slug) ">
     <div class="w-1/2 flex justify-center items-center">
       <img v-if="post.cover" v-lazy="post.cover" alt="" class="ArticleImg w-4/5 h-4/5  object-cover rounded-2xl " style="width: 99%;height: 99%"/>
-      <img v-else src="@/assets/w.png" class="ArticleImg  object-cover rounded-2xl" style="width: 99%;height: 99%"/>
+      <img v-else src="@/assets/w.webp" class="ArticleImg  object-cover rounded-2xl" style="width: 99%;height: 99%"/>
     </div>
     <div class="ArticleContent w-1/2">
       <!--标题-->
@@ -144,6 +144,7 @@ export default defineComponent({
   height: 20rem;
   color: var(--text-bright);
   background: var(--gradient-cover);
+  padding: 10px;
 }
 
 .Article-Card:hover {

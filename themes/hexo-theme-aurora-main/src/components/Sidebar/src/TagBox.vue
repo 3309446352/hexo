@@ -12,7 +12,7 @@
           :active="!!activeTag && tag.slug === activeTag"
           size="small"
         />
-        <!-- 修改2: 只有当标签总数超过10个，且未展开时，才显示“更多”按钮和遮罩 -->
+        <!-- TODO:修改2: 只有当标签总数超过10个，且未展开时，才显示“更多”按钮和遮罩 -->
         <template v-if="tags.length > 10 && !expand">
           <div class="more-cover"></div>
           <div class="more-btn" @click="expandBox">

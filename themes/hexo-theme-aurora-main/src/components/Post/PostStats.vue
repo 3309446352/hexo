@@ -186,17 +186,18 @@ import useCommentPlugin from '@/hooks/useCommentPlugin'
 
 export default defineComponent({
   name: 'ObPostStats',
+  // < --:TODO:评论组件-->
   components: { SvgIcon },
   props: {
     postWordCount: {
       type: Number || undefined
-    },
+    }, //文章字数
     postTimeCount: {
       type: String || undefined
-    },
+    }, //阅读时长
     postTitle: {
       type: String
-    },
+    }, //文章标题，用于评论系统
     pluginConfigs: {
       type: Object as PropType<PluginsData>,
       default: () => new ThemeConfig().plugins,
@@ -206,15 +207,15 @@ export default defineComponent({
       type: String,
       default: '/',
       required: true
-    },
-    comments: Boolean
+    }, //评论插件的配置对象
+    comments: Boolean //是否显示评论数统计
   },
   setup(props, { expose }) {
     const commentCount = ref<number | undefined>(undefined)
     const {
-      enabledCommentPlugin,
-      initCommentPluginCommentCount,
-      intiCommentPluginPageView
+      enabledCommentPlugin, //当前启用的评论插件
+      initCommentPluginCommentCount, //初始化评论数的方法
+      intiCommentPluginPageView //初始化访问量的方法
     } = useCommentPlugin()
 
     const getCommentCount = async () => {
@@ -226,13 +227,14 @@ export default defineComponent({
     const getPostView = () => {
       intiCommentPluginPageView(props.currentPath)
     }
-
+    //通过 expose方法将 getCommentCount和 getPostView暴露给父组件，使得父组件可以手动触发评论数和访问量的获取。
     expose({
       getCommentCount,
       getPostView
     })
 
     return {
+      //返回了模板中需要使用的 commentCount和计算属性 plugin。
       commentCount,
       plugin: computed(() => enabledCommentPlugin.value.plugin)
     }
