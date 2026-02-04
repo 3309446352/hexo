@@ -13,10 +13,11 @@ categories:
 cover: https://raw.githubusercontent.com/3309446352/Images/main/img/啊，什么时候雨停啊！.webp
 date: '2025-04-16T22:47:49.663313+08:00'
 description: description
+feature: true
 tags:
 - Vue
 title: Vue3 的新写法
-updated: '2025-04-16T22:49:07.052+08:00'
+updated: '2026-02-04T23:53:18.453+08:00'
 ---
 #  {{title}}
 
