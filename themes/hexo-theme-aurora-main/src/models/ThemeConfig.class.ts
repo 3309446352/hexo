@@ -1,60 +1,74 @@
 interface ThemeRaw {
   /** Hexo config data */
   theme_config: {
-    menu: GeneralOptions
-    custom_menu: GeneralOptions
-    avatar: GeneralOptions
-    theme: GeneralOptions
-    site: StringConfig
-    socials: StringConfig
-    custom_socials: GeneralOptions
-    site_meta: GeneralOptions
-    plugins: GeneralOptions
-    footer_links: FooterLink[]
-    version: string
+    menu: GeneralOptions // 菜单配置
+    custom_menu: GeneralOptions // 自定义菜单
+    avatar: GeneralOptions // 头像配置
+    theme: GeneralOptions // 主题样式
+    site: StringConfig // 网站信息
+    socials: StringConfig // 社交媒体
+    custom_socials: GeneralOptions // 自定义社交链接
+    site_meta: GeneralOptions // 网站元数据
+    plugins: GeneralOptions // 插件配置
+    footer_links: FooterLink[] // 页脚链接
+    version: string // 主题版本
   }
 }
 
 interface SwitchConfig {
-  [key: string]: boolean
+  [key: string]: boolean // 开关配置（布尔值映射）
 }
 
 interface StringConfig {
-  [key: string]: string
+  [key: string]: string // 字符串配置
 }
 
 interface GeneralOptions<T = any> {
-  [key: string]: T
+  [key: string]: T // 通用配置选项
 }
 
 export class ThemeConfig {
   /** Menu config data */
+  /** 菜单配置数据 */
   menu: ThemeMenu = new ThemeMenu()
   /** Avatar config data */
+  /** 头像配置数据 */
   avatar: Avatar = new Avatar()
   /** Theme config data */
+  /** 主题配置数据 */
   theme: Theme = new Theme()
   /** Site config data */
+  /** 网站配置数据 */
   site: Site = new Site()
   /** Socials config data */
+  /** 社交媒体配置数据 */
   socials: Social = new Social()
   /** Meta data for the site */
+  /** 网站的元数据 */
   site_meta: SiteMeta = new SiteMeta()
   /** Plugin configs */
+  /** 插件配置 */
   plugins: Plugins = new Plugins()
   /** Footer Links configs */
+  /** 页脚链接配置 */
   footerLinks: FooterLinks = new FooterLinks()
   /** Theme version */
+  /** 主题版本 */
   version = ''
-
   /**
    * Model class for Hexo theme config
    *
    * @param raw Config data generated from Hexo
    */
+  /**
+   * Hexo 主题配置的模型类
+   *
+   * @param raw 从 Hexo 生成的配置数据
+   */
   constructor(raw?: ThemeRaw) {
     const rawConfig = raw && raw['theme_config']
     if (rawConfig) {
+      // 初始化各个配置模块
       this.menu = new ThemeMenu(rawConfig.menu)
       this.avatar = new Avatar(rawConfig.avatar)
       this.theme = new Theme(rawConfig.theme)
@@ -91,6 +105,7 @@ export class ThemeMenu implements ObMenu {
    * @param raw Config data generated from Hexo
    */
   constructor(raw?: GeneralOptions) {
+    // 预定义默认菜单项
     const extract: GeneralOptions = {
       About: {
         name: 'About',
@@ -177,6 +192,7 @@ export class ThemeMenu implements ObMenu {
 
     const defaultMenus = Object.keys(extract)
     if (raw) {
+      // 处理默认菜单和自定义菜单
       // Theme default menus
       for (const menu of defaultMenus) {
         const menuType = typeof raw[menu]
@@ -185,6 +201,7 @@ export class ThemeMenu implements ObMenu {
         }
       }
       // Theme custom menus
+      // 处理自定义菜单
       for (const otherMenu of Object.keys(raw)) {
         // Updating the i18n config from the menu config for default menus
         if (defaultMenus.indexOf(otherMenu) > 0 && raw[otherMenu].i18n) {
@@ -211,12 +228,16 @@ export type Locales = keyof typeof LocalesTypes
 
 export class Menu {
   /** Name of the menu */
+  /** 菜单名称 */
   name = ''
   /** Vue router path for the menu */
+  /** Vue 路由路径 */
   path = ''
   /** Translation key for vue-i18n */
+  /** vue-i18n 的翻译键 */
   i18n: Partial<Record<Locales, string>> = {}
   /** Sub menus */
+  /** 子菜单 */
   children: Menu[] = []
 
   /**
@@ -285,10 +306,11 @@ interface ObTheme {
 }
 
 export class Theme implements ObTheme {
-  dark_mode = 'auto'
-  profile_shape = 'diamond'
-  feature = true
+  dark_mode = 'auto' // TODO:暗黑模式：'auto'、'dark'、'light'
+  profile_shape = 'diamond' // TODO:头像形状：圆形、菱形、圆角
+  feature = true // TODO:是否启用特色功能
   gradient = {
+    // TODO: 渐变颜色配置
     color_1: '#24c6dc',
     color_2: '#5433ff',
     color_3: '#ff0099'
@@ -311,6 +333,7 @@ export class Theme implements ObTheme {
    */
   constructor(raw?: GeneralOptions) {
     if (raw) {
+      // TODO:处理头像形状转换
       for (const key of Object.keys(this)) {
         if (Object.prototype.hasOwnProperty.call(raw, key)) {
           if (key === 'profile_shape') {

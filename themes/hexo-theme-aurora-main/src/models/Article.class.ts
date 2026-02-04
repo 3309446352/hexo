@@ -1,24 +1,25 @@
 import { Post } from '@/models/Post.class'
+import * as console from 'console'
 
 export interface Detail {
-  title: string
-  date: { month: string; day: number; year: number }
-  updated: string
-  comments: boolean
-  path: string
-  covers: string | null
-  excerpt: string | null
-  content: string
-  count_time: { symbolsTime?: string; symbolsCount?: number }
-  toc: string
+  title: string // 标题
+  date: { month: string; day: number; year: number } // 结构化日期
+  updated: string // 更新时间
+  comments: boolean // 是否开启评论
+  path: string // 访问路径
+  covers: string | null // 封面图片（可为空）
+  excerpt: string | null // 摘要（可为空）
+  content: string // 正文内容
+  count_time: { symbolsTime?: string; symbolsCount?: number } // 字数统计
+  toc: string // 文章目录
 }
 
 export interface Link {
-  nick: string
-  avatar: string
-  link: string
-  description: string
-  label: string
+  nick: string // 昵称/名称
+  avatar: string // 头像
+  link: string // 链接地址
+  description: string // 描述
+  label: string // 标签
 }
 
 export class Article extends Post implements Detail {
@@ -35,9 +36,9 @@ export class Article extends Post implements Detail {
   excerpt: string | null = null
   content = ''
   count_time = { symbolsTime: undefined, symbolsCount: undefined }
-
+  // 实现Detail接口要求的所有属性
   constructor(raw?: { [key: string]: [] }) {
-    super(raw)
+    super(raw) // 调用Post父类的构造函数
     if (raw) {
       for (const key of ['covers', 'content']) {
         if (Object.prototype.hasOwnProperty.call(raw, key)) {

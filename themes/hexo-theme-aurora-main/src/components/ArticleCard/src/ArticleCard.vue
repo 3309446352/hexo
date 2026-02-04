@@ -1,5 +1,22 @@
 <template>
-  <li class="article-container" @click="handleCardClick(post?.slug)">
+  <li
+    class="article-container"
+    :class="{ 'glass-effect': hasHiddenTag }"
+    @click="handleCardClick(post?.slug)"
+  >
+    <!-- 新增：密码验证下拉框 -->
+    <div v-if="showPasswordDialog" class="password-dropdown" @click.stop>
+      <div class="dropdown-header">该内容已加密</div>
+      <div class="dropdown-body">
+        <input
+          v-model="inputPassword"
+          type="password"
+          placeholder="请输入访问密码"
+          @keyup.enter="confirmAccess"
+        />
+        <button @click="confirmAccess">解锁</button>
+      </div>
+    </div>
     <span v-if="post.feature" class="article-tag-card">
       <b>
         <SvgIcon icon-class="hot" />
@@ -92,10 +109,11 @@
 
 <script lang="ts">
 import { useAppStore } from '@/stores/app'
-import { computed, defineComponent, getCurrentInstance, toRefs } from 'vue'
+import { computed, ComputedRef, defineComponent, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import SvgIcon from '@/components/SvgIcon/index.vue'
 import { useRouter } from 'vue-router'
+import { Tag } from '@/models/Post.class'
 
 export default defineComponent({
   name: 'ARArticleCard',
@@ -108,27 +126,49 @@ export default defineComponent({
   },
   setup(props) {
     const router = useRouter()
-    const appStore = useAppStore() //用于获取应用程序配置的存储实例。
+    const appStore = useAppStore()
     const { t } = useI18n()
-
+    // 计算属性：检查是否有隐藏标签
+    const hasHiddenTag: ComputedRef<boolean> = computed(() => {
+      const tags = props.data.tags;
+      if (!tags || !Array.isArray(tags)) return false;
+      // 简化判断逻辑
+      return tags.some((tag: Tag) => tag.name === '隐藏');
+    });
+    // 新增状态：控制密码框显示
+    const showPasswordDialog = ref(false)
+    const inputPassword = ref('')
     const handleCardClick = (slug?: string) => {
-      if (!slug) return
-      router.push({ name: 'post-slug', params: { slug } })
-    } //用于跳转到文章详情页。
-
+      if (!slug) return;
+      // 如果有隐藏标签，拦截跳转，显示密码框
+      if (hasHiddenTag.value) {
+        showPasswordDialog.value = !showPasswordDialog.value
+      } else {
+        // 正常跳转
+        router.push({ name: 'post-slug', params: { slug } });
+      }
+    }
     const handleAuthorClick = (link: string) => {
-      if (link === '') link = window.location.href
+      if (!link) link = window.location.href
       window.location.href = link
-    } //用于跳转到作者链接。
-
+    }
+    // 新增：验证密码并跳转
+    const confirmAccess = () => {
+      const correctPassword = 'qwer' // 你的密码
+      if (inputPassword.value === correctPassword) {
+        showPasswordDialog.value = false
+        // 验证成功后跳转
+        router.push({ name: 'post-slug', params: { slug: props.data.slug } });
+      } else {
+        alert('密码错误');
+      }
+    };
     const navigateToTag = (slug: string) => {
       router.push({ name: 'post-search', query: { tag: slug } })
-    } //用于根据标签筛选文章列表。
-
+    }
     const navigateToCategory = (slug: string) => {
       router.push({ name: 'post-search', query: { category: slug } })
-    } //用于根据分类筛选文章列表。
-
+    }
     return {
       avatarClasses: computed(() => ({
         'hover:opacity-50 cursor-pointer': true,
@@ -141,14 +181,163 @@ export default defineComponent({
       navigateToTag,
       navigateToCategory,
       handleAuthorClick,
-      handleCardClick,
-      t
+      handleCardClick, // 确保返回的是修正后的函数
+      t,
+      hasHiddenTag,
+      showPasswordDialog,
+      inputPassword,
+      confirmAccess
     }
   }
 })
 </script>
 
 <style lang="scss" scoped>
+/* 新增玻璃模糊效果样式 */
+.glass-effect {
+  position: relative;
+  overflow: hidden;
+
+  /* 密码验证下拉框样式 */
+  .password-dropdown {
+    // 1. 定位：绝对定位在卡片正中央
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid  #38bdf8;
+
+    // 2. 层级：必须大于遮罩层的 z-index: 10
+    z-index: 20;
+
+    // 3. 尺寸与外观
+    width: 86%; // 宽度占卡片绝大部分
+    max-width: 320px;
+    padding: 24px 20px;
+
+    // 背景采用半透明毛玻璃质感，与遮罩区分开
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+
+    // 简单的入场动画
+    animation: fadeInDown 0.3s ease-out;
+
+    // 标题样式
+    .dropdown-header {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    // 内容区布局
+    .dropdown-body {
+      display: flex;
+      flex-direction: column;
+      gap: 12px; // 输入框与按钮的间距
+
+      input {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 0.95rem;
+        color: #333;
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        outline: none;
+        transition: all 0.3s ease;
+        box-sizing: border-box; // 确保padding不撑大宽度
+
+        &:focus {
+          border-color: var(--theme-color, #409eff); // 建议使用您的主题色变量
+          box-shadow: 0 0 0 3px rgba(64, 158, 255, 0.1);
+        }
+
+        &::placeholder {
+          color: #aaa;
+        }
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #fff;
+        background: var(--theme-color, #409eff); // 建议使用您的主题色变量
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          opacity: 0.9;
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  // 定义入场动画
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -40%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // 优化点1：大幅降低模糊半径（从30px降至10px以内），这是性能杀手
+    backdrop-filter: blur(5px);
+    // 优化点2：通过背景色替代brightness滤镜，减少计算量
+    background-color: rgba(129, 128, 128, 0.6);
+    z-index: 10;
+    border-radius: inherit;
+    //pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      transparent 48%,
+      //rgba(0, 0, 0, 0.3) 50%,
+      transparent 52%
+    );
+    background-size: 10px 10px;
+    //z-index: 11; // 条纹层级需高于遮罩层
+    //pointer-events: none; // 同样允许穿透
+  }
+
+  > * {
+    position: relative;
+    z-index: 3;
+  }
+}
 .feature-sign {
   width: calc(100% - 0.5rem);
   height: calc(100% - 0.5rem);

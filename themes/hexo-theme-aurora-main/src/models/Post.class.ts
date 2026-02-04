@@ -91,6 +91,7 @@ export class Post {
   constructor(raw?: PostRaw) {
     if (raw) {
       for (const key of Object.keys(this)) {
+        // console.log(`Assigning ${key}:`, raw[key]);
         if (Object.prototype.hasOwnProperty.call(raw, key)) {
           if (key === 'categories') {
             Object.assign(this, {

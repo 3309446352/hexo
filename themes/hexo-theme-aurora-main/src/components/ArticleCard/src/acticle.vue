@@ -1,5 +1,8 @@
 <template>
-  <div class="Article-Card flex rounded-2xl " @click="handleCardClick(post?.slug) ">
+  <div
+    class="Article-Card flex rounded-2xl"
+    @click="handleCardClick(post?.slug)"
+  >
     <div class="w-1/2 flex justify-center items-center">
       <img v-if="post.cover" v-lazy="post.cover" alt="" class="ArticleImg w-4/5 h-4/5  object-cover rounded-2xl " style="width: 99%;height: 99%"/>
       <img v-else src="@/assets/w.webp" class="ArticleImg  object-cover rounded-2xl" style="width: 99%;height: 99%"/>
@@ -57,7 +60,8 @@
       <div class="article-footer mx-10" v-if="post.author && post.date">
         <div class="flex flex-row items-center">
           <img class="w-8 h-8 rounded-full mr-2" :src="post.author.avatar" :alt="`avatar-${post.author.name}`"
-            @click="handleAuthorClick(post.author.link)" />
+            @click="handleAuthorClick(post.author.link)"
+          />
           <span class="text-ob-dim">
             <strong class="text-ob-normal pr-1.5 hover:text-ob hover:opacity-50 cursor-pointer"
               @click="handleAuthorClick(post.author.link)">
@@ -82,7 +86,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
+import { computed, defineComponent, onMounted } from 'vue'
 import SvgIcon from '@/components/SvgIcon/index.vue'
 import { useRouter } from 'vue-router'
 import { useAppStore } from '@/stores/app'
@@ -90,7 +94,7 @@ import { useI18n } from 'vue-i18n'
 import ObSkeleton from '@/components/LoadingSkeleton/Skeleton.vue'
 export default defineComponent({
   name: 'ArticleContent',
-  components: { ObSkeleton },
+  components: {SvgIcon, ObSkeleton },
   props: {
     data: {
       type: Object,
@@ -119,7 +123,6 @@ export default defineComponent({
     const navigateToCategory = (slug: string) => {
       router.push({ name: 'post-search', query: { category: slug } })
     } //用于根据分类筛选文章列表。
-
     return {
       avatarClasses: computed(() => ({
         'hover:opacity-50 cursor-pointer': true,

@@ -70,7 +70,7 @@
 
             <template v-else>
               <li v-for="(post, index) in posts.data" :key="post.slug">
-                <Article :data="post"/>
+                <Article :data="post" />
               </li>
             </template>
           </div>
@@ -123,7 +123,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, onMounted, ref } from 'vue'
+import { computed, defineComponent, onMounted, ref, toRef } from 'vue'
 import { Feature, FeatureList } from '@/components/Feature'
 import { ArticleCard, HorizontalArticle } from '@/components/ArticleCard'
 import { MainTitle } from '@/components/Title'
@@ -217,7 +217,9 @@ export default defineComponent({
     }
 
     onMounted(fetchData)
-
+    onMounted(() => {
+      console.log(toRef(posts))
+    })
     const expandHandler = () => {
       expanderClass.value.expanded = !expanderClass.value.expanded
       tabClass.value['expanded-tab'] = !tabClass.value['expanded-tab']
@@ -278,7 +280,6 @@ export default defineComponent({
         await fetchPostData()
       }
     }
-
     return {
       endEleId: computed(() =>
         appStore.themeConfig.footerLinks.data.length > 0
