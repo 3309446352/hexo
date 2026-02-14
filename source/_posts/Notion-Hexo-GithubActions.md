@@ -6,10 +6,10 @@ categories:
 - - Hexo
 cover: https://raw.githubusercontent.com/3309446352/Images/main/img/702ea068d3e0741d38b1535b68ae83f6ec4ac8c30dd2b10aa50468b17875facd.webp
 date: '2026-02-14T20:45:09.915070+08:00'
-description: '**通过这个设置，可以实现在Notion写文章，**[Githubactions](https://zhida.zhihu.com/search?content_id=260364529%5C&content_type=Article%5C&match_order=1%5C&q=Githubactions%5C&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3NzEyMjk4NTAsInEiOiJHaXRodWJhY3Rpb25zIiwiemhpZGFfc291cmNlIjoiZW50aXR5IiwiY29udGVudF9pZCI6MjYwMzY0NTI5LCJjb250ZW50X3R5cGUiOiJBcnRpY2xlIiwibWF0Y2hfb3JkZXIiOjEsInpkX3Rva2VuIjpudWxsfQ.VSrYHVwsGt4jj8hwPd9V29CN3ekKCe8Jd5uUFPIsRVE%5C&zhida_source=entity)抓取Notion的文章，然后发布到对应的Hexo博客上，可以让Notion充当Hexo博客的后台，随时随地用手机或者电脑通过Notion写博客跟管理博客文章了'
+description: notion通过GithubAction同步到hexo文章博客设置
 tags: []
 title: Notion-Hexo-GithubActions
-updated: '2026-02-14T20:49:22.596+08:00'
+updated: '2026-02-14T20:52:22.888+08:00'
 ---
 #  {{title}}
 
@@ -174,26 +174,26 @@ updated: '2026-02-14T20:49:22.596+08:00'
                        if (imageUrl) {
                          const imageNum = imageCounter.get(post.id);
                          imageCounter.set(post.id, imageNum + 1);
-                 
+               
                          const ext = path.extname(imageUrl.split('?')[0]) || '.jpg';
                          const imageName = `img${formattedDate}-${imageNum.toString().padStart(3, '0')}${ext}`;
-                 
+               
                          await downloadImage(imageUrl, postDir, imageName);
-                 
+               
                          // 合并所有 caption 文本
                          const captionText = (block.image.caption || [])
                            .map(t => t.plain_text)
                            .join('');
-                 
+               
                          let customStyle = '';
-                 
+               
                          const sizeMatch = captionText.match(/size\s*=\s*(\d+)%/i);
                          if (sizeMatch) {
                            customStyle += `width: ${sizeMatch[1]}%; height: auto;`;
                          } else {
                            customStyle += `max-width: 100%; height: auto;`;
                          }
-                 
+               
                          if (/center/i.test(captionText)) {
                            customStyle += ` display: block; margin: 1rem auto;`;
                          } else if (/left/i.test(captionText)) {
@@ -203,7 +203,7 @@ updated: '2026-02-14T20:49:22.596+08:00'
                          } else {
                            customStyle += ` display: block; margin: 1rem auto;`;
                          }
-                 
+               
                          content += `<img src="${postDirName}/${imageName}" alt="${imageName}" style="${customStyle}" />\n\n`;
                        }
                      }
