@@ -1,6 +1,6 @@
 ---
 abbrlink: ''
-abstracts: abstracts
+abstracts: 抓取Notion的文章，然后发布到对应的Hexo博客上，可以让Notion充当Hexo博客的后台，用手机或者电脑写博客跟管理博客文章了
 author: ZMC
 categories:
 - - Hexo
