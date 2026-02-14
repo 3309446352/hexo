@@ -9,12 +9,11 @@ date: '2026-02-14T20:45:09.915070+08:00'
 description: '**通过这个设置，可以实现在Notion写文章，**[Githubactions](https://zhida.zhihu.com/search?content_id=260364529%5C&content_type=Article%5C&match_order=1%5C&q=Githubactions%5C&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3NzEyMjk4NTAsInEiOiJHaXRodWJhY3Rpb25zIiwiemhpZGFfc291cmNlIjoiZW50aXR5IiwiY29udGVudF9pZCI6MjYwMzY0NTI5LCJjb250ZW50X3R5cGUiOiJBcnRpY2xlIiwibWF0Y2hfb3JkZXIiOjEsInpkX3Rva2VuIjpudWxsfQ.VSrYHVwsGt4jj8hwPd9V29CN3ekKCe8Jd5uUFPIsRVE%5C&zhida_source=entity)抓取Notion的文章，然后发布到对应的Hexo博客上，可以让Notion充当Hexo博客的后台，随时随地用手机或者电脑通过Notion写博客跟管理博客文章了'
 tags: []
 title: Notion-Hexo-GithubActions
-updated: '2026-02-14T20:45:12.030+08:00'
+updated: '2026-02-14T20:49:22.596+08:00'
 ---
 #  {{title}}
 
 ## 简介 : {{description}}
-
 
 **原文链接：**[https://www.kulafan.com/d9af86de/](https://link.zhihu.com/?target=https%3A//www.kulafan.com/d9af86de/)
 
@@ -41,7 +40,7 @@ updated: '2026-02-14T20:45:12.030+08:00'
 | **categories** | **select**       |
 | **publised**   | **select**       |
 
-![](file:///F:/Administrator/%E6%A1%8C%E9%9D%A2/%E5%BB%BA%E6%A8%A1%E5%B8%83%E7%BA%BF/%E5%BB%BA%E6%A8%A1%E5%B8%83%E7%BA%BF.assets/v2-284e958853906f3ff22d36e27876f37d_1440w.jpg?lastModify=1771073127)
+![](https://raw.githubusercontent.com/3309446352/Images/main/Content/v2-284e958853906f3ff22d36e27876f37d_1440w.jpg?lastModify=1771073127)
 
 **设置完之后就是上面这样。**
 
@@ -65,7 +64,7 @@ updated: '2026-02-14T20:45:12.030+08:00'
 
 **在这个数据库下面新建一列 按照对应的输入文章标题、日期、分类等等。然后title下面文章的名字点进去，就可以编辑里面的内容了，编辑完之后点publised下面的复选框，变成勾之后就可以被抓取了。**
 
-![](file:///F:/Administrator/%E6%A1%8C%E9%9D%A2/%E5%BB%BA%E6%A8%A1%E5%B8%83%E7%BA%BF/%E5%BB%BA%E6%A8%A1%E5%B8%83%E7%BA%BF.assets/v2-8fe8726e5db9eef2d1208e4e4c87e5b6_1440w.jpg?lastModify=1771073127)
+![](https://raw.githubusercontent.com/3309446352/Images/main/Content//v2-8fe8726e5db9eef2d1208e4e4c87e5b6_1440w.jpg?lastModify=1771073127)
 
 ## **二、接下来就是hexo目录下的的设置**
 
@@ -175,26 +174,26 @@ updated: '2026-02-14T20:45:12.030+08:00'
                        if (imageUrl) {
                          const imageNum = imageCounter.get(post.id);
                          imageCounter.set(post.id, imageNum + 1);
-                   
+                 
                          const ext = path.extname(imageUrl.split('?')[0]) || '.jpg';
                          const imageName = `img${formattedDate}-${imageNum.toString().padStart(3, '0')}${ext}`;
-                   
+                 
                          await downloadImage(imageUrl, postDir, imageName);
-                   
+                 
                          // 合并所有 caption 文本
                          const captionText = (block.image.caption || [])
                            .map(t => t.plain_text)
                            .join('');
-                   
+                 
                          let customStyle = '';
-                   
+                 
                          const sizeMatch = captionText.match(/size\s*=\s*(\d+)%/i);
                          if (sizeMatch) {
                            customStyle += `width: ${sizeMatch[1]}%; height: auto;`;
                          } else {
                            customStyle += `max-width: 100%; height: auto;`;
                          }
-                   
+                 
                          if (/center/i.test(captionText)) {
                            customStyle += ` display: block; margin: 1rem auto;`;
                          } else if (/left/i.test(captionText)) {
@@ -204,7 +203,7 @@ updated: '2026-02-14T20:45:12.030+08:00'
                          } else {
                            customStyle += ` display: block; margin: 1rem auto;`;
                          }
-                   
+                 
                          content += `<img src="${postDirName}/${imageName}" alt="${imageName}" style="${customStyle}" />\n\n`;
                        }
                      }
@@ -466,7 +465,7 @@ updated: '2026-02-14T20:45:12.030+08:00'
 
 **进入仓库之后点击actions**
 
-![](file:///F:/Administrator/%E6%A1%8C%E9%9D%A2/%E5%BB%BA%E6%A8%A1%E5%B8%83%E7%BA%BF/%E5%BB%BA%E6%A8%A1%E5%B8%83%E7%BA%BF.assets/v2-d502a49e10b50b7829335f0610da97d5_1440w.jpg?lastModify=1771073127)
+![](https://raw.githubusercontent.com/3309446352/Images/main/Content//v2-d502a49e10b50b7829335f0610da97d5_1440w.jpg?lastModify=1771073127)
 
 **部署完之后应该就OK了我设置的代码是一小时抓去一次**
 
