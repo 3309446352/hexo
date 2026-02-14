@@ -8,10 +8,9 @@ tags:
 - Blender
 - 3D建模
 title: blender笔记
-updated: '2026-02-14T17:31:48.654+08:00'
+updated: '2026-02-14T17:52:02.671+08:00'
 ---
 # blender布线笔记
-
 
 ```
 # 一、多边面转四边面
