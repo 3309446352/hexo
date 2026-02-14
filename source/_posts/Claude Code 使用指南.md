@@ -1,6 +1,6 @@
 ---
 abbrlink: ''
-abstracts: Claude Code(CC)是由 Anthropic 开发的**系统级 AI Agent**,它不仅是一个代码编写工具,更是一个可以通过自然语言指令完成各种电脑任务的智能助手。
+abstracts: Claude Code(CC)是由 Anthropic 开发的**系统级 AI Agent**,它不仅是一个代码编写工具,更是一个可以通过自然语言指令完成各种电脑任务的智能助手。
 author: ZMC
 categories:
 - - AI
@@ -10,10 +10,9 @@ description: null
 tags:
 - 工具
 title: Claude Code 使用指南
-updated: '2026-02-14T21:18:30.966+08:00'
+updated: '2026-02-14T21:27:08.151+08:00'
 ---
 #  {{title}}
-
 
 # Claude Code 完全指南:使用方式、技巧与最佳实践
 
@@ -3885,3 +3884,7 @@ await testGen.run(`
 > **正如 Ado Kukic 所说:"用得最好的开发者,不是那些把所有事情都丢给 AI 的人,而是那些懂得何时使用计划模式、何时开启深度思考、如何设置安全边界的人。"**
 
 **Claude Code 不仅仅是一个工具,它是一个可编程、可扩展、可进化的智能开发环境。你的创造力决定了它的上限。**
+
+#### 原文取自
+
+https://juejin.cn/post/7592079304923824138#heading-14
