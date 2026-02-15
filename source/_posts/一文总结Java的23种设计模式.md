@@ -1,19 +1,18 @@
 ---
 abbrlink: ''
-abstracts: Java中的23种设计模式主要分为三类：  创建型模式：主要解决对象创建问题 结构型模式：主要解决对象组合问题 行为型模式：主要解决对象之间的交互问题
+abstracts: Java中的23种设计模式主要分为三类：  创建型模式：主要解决对象创建问题 结构型模式：主要解决对象组合问题 行为型模式：主要解决对象之间的交互问题
 author: ZMC
 categories:
 - - 后端
-cover: https://raw.githubusercontent.com/3309446352/Images/main/img/e8e8257ace340d33aea63259f89603d2.webp
+cover: https://raw.githubusercontent.com/3309446352/Images/main/img/da6dfbbebd74043b0692c9098b5aa23fbac7c09afdaa23cf361b661f337b1825.webp
 date: '2026-02-16T01:34:57.087270+08:00'
 description: description
 tags:
 - 设计模式
 title: 一文总结Java的23种设计模式
-updated: '2026-02-16T01:34:56.970+08:00'
+updated: '2026-02-16T01:52:08.969+08:00'
 ---
 #  {{title}}
-
 
 **<!---->**
 
