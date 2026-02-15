@@ -1,6 +1,6 @@
 ---
 abbrlink: ''
-abstracts: GitHub Actions 是一个持续集成 (Continuous integration)和持续交付 (Continuous delivery)的平台，它可以做到自动化构建、测试、部署。
+abstracts: GitHub Actions 是一个持续集成 (Continuous integration)和持续交付 (Continuous delivery)的平台，它可以做到自动化构建、测试、部署。
 author: ZMC
 categories:
 - - 后端
@@ -8,12 +8,11 @@ cover: https://raw.githubusercontent.com/3309446352/Images/main/img/d7520811f04b
 date: '2026-02-16T01:12:17.680978+08:00'
 description: description
 tags:
-- GitHub Actions
+- GitHubActions
 title: 还不会用 GitHub Actions ？看看这篇
-updated: '2026-02-16T01:12:17.698+08:00'
+updated: '2026-02-16T01:46:36.434+08:00'
 ---
 #  {{title}}
-
 
 ## GitHub Actions
 
