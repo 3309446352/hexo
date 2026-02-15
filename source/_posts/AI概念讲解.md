@@ -1,6 +1,6 @@
 ---
 abbrlink: ''
-abstracts: abstracts
+abstracts: Prompt、MCP、Skills、Rule  概念讲解
 author: ZMC
 categories:
 - - AI
@@ -10,10 +10,9 @@ description: description
 tags:
 - AI
 title: AI概念讲解
-updated: '2026-02-15T10:59:00.988+08:00'
+updated: '2026-02-15T11:32:11.657+08:00'
 ---
 #  {{title}}
-
 
 # Prompt、MCP、Skills、Rule... 终于有人把这些 AI 概念讲清楚了！
 
