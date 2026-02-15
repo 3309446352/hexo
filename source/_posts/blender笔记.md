@@ -1,14 +1,13 @@
 ---
 abbrlink: ''
 categories:
-- Blender建模
+- - 3D建模
 cover: https://raw.githubusercontent.com/3309446352/Images/main/img/o.jpg
 date: '2024-03-22T19:38:41+08:00'
 tags:
 - Blender
-- 3D建模
 title: blender笔记
-updated: '2026-02-14T17:52:02.671+08:00'
+updated: '2026-02-15T11:27:09.773+08:00'
 ---
 # blender布线笔记
 
