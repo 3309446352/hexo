@@ -8,9 +8,8 @@ date: '2025-10-12T13:34:15.189260+08:00'
 description: GitHubActions是一个集成和持续交付的平台，它可以帮助你通过自动化的构建（包括编译、发布、自动化测试）来验证你的代码，从而尽快地发现集成错误。
 tags:
 - GitHubActions
-- Github自动化
 title: GitHubActions详解
-updated: '2025-10-12T13:40:08.904+08:00'
+updated: '2026-02-16T01:46:10.703+08:00'
 ---
 # GitHubActions详解
 
