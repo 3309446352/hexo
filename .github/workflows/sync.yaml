@@ -36,7 +36,6 @@ jobs:
           export TZ='Asia/Shanghai'
           export HUSKY=0
           npm install --prod --ignore-scripts
-
       - name: 拉取文档
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
@@ -45,6 +44,11 @@ jobs:
           IMAGES_OWNER: ${{ secrets.IMAGES_OWNER }}          # ← 添加
           IMAGES_REPO: ${{ secrets.IMAGES_REPO }}
         run: |
+          echo "=== 检查环境变量 ==="
+          echo "IMAGES_TOKEN 存在: ${{ env.IMAGES_TOKEN != '' }}"
+          echo "IMAGES_OWNER: $IMAGES_OWNER"
+          echo "IMAGES_REPO: $IMAGES_REPO"
+          echo "==================="
           npm run sync
       - name: 配置Git用户名邮箱
         run: |
