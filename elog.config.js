@@ -1,5 +1,5 @@
 module.exports = {
-  write: {
+  write: {// 写作平台详细配置
     // 内容写入配置（从 Notion 同步到本地）
     platform: 'notion',
     notion: {
@@ -9,7 +9,7 @@ module.exports = {
     }
   },
    // 部署配置（将本地文件发布到目标位置）
-  deploy: {
+  deploy: { //部署（博客）平台详细配置
     platform: 'local',
     local: {
        outputDir: './source/_posts',  // 输出目录（Hexo 默认文章目录）
@@ -21,15 +21,27 @@ module.exports = {
         include: ['categories', 'tags', 'title', 'date', 'updated', 'permalink', 'cover', 'description'],
         timeFormat: true           // 时间格式化（使用 Hexo 时间格式）
       },
-      formatExt: './format-image.js'  // 图片路径处理脚本
+      // formatExt: './format-image.js'  // 图片路径处理脚本
     }
   },
-  image: {// 图片处理配置
+  // image: {// 图片处理配置
+  //   enable: true, //是否启用图床
+  //   platform: 'local', //图床平台 local/cos/oss/github/qiniu/upyun
+  //   local: {
+  //     outputDir: './source/images',  // 图片输出目录
+  //     prefixKey: '/images'           // 图片 URL 前缀
+  //   }
+  // }
+  image: {
     enable: true,
-    platform: 'local',
-    local: {
-      outputDir: './source/images',  // 图片输出目录
-      prefixKey: '/images'           // 图片 URL 前缀
+    platform: 'github',  // 改为 github
+    github: {
+      token: process.env.GITHUB_TOKEN,
+      owner: process.env.GITHUB_OWNER,                  // GitHub 用户名
+      repo: process.env.GITHUB_REPO,                  // 存放图片的仓库名
+      branch: 'main',                          // 分支名（默认 main）       // 图片存储路径
+      host: cdn.jsdelivr.net,// GitHub Token
+      prefixKey: 'img/'  // 图片访问前缀
     }
   }
 };
