@@ -41,9 +41,9 @@ jobs:
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-          IMAGES_TOKEN: ${{ secrets.GITHUB_TOKEN }}          # ← 添加
-          IMAGES_OWNER: ${{ secrets.GITHUB_OWNER }}          # ← 添加
-          IMAGES_REPO: ${{ secrets.GITHUB_REPO }}
+          IMAGES_TOKEN: ${{ secrets.IMAGES_TOKEN }}          # ← 添加
+          IMAGES_OWNER: ${{ secrets.IMAGES_OWNER }}          # ← 添加
+          IMAGES_REPO: ${{ secrets.IMAGES_REPO }}
         run: |
           npm run sync
       - name: 配置Git用户名邮箱
