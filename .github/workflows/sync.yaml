@@ -44,11 +44,14 @@ jobs:
           IMAGES_OWNER: ${{ secrets.IMAGES_OWNER }}          # ← 添加
           IMAGES_REPO: ${{ secrets.IMAGES_REPO }}
         run: |
-          echo "=== 检查环境变量 ==="
-          echo "IMAGES_TOKEN 存在: ${{ env.IMAGES_TOKEN != '' }}"
-          echo "IMAGES_OWNER: $IMAGES_OWNER"
-          echo "IMAGES_REPO: $IMAGES_REPO"
-          echo "==================="
+          echo "=== 仓库中的 elog.config.js ==="
+          cat elog.config.js
+          echo "==============================="
+          echo "=== 环境变量值 ==="
+          echo "IMAGES_OWNER=$IMAGES_OWNER"
+          echo "IMAGES_REPO=$IMAGES_REPO"
+          echo "IMAGES_TOKEN 长度=${#IMAGES_TOKEN}"
+          echo "================="
           npm run sync
       - name: 配置Git用户名邮箱
         run: |
