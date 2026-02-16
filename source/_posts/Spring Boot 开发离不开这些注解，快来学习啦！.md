@@ -1,19 +1,18 @@
 ---
 abbrlink: ''
-abstracts: Spring Boot 是一款非常流行的 Java 框架，其注解用法复杂而丰富。在 Spring Boot 中，除了常规的 AOP 注解外，还有以下几类注解，常记定能有所感悟。
+abstracts: Spring Boot 是一款非常流行的 Java 框架，其注解用法复杂而丰富。在 Spring Boot 中，除了常规的 AOP 注解外，还有以下几类注解，常记定能有所感悟。
 author: ZMC
 categories:
 - - 后端
-cover: https://raw.githubusercontent.com/3309446352/Images/main/img/096b379a6b6dde15abcd6b389eb82e3f.webp
+cover: https://raw.githubusercontent.com/3309446352/Images/main/img/u%3D3370016881%2C216894587%26fm%3D253%26app%3D138%26f%3DJPEG.jfif
 date: '2026-02-16T01:17:37.870624+08:00'
 description: description
 tags:
 - Springboot
 title: Spring Boot 开发离不开这些注解，快来学习啦！
-updated: '2026-02-16T01:17:37.620+08:00'
+updated: '2026-02-16T19:16:34.589+08:00'
 ---
 #  {{title}}
-
 
 # Spring Boot 开发离不开这些注解，快来学习啦！
 
