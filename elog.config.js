@@ -36,9 +36,9 @@ module.exports = {
     enable: true,
     platform: 'github',  // 改为 github
     github: {
-      token: process.env.GITHUB_TOKEN,
-      owner: process.env.GITHUB_OWNER,                  // GitHub 用户名
-      repo: process.env.GITHUB_REPO,                  // 存放图片的仓库名
+      token: process.env.IMAGES_TOKEN,
+      owner: process.env.IMAGES_OWNER,                  // GitHub 用户名
+      repo: process.env.IMAGES_REPO,                  // 存放图片的仓库名
       branch: 'main',                          // 分支名（默认 main）       // 图片存储路径
       host: cdn.jsdelivr.net,// GitHub Token
       prefixKey: 'img/'  // 图片访问前缀
