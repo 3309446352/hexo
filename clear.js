@@ -23,12 +23,11 @@ async function deleteDraftPosts() {
     try {
         console.log('正在查询 Notion 中状态为 "待发布" 的文章...');
 
-        // 1. 查询 Notion 数据库
         const response = await notion.databases.query({
             database_id: process.env.NOTION_DATABASE_ID,
             filter: {
-                property: 'status',     // 属性名
-                select: {               // 属性类型：下拉选择
+                property: 'status',
+                select: {
                     equals: '待发布'
                 }
             }
@@ -43,49 +42,62 @@ async function deleteDraftPosts() {
 
         console.log(`查询到 ${posts.length} 篇文章，开始处理...`);
 
-        // 2. 遍历文章进行删除
-        for (const post of posts) {
-            // --- 修改部分开始：自动查找标题属性 ---
-            let title = 'Untitled';
+        // 读取本地目录所有文件
+        let localFiles = [];
+        try {
+            localFiles = fs.readdirSync(HEXO_POST_DIR);
+        } catch (e) {
+            console.log('目录读取失败，可能不存在');
+        }
 
-            // 遍历所有属性，找到 type 为 'title' 的那个，无论它叫 Title 还是 标题
+        for (const post of posts) {
+            // 1. 获取标题
+            let title = 'Untitled';
             for (const key in post.properties) {
                 if (post.properties[key].type === 'title') {
                     const titleArr = post.properties[key].title;
-                    console.log('调试-当前title变量:', title);
-                    console.log('调试-读取到的titleArr:', titleArr);
                     if (titleArr && titleArr.length > 0) {
                         title = titleArr[0].plain_text;
                     }
-                    break; // 找到后退出循环
+                    break;
                 }
             }
-            // --- 修改部分结束 ---
 
-            // 生成安全文件名
-            const safeTitle = generateSafeFileName(title);
-            console.log(`正在处理: ${safeTitle}`);
+            console.log(`\n正在处理文章: ${title}`);
 
-            // 拼接路径：文章文件 和 图片文件夹
-            const filePath = path.join(HEXO_POST_DIR, `${safeTitle}.md`);
-            const imgDirPath = path.join(HEXO_POST_DIR, safeTitle);
+            // 2. 核心匹配逻辑
+            const coreTitle = getCoreName(title); // 例如：年少不知自增好错把UUID当个宝
 
-            // 删除 Markdown 文件
-            if (fs.existsSync(filePath)) {
+            // 在本地文件中查找包含这个核心名称的文件
+            // 同时排除掉可能匹配到的同名文件夹（只匹配.md文件）
+            const targetFile = localFiles.find(file => {
+                if (!file.endsWith('.md')) return false;
+                return getCoreName(file).includes(coreTitle);
+            });
+
+            if (targetFile) {
+                // 找到了文件
+                const filePath = path.join(HEXO_POST_DIR, targetFile);
+                const fileNameWithoutExt = targetFile.replace('.md', '');
+                const imgDirPath = path.join(HEXO_POST_DIR, fileNameWithoutExt);
+
+                // 删除 MD 文件
                 fs.unlinkSync(filePath);
-                console.log(`[删除文件] ${safeTitle}.md`);
-            } else {
-                console.log(`[文件不存在] ${safeTitle}.md`);
-            }
+                console.log(`[成功删除] ${targetFile}`);
 
-            // 删除图片文件夹
-            if (fs.existsSync(imgDirPath)) {
-                fs.rmSync(imgDirPath, { recursive: true, force: true }); // Node.js 14.14+
-                console.log(`[删除目录] ${safeTitle}/`);
+                // 删除同名图片文件夹
+                if (fs.existsSync(imgDirPath)) {
+                    fs.rmSync(imgDirPath, { recursive: true, force: true });
+                    console.log(`[成功删除目录] ${fileNameWithoutExt}/`);
+                }
+            } else {
+                console.log(`[未找到文件] 在本地未找到匹配文章: ${title}`);
+                // 调试：打印一下本地到底有哪些文件，方便排查
+                // console.log('本地文件列表:', localFiles);
             }
         }
 
-        console.log('所有操作已完成。');
+        console.log('\n所有操作已完成。');
 
     } catch (error) {
         console.error('执行出错:', error.message);
