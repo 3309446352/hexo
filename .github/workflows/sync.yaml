@@ -30,7 +30,6 @@ jobs:
         with:
           node-version: "20.x"  # 更新到更现代的Node.js版本
           cache: 'npm'  # 启用npm缓存加速安装
-
       - name: 安装依赖
         run: |
           export TZ='Asia/Shanghai'
@@ -56,7 +55,6 @@ jobs:
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
         run: |
           node clear.js
-
       - name: 配置Git用户名邮箱
         run: |
           git config --global user.name "3309446352"
