@@ -44,7 +44,7 @@ jobs:
           IMAGES_OWNER: ${{ secrets.IMAGES_OWNER }}          # ← 添加
           IMAGES_REPO: ${{ secrets.IMAGES_REPO }}
         run: |
-          curl -s -H "Authorization: token $IMAGES_TOKEN" 
+          curl -s -H "Authorization: token $IMAGES_TOKEN" \
           https://api.github.com/repos/$IMAGES_OWNER/$IMAGES_REPO | head -20
           npm run sync
       - name: 配置Git用户名邮箱
