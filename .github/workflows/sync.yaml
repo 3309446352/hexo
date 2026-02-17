@@ -46,7 +46,7 @@ jobs:
         run: |
           echo "=== 环境变量检查 ==="
           echo "IMAGES_TOKEN 长度: ${#IMAGES_TOKEN}"
-          echo "IMAGES_OWNER: $IMAGES_OWNER"
+          echo "IMAGES_USER: $IMAGES_USER"
           echo "IMAGES_REPO: $IMAGES_REPO"
           echo "=================="
           
