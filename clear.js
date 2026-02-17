@@ -26,9 +26,9 @@ async function deleteDraftPosts() {
         const response = await notion.databases.query({
             database_id: process.env.NOTION_DATABASE_ID,
             filter: {
-                property: 'status',      // 属性名
-                status: {                // 属性类型 (如果是下拉框请改为 select)
-                    equals: '待发布'     // 目标状态
+                property: 'status',     // 确认您的属性名是不是这个
+                select: {               // 关键修改：改为 select
+                    equals: '待发布'
                 }
             }
         });
