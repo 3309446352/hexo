@@ -13,8 +13,8 @@ const HEXO_POST_DIR = 'source/_posts';
  * 生成安全的文件名（替换特殊字符）
  */
 function generateSafeFileName(name) {
-    // 保留中文、字母、数字、下划线、点、短横线
-    return name.replace(/[^a-zA-Z0-9\u4e00-\u9fa5._-]/g, '-');
+    // 逻辑改为：删除不符合要求的字符，而不是替换为 '-'
+    return name.replace(/[^a-zA-Z0-9\u4e00-\u9fa5._-]/g, '');
 }
 /**
  * 查询 Notion 并删除对应文章
