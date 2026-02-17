@@ -43,18 +43,7 @@ jobs:
           IMAGES_USER: ${{ secrets.IMAGES_USER}}          # ← 添加
           IMAGES_REPO: ${{ secrets.IMAGES_REPO }}
         run: |
-#          echo "=== 环境变量检查 ==="
-#          echo "IMAGES_TOKEN 长度: ${#IMAGES_TOKEN}"
-#          echo "IMAGES_OWNER: $IMAGES_USER"
-#          echo "IMAGES_REPO: $IMAGES_REPO"
-#          echo "=================="
-          npm run sync
-      - name: 执行删除脚本
-        env:
-          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-        run: |
-          node clear.js
+            npm run sync
       - name: 配置Git用户名邮箱
         run: |
           git config --global user.name "3309446352"
