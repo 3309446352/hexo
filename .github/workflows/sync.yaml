@@ -36,6 +36,7 @@ jobs:
           export TZ='Asia/Shanghai'
           export HUSKY=0
           npm install --prod --ignore-scripts
+
       - name: 拉取文档
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
@@ -44,12 +45,21 @@ jobs:
           IMAGES_USER: ${{ secrets.IMAGES_USER}}          # ← 添加
           IMAGES_REPO: ${{ secrets.IMAGES_REPO }}
         run: |
-          echo "=== 环境变量检查 ==="
-          echo "IMAGES_TOKEN 长度: ${#IMAGES_TOKEN}"
-          echo "IMAGES_OWNER: $IMAGES_USER"
-          echo "IMAGES_REPO: $IMAGES_REPO"
-          echo "=================="
+#          echo "=== 环境变量检查 ==="
+#          echo "IMAGES_TOKEN 长度: ${#IMAGES_TOKEN}"
+#          echo "IMAGES_OWNER: $IMAGES_USER"
+#          echo "IMAGES_REPO: $IMAGES_REPO"
+#          echo "=================="
           npm run sync
+
+          # --- 新增步骤开始 ---
+      - name: 执行删除脚本
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        run: |
+          node clear.js
+
       - name: 配置Git用户名邮箱
         run: |
           git config --global user.name "3309446352"
