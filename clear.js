@@ -19,10 +19,14 @@ function generateSafeFileName(name) {
 /**
  * 查询 Notion 并删除对应文章
  */
+/**
+ * 查询 Notion 并删除对应文章
+ */
 async function deleteDraftPosts() {
     try {
         console.log('正在查询 Notion 中状态为 "待发布" 的文章...');
 
+        // 1. 查询 Notion 数据库
         const response = await notion.databases.query({
             database_id: process.env.NOTION_DATABASE_ID,
             filter: {
@@ -42,16 +46,18 @@ async function deleteDraftPosts() {
 
         console.log(`查询到 ${posts.length} 篇文章，开始处理...`);
 
-        // 读取本地目录所有文件
+        // 2. 读取本地目录所有文件（用于模糊匹配）
         let localFiles = [];
         try {
             localFiles = fs.readdirSync(HEXO_POST_DIR);
         } catch (e) {
-            console.log('目录读取失败，可能不存在');
+            console.log('本地目录读取失败，请检查路径');
+            return;
         }
 
+        // 3. 遍历文章进行删除
         for (const post of posts) {
-            // 1. 获取标题
+            // --- 自动查找标题属性 ---
             let title = 'Untitled';
             for (const key in post.properties) {
                 if (post.properties[key].type === 'title') {
@@ -65,13 +71,14 @@ async function deleteDraftPosts() {
 
             console.log(`\n正在处理文章: ${title}`);
 
-            // 2. 核心匹配逻辑
-            const coreTitle = getCoreName(title); // 例如：年少不知自增好错把UUID当个宝
+            // --- 模糊匹配逻辑 ---
+            // 获取标题的核心文字（去掉标点）
+            const coreTitle = getCoreName(title);
 
-            // 在本地文件中查找包含这个核心名称的文件
-            // 同时排除掉可能匹配到的同名文件夹（只匹配.md文件）
+            // 在本地文件中查找包含这个核心名称的 .md 文件
             const targetFile = localFiles.find(file => {
                 if (!file.endsWith('.md')) return false;
+                // 将文件名也去掉标点，看是否包含标题核心
                 return getCoreName(file).includes(coreTitle);
             });
 
@@ -81,7 +88,7 @@ async function deleteDraftPosts() {
                 const fileNameWithoutExt = targetFile.replace('.md', '');
                 const imgDirPath = path.join(HEXO_POST_DIR, fileNameWithoutExt);
 
-                // 删除 MD 文件
+                // 删除 Markdown 文件
                 fs.unlinkSync(filePath);
                 console.log(`[成功删除] ${targetFile}`);
 
@@ -92,8 +99,8 @@ async function deleteDraftPosts() {
                 }
             } else {
                 console.log(`[未找到文件] 在本地未找到匹配文章: ${title}`);
-                // 调试：打印一下本地到底有哪些文件，方便排查
-                // console.log('本地文件列表:', localFiles);
+                // 如果还是找不到，打印一下核心名字，方便调试
+                console.log(` -> 核心匹配串: ${coreTitle}`);
             }
         }
 
