@@ -41,26 +41,15 @@ jobs:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
           IMAGES_TOKEN: ${{ secrets.IMAGES_TOKEN }}          # ← 添加
-          IMAGES_OWNER: ${{ secrets.IMAGES_USER}}          # ← 添加
+          IMAGES_USER: ${{ secrets.IMAGES_USER}}          # ← 添加
           IMAGES_REPO: ${{ secrets.IMAGES_REPO }}
         run: |
           echo "=== 环境变量检查 ==="
           echo "IMAGES_TOKEN 长度: ${#IMAGES_TOKEN}"
-          echo "IMAGES_USER: $IMAGES_USER"
+          echo "IMAGES_OWNER: $IMAGES_USER"
           echo "IMAGES_REPO: $IMAGES_REPO"
           echo "=================="
-          
-          echo "=== elog.config.js 内容 ==="
-          cat elog.config.js
-          echo "========================"
-          curl -s -H "Authorization: token $IMAGES_TOKEN" \
-          https://api.github.com/repos/$IMAGES_OWNER/$IMAGES_REPO | head -20
           npm run sync
-      - name: 检查配置文件
-        run: |
-          echo "=== elog.config.js 内容 ==="
-          cat elog.config.js
-          echo "========================"
       - name: 配置Git用户名邮箱
         run: |
           git config --global user.name "3309446352"
