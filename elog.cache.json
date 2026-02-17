@@ -3,15 +3,18 @@
     {
       "id": "28862f35-ece7-80a9-a8f9-eab373cff46d",
       "doc_id": "28862f35-ece7-80a9-a8f9-eab373cff46d",
-      "updated": 1771340040000,
+      "updated": 1771341360000,
       "properties": {
-        "categories": "",
-        "tags": [],
+        "categories": "读书笔记",
+        "tags": [
+          "读书笔记"
+        ],
         "description": "",
         "permalink": "",
         "title": "《小王子》",
-        "date": "2025-10-11 02:51:00",
-        "updated": "2026-02-17 22:54:00"
+        "date": "2026-02-17 08:00:00",
+        "cover": "https://raw.githubusercontent.com/3309446352/Images/main/img/951eab3fc9090232801f19d4da131133cc56084e.jpg%401256w_790h_!web-article-pic.webp",
+        "updated": "2026-02-17 23:16:00"
       },
       "realName": "《小王子》",
       "relativePath": "/《小王子》.md",
@@ -23,7 +26,7 @@
       "object": "page",
       "id": "28862f35-ece7-80a9-a8f9-eab373cff46d",
       "created_time": "2025-10-10T18:51:00.000Z",
-      "last_edited_time": "2026-02-17T14:54:00.000Z",
+      "last_edited_time": "2026-02-17T15:16:00.000Z",
       "created_by": {
         "object": "user",
         "id": "f04da5d6-e3fa-44e9-8b2e-5c672b46c03c"
@@ -32,7 +35,12 @@
         "object": "user",
         "id": "f04da5d6-e3fa-44e9-8b2e-5c672b46c03c"
       },
-      "cover": null,
+      "cover": {
+        "type": "external",
+        "external": {
+          "url": "https://raw.githubusercontent.com/3309446352/Images/main/img/951eab3fc9090232801f19d4da131133cc56084e.jpg%401256w_790h_!web-article-pic.webp"
+        }
+      },
       "icon": null,
       "parent": {
         "type": "database_id",
@@ -42,13 +50,16 @@
       "in_trash": false,
       "is_locked": false,
       "properties": {
-        "categories": "",
-        "tags": [],
+        "categories": "读书笔记",
+        "tags": [
+          "读书笔记"
+        ],
         "description": "",
         "permalink": "",
         "title": "《小王子》",
-        "date": "2025-10-11 02:51:00",
-        "updated": "2026-02-17 22:54:00"
+        "date": "2026-02-17 08:00:00",
+        "cover": "https://raw.githubusercontent.com/3309446352/Images/main/img/951eab3fc9090232801f19d4da131133cc56084e.jpg%401256w_790h_!web-article-pic.webp",
+        "updated": "2026-02-17 23:16:00"
       },
       "url": "https://www.notion.so/28862f35ece780a9a8f9eab373cff46d",
       "public_url": null
