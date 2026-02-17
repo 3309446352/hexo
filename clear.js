@@ -34,6 +34,7 @@ async function deleteDraftPosts() {
         });
         const posts = response.results;
         if (!posts || posts.length === 0) {
+
             console.log('没有需要删除的文章。');
             return;
         }
@@ -44,9 +45,12 @@ async function deleteDraftPosts() {
             const title = post.properties.Title?.title[0]?.plain_text || 'Untitled';
             // 生成安全文件名
             const safeTitle = generateSafeFileName(title);
+            console.log(safeTitle)
             // 拼接路径：文章文件 和 图片文件夹
             const filePath = path.join(HEXO_POST_DIR, `${safeTitle}.md`);
+            console.log(filePath)
             const imgDirPath = path.join(HEXO_POST_DIR, safeTitle);
+            console.log(imgDirPath)
             // 删除 Markdown 文件
             if (fs.existsSync(filePath)) {
                 fs.unlinkSync(filePath);
