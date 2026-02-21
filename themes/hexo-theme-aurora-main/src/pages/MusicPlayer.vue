@@ -14,7 +14,7 @@
         <input
           v-model="formData.type"
           type="text"
-          placeholder="请输入类型 歌曲, 音乐播放清单, 专辑, 搜索, 艺术家"
+          placeholder="请输入歌曲类型 歌曲, 音乐播放清单, 专辑, 搜索, 艺术家"
         />
       </div>
       <div class="form-group">
@@ -22,7 +22,7 @@
         <input
           v-model="formData.Id"
           type="number"
-          placeholder="请输入Id 歌曲, 音乐播放清单, 专辑, 搜索, 艺术家"
+          placeholder="请输入Id 歌曲, 音乐播放清单, 专辑, 搜索, 艺术家 默认"
         />
       </div>
       <!-- 提交按钮 -->

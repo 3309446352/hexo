@@ -1,5 +1,5 @@
 <template>
-  <div id="App-Wrapper" :class="[appWrapperClass, theme]" :style="wrapperStyle">
+  <div id="App-Wrapper" :class="[appWrapperClass, theme]":style="wrapperStyle">
     <HeaderMain />
     <div id="loading-bar-wrapper" :class="loadingBarClass"></div>
     <div id="App-Container" class="app-container lg:max-w-screen-2xl px-3 lg:px-8"

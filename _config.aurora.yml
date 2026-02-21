@@ -513,6 +513,16 @@ footer_links: #页脚链接
       - title: EPIC # link title
         mode: "Games"
         url: ./page/Games # URL link
+  - title: 新闻
+    links:
+      - title: 时讯
+        mode: "News"
+        url: https://newsnow.busiyi.world/c/hottest # URL link
+  - title: AI
+    links:
+      - title: AI
+        mode: "AI"
+        url: https://ai-bot.cn/daily-ai-news/ # URL link
 #! ---------------------------------------------------------------
 #! Highlighter Shiki
 #! ---------------------------------------------------------------

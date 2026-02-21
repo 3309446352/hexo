@@ -1,4 +1,5 @@
 <template>
+  <!-- TODO:文章组件-->
   <div class="flex flex-col mt-20">
     <div class="main-grid">
       <div class="post-header">
@@ -102,7 +103,8 @@
         </div>
       </div>
     </div>
-    <div class="main-grid">
+    <div :class="{ 'main-grid': !isFullWidth }" >
+      <!--TODO: 文章内容-->
       <div>
         <template v-if="post.content">
           <div
@@ -166,12 +168,13 @@
           </div>
         </template>
       </div>
-      <div>
-        <Sidebar>
-          <Profile :author="post.author.slug || ''" />
-          <Toc :toc="post.toc" :comments="enabledComment" />
-        </Sidebar>
-      </div>
+      <!-- 文章内容-->
+      <!--TODO:用户显示和目录组件-->
+      <Sidebar v-if="!isFullWidth">
+        <Profile :author="post.author.slug || ''" />
+        <Toc :toc="post.toc" :comments="enabledComment" />
+      </Sidebar>
+      <!--用户显示和目录组件-->
     </div>
   </div>
 </template>
@@ -193,6 +196,7 @@ import SvgIcon, { SvgTypes } from '@/components/SvgIcon/index.vue'
 import PostStats from '@/components/Post/PostStats.vue'
 import useCommentPlugin from '@/hooks/useCommentPlugin'
 import useLightBox from '@/hooks/useLightBox'
+import { useNavigatorStore } from '@/stores/navigator'
 
 interface PostStatsExpose extends Ref<InstanceType<typeof PostStats>> {
   getCommentCount(): void
@@ -273,6 +277,8 @@ export default defineComponent({
       router.push({ name: 'post-search', query: { category: slug } })
     }
 
+    const isFullWidth = computed(() => useNavigatorStore().isFullWidth)
+
     return {
       avatarClasses: computed(() => {
         return {
@@ -295,6 +301,7 @@ export default defineComponent({
       navigateToCategory,
       loading,
       post,
+      isFullWidth,
       t
     }
   },

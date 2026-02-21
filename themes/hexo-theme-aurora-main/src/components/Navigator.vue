@@ -3,6 +3,7 @@
     'Ob-Navigator--open': openNavigator,
     'Ob-Navigator--scrolling': scrolling
   }">
+    <!--TODO：返回顶部按钮-->
     <transition name="fade-bounce-y" mode="out-in">
       <div v-if="!openNavigator && showProgress" @click.stop.prevent="handleBackToTop" class="Ob-Navigator-btt">
         <div>
@@ -13,7 +14,8 @@
         </span>
       </div>
     </transition>
-
+    <!--返回顶部按钮-->
+    <!--弹出伸缩框-->
     <div class="Ob-Navigator-ball" @click.stop.prevent="handleNavigatorToggle">
       <div :style="gradient">
         <transition name="fade-bounce-y" mode="out-in">
@@ -25,15 +27,14 @@
     </div>
 
     <ul class="Ob-Navigator-submenu">
-      <li id="Ob-Navigator-top" :style="gradient" @click.stop.prevent="handleBackToTop">
+      <li id="Ob-Navigator-top" :style="gradient" @click.stop.prevent="handleLayout">
         <div>
-          <SvgIcon icon-class="back-to-top-name" class-name="text-ob-bright" />
+          <SvgIcon icon-class="left-right-arrow" class-name="text-ob-bright" />
         </div>
         <span class="Ob-Navigator-tips">
           {{ t('settings.tips-back-to-top') }}
         </span>
       </li>
-
       <li id="Ob-Navigator-home" :style="gradient" @click.stop.prevent="handleGoHome">
         <div>
           <SvgIcon icon-class="nav-home" class-name="text-ob-bright" />
@@ -157,6 +158,12 @@ export default defineComponent({
       searchStore.setOpenModal(true)
     }
 
+    // TODO: 侧边栏伸缩
+    const isFullWidth = navigatorStore.isFullWidth
+    const handleLayout = () => {
+      navigatorStore.toggleFullWidth()
+    }
+
     onMounted(() => {
       scrollHandler()
       document.addEventListener('scroll', scrollHandler)
@@ -187,6 +194,8 @@ export default defineComponent({
       handleOpenMenu,
       handleGoHome,
       handleSearch,
+      isFullWidth,
+      handleLayout,
       scrolling,
       SvgTypes,
       t

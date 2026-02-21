@@ -10,7 +10,7 @@
     />
     <div class="timelist-list" @click="Convert">
       <h1 v-if="loading">{{ newsList }}</h1>
-      <h1 v-else-if="error">{{ currentItem[currentIndex].desc }}</h1>
+      <h1 v-else-if="error">{{ currentItem[currentIndex] }}</h1>
       <h1 v-else>加载失败，请重试</h1>
     </div>
     <SvgIcon
@@ -40,38 +40,25 @@ export default defineComponent({
     const content = ref('')
     // 获取新闻数据
     // 数据获取与处理
-    const currentItem = [
-      {
-        desc: '一日不思量，也攒眉千度。\t\t——柳永《昼夜乐·洞房记得初相遇》'
-      },
-      {
-        desc: '一朝春尽红颜老，花落人亡两不知。\t\t——李清照《如梦令·常记溪亭日暮》'
-      },
-      {
-        desc: '月上柳梢头，人约黄昏后。\t\t——欧阳修《生查子·元夕》'
-      },
-      {
-        desc: '天长地久有时尽，此恨绵绵无绝期。\t\t——白居易《长恨歌》'
-      },
-      {
-        desc: '荣华诚足贵，亦复可怜伤。\t\t——陶渊明《拟古九首》'
-      },
-      {
-        desc: '渺万里层云，千山暮雪，只影向谁去？\t\t——元好问《摸鱼儿·雁丘词 / 迈陂塘》'
-      },
-      {
-        desc: '月明点滴，夜雨潇潇，灯下独坐。\t\t——李清照《如梦令·常记溪亭日暮》'
-      },
-      {
-        desc: '素女鸣珠佩，天人弄彩球。\t\t——李白《宫中行乐词八首》'
-      }
-    ]
+    const currentItem = ref([])
     // 启动定时轮播
     const startRotation = () => {
       if (timer) clearInterval(timer)
       timer = window.setInterval(() => {
-        currentIndex.value = (currentIndex.value + 1) % currentItem.length
-      }, 30000) // 3秒切换一次
+        currentIndex.value = (currentIndex.value + 1) % currentItem.value.length
+      }, 8000) // 3秒切换一次
+    }
+
+    const SixWorld = async () =>{
+      try {
+        const res = await axios.get('https://60s.viki.moe/v2/60s?encoding=json')
+        // const result = await axios.get('https://60s.viki.moe/v2/ai-news?date&all&encoding=json')
+        currentItem.value = res.data.data.news
+        // currentItem.value.push(...result.data.data.news.title)
+        console.log( currentItem.value)
+      } catch (error) {
+        error.value = true
+      }
     }
     const fetchNews = async () => {
       try {
@@ -101,6 +88,7 @@ export default defineComponent({
     onMounted(() => {
       startRotation()
       fetchNews()
+      SixWorld()
     })
 
     return {

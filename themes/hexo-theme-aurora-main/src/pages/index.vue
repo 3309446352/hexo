@@ -1,5 +1,5 @@
 <template>
-  <div class="block mt-8">
+  <div class="block mt-8" style="-ms-overflow-style: none;overflow-y: auto;scrollbar-width: none; /* Firefox */">
     <Feature v-if="themeConfig.theme.feature" :data="topFeature">
       <FeatureList :data="featurePosts" />
     </Feature>
@@ -10,14 +10,14 @@
     <div>
       <ArticleList :title="'titles.articles'" icon="article" />
       <!--TODO:titles.可以引入titles-->
-      <div class="main-grid" id="article-list">
+      <div :class="{ 'main-grid': !isFullWidth }" id="article-list">
         <div class="flex flex-col relative">
           <ul :class="tabClass">
             <li
               :class="{ active: activeTab === '' }"
               @click="handleTabChange('')"
             >
-            <span class="first-tab" :style="activeTabStyle('')">
+              <span class="first-tab" :style="activeTabStyle('')">
                 {{ t('settings.button-all') }}
               </span>
             </li>
@@ -28,9 +28,9 @@
                 :class="{ active: activeTab === category.slug }"
                 @click="handleTabChange(category.slug)"
               >
-              <span :style="activeTabStyle(category.slug)">
-                {{ category.name }}
-              </span>
+                <span :style="activeTabStyle(category.slug)">
+                  {{ category.name }}
+                </span>
                 <b>
                   {{ category.count }}
                 </b>
@@ -44,14 +44,14 @@
           </ul>
 
           <span :class="expanderClass" @click="expandHandler">
-          <SvgIcon
-            icon-class="chevron"
-            height="1.2rem"
-            width="1.2rem"
-            fill="var(--text-normal)"
-            stroke="var(--text-normal)"
-          />
-        </span>
+            <SvgIcon
+              icon-class="chevron"
+              height="1.2rem"
+              width="1.2rem"
+              fill="var(--text-normal)"
+              stroke="var(--text-normal)"
+            />
+          </span>
           <!--TODO：文章伸缩转换-->
           <div class="list-none flex flex-col gap-6" v-if="showComponent">
             <template v-if="posts.data.length === 0">
@@ -75,7 +75,7 @@
             </template>
           </div>
           <ul class="flex flex-wrap -mx-3 gap-y-6" v-else>
-            <template v-if="posts.data.length === 0" >
+            <template v-if="posts.data.length === 0">
               <li v-for="n in 6" :key="n" class="w-full md:w-1/2 px-3">
                 <ArticleCard :data="{}" />
               </li>
@@ -90,7 +90,11 @@
             </template>
 
             <template v-else>
-              <li v-for="post in posts.data" :key="post.slug" class="w-full md:w-1/2 px-3">
+              <li
+                v-for="post in posts.data"
+                :key="post.slug"
+                class="w-full md:w-1/2 px-3"
+              >
                 <ArticleCard :data="post" />
               </li>
             </template>
@@ -103,20 +107,26 @@
             @pageChange="pageChangeHandler"
           />
         </div>
-        <div>
-          <Sidebar style="overflow-block: auto">
-            <Profile author="blog-author" />
-            <RecentComment />
-            <Notice />
-            <Sticky
-              :stickyTop="32 + 63"
-              :endingElId="endEleId"
-              dynamicElClass="#sticky-tag-box"
-            >
-              <TagBox />
-            </Sticky>
-          </Sidebar>
-        </div>
+        <Sidebar v-if="!isFullWidth" style="overflow-block: auto">
+          <!--TODO：用户简介组件-->
+          <Profile author="blog-author" />
+          <!--TODO:时间组件-->
+          <Notice />
+          <!--TODO:新闻组件-->
+          <NewsBox></NewsBox>
+          <!--TODO:音乐组件-->
+          <MusicBox></MusicBox>
+          <!--TODO:最近评论-->
+          <RecentComment />
+          <!--TODO:Tags组件-->
+          <Sticky
+            :stickyTop="32 + 63"
+            :endingElId="endEleId"
+            dynamicElClass="#sticky-tag-box"
+          >
+            <TagBox />
+          </Sticky>
+        </Sidebar>
       </div>
     </div>
   </div>
@@ -127,7 +137,13 @@ import { computed, defineComponent, onMounted, ref, toRef } from 'vue'
 import { Feature, FeatureList } from '@/components/Feature'
 import { ArticleCard, HorizontalArticle } from '@/components/ArticleCard'
 import { MainTitle } from '@/components/Title'
-import { Sidebar, TagBox, RecentComment, Profile, Notice} from '@/components/Sidebar'
+import {
+  Sidebar,
+  TagBox,
+  RecentComment,
+  Profile,
+  Notice
+} from '@/components/Sidebar'
 import { usePostStore } from '@/stores/post'
 import { FeaturePosts, PostList } from '@/models/Post.class'
 import { useAppStore } from '@/stores/app'
@@ -141,9 +157,14 @@ import Sticky from '@/components/Sticky.vue'
 import Article from '@/components/ArticleCard/src/acticle.vue'
 import { useArticleStore } from '@/stores/article'
 import ArticleList from '@/components/ArticleList.vue'
+import { useNavigatorStore } from '@/stores/navigator'
+import NewsBox from '@/components/Sidebar/src/NewsBox.vue'
+import MusicBox from '@/components/Sidebar/src/MusicBox.vue'
 export default defineComponent({
   name: 'ARHome',
   components: {
+    MusicBox,
+    NewsBox,
     Notice,
     ArticleList,
     Article,
@@ -175,7 +196,7 @@ export default defineComponent({
     const featurePosts = ref(new FeaturePosts().features)
     const posts = ref(new PostList())
     const articleStore = useArticleStore()
-
+    const isFullWidth = computed(() => useNavigatorStore().isFullWidth)
     const showComponent = computed(() => {
       return articleStore.showComponent
     })
@@ -217,9 +238,6 @@ export default defineComponent({
     }
 
     onMounted(fetchData)
-    onMounted(() => {
-      console.log(toRef(posts))
-    })
     const expandHandler = () => {
       expanderClass.value.expanded = !expanderClass.value.expanded
       tabClass.value['expanded-tab'] = !tabClass.value['expanded-tab']
@@ -280,6 +298,7 @@ export default defineComponent({
         await fetchPostData()
       }
     }
+    // TODO: 侧边栏伸缩
     return {
       endEleId: computed(() =>
         appStore.themeConfig.footerLinks.data.length > 0
@@ -311,7 +330,8 @@ export default defineComponent({
       pagination,
       pageChangeHandler,
       t,
-      showComponent
+      showComponent,
+      isFullWidth
     }
   }
 })
@@ -319,5 +339,4 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 /* 新增/修改 CSS */
-
 </style>
