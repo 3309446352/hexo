@@ -32,7 +32,7 @@
           <SvgIcon icon-class="left-right-arrow" class-name="text-ob-bright" />
         </div>
         <span class="Ob-Navigator-tips">
-          {{ t('settings.tips-back-to-top') }}
+          {{ t('settings.Side-bar') }}
         </span>
       </li>
       <li id="Ob-Navigator-home" :style="gradient" @click.stop.prevent="handleGoHome">

@@ -14,7 +14,7 @@
         <input
           v-model="formData.type"
           type="text"
-          placeholder="请输入歌曲类型 歌曲, 音乐播放清单, 专辑, 搜索, 艺术家"
+          placeholder="请输入类型 歌曲, 音乐播放清单, 专辑, 搜索, 艺术家"
         />
       </div>
       <div class="form-group">
@@ -22,7 +22,15 @@
         <input
           v-model="formData.Id"
           type="number"
-          placeholder="请输入Id 歌曲, 音乐播放清单, 专辑, 搜索, 艺术家 默认"
+          placeholder="请输入Id 歌曲, 音乐播放清单, 专辑, 搜索, 艺术家 "
+        />
+      </div>
+      <div class="form-group">
+        <label for="type">url:</label>
+        <input
+          v-model="formData.url"
+          type="text"
+          placeholder="请输入url 歌曲, 音乐播放清单, 专辑, 搜索, 艺术家 "
         />
       </div>
       <!-- 提交按钮 -->
@@ -42,11 +50,12 @@ const isSubmitting = ref(false)
 const formData = reactive({
   Server: '',
   type: '',
-  Id: ''
+  Id: '',
+  url: ''
 })
 // 表单提交处理
 const handleSubmit = () => {
-  playerStore.GetPlayer(formData.Server, formData.type, formData.Id)
+  playerStore.GetPlayer(formData.Server, formData.type, formData.Id,formData.url)
   isSubmitting.value = true
 }
 </script>

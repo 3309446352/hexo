@@ -4,7 +4,7 @@
       <div v-for="(item, index) in displayedItems" :key="index">
         <ul class="news-item">
           <li>
-            <a :href="item.link" target="_blank">{{ item.title }}</a>
+            <a :href="item.link" target="_blank" style="color: var(--text-bright)">{{ item.title }}</a>
           </li>
         </ul>
       </div>

@@ -57,14 +57,24 @@ jobs:
           git config --global user.email "xuechengdugu@gmail.com"
       - name: 提交拉取的文档到GitHub仓库
         run: |
-          echo `date +"%Y-%m-%d %H:%M:%S"` begin > time.txt
-          git add .
-          git commit -m "Refresh elog.cache.json" -a
+            git add .
+        # 提交信息改为中文，并防止无变更时报错
+            git commit -m "刷新文档和缓存" -a || echo "没有变更需要提交"
 
-      - name: 推送文档到仓库
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+            - name: 推送文档到仓库
+              uses: ad-m/github-push-action@master
+              with:
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+      # === 失败时打印定位信息 ===
+      - name: 任务失败告警
+        if: failure()
+        run: |
+            echo "⚠️  同步任务执行失败！"
+            echo "👇 请点击上方失败的步骤（红叉处）查看具体报错原因："
+            echo "   1. 若 '拉取文档' 步骤失败：请检查 Notion Token 或网络连接。"
+            echo "   2. 若 '推送文档' 步骤失败：请检查 GITHUB_TOKEN 权限或远程仓库冲突。"
+            echo "   3. 若 '执行删除脚本' 步骤失败：请检查 clear.js 代码逻辑。"
+            echo "链接: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
       - name: 调试信息
         run: |
           echo "事件类型: ${{ github.event_name }}"
