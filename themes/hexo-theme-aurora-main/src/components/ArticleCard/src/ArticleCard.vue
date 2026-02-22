@@ -154,10 +154,8 @@ export default defineComponent({
     }
     // 新增：验证密码并跳转
     const confirmAccess = () => {
-      const correctPassword = 'qwer' // 你的密码
-      if (inputPassword.value === correctPassword) {
+      if (inputPassword.value === props.data.slug) {
         showPasswordDialog.value = false
-        // 验证成功后跳转
         router.push({ name: 'post-slug', params: { slug: props.data.slug } });
       } else {
         alert('密码错误');

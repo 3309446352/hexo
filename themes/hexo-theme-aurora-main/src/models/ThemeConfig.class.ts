@@ -145,7 +145,7 @@ export class ThemeMenu implements ObMenu {
       },
       bangumis: {
         name: 'bangumis',
-        path: '/bangumis',
+        path: '/PagesBox/bangumis',
         i18n: {
           'zh-CN': '追番',
           'zh-TW': '追番',
@@ -154,7 +154,7 @@ export class ThemeMenu implements ObMenu {
       },
       QuotesCard: {
         name: 'QuotesCard',
-        path: '/QuotesCard',
+        path: '/PagesBox/QuotesCard',
         i18n: {
           'zh-CN': '读书',
           'zh-TW': '讀書',
@@ -163,7 +163,7 @@ export class ThemeMenu implements ObMenu {
       },
       collect: {
         name: 'collect',
-        path: '/collect',
+        path: '/PagesBox/collect',
         i18n: {
           'zh-CN': '收集',
           'zh-TW': '收集',
@@ -172,7 +172,7 @@ export class ThemeMenu implements ObMenu {
       },
       MusicGame: {
         name: 'MusicGame',
-        path: '/MusicGame',
+        path: '/PagesBox/MusicGame',
         i18n: {
           'zh-CN': '音乐室',
           'zh-TW': '音乐室',
@@ -186,6 +186,15 @@ export class ThemeMenu implements ObMenu {
           'zh-CN': '照片',
           'zh-TW': '照片',
           en: 'photos'
+        }
+      },
+      PageBox: {
+        name: 'PageBox',
+        path: '/PagesBox/pages',
+        i18n: {
+          'zh-CN': '页面',
+          'zh-TW': '頁面',
+          en: 'Pages'
         }
       }
     }

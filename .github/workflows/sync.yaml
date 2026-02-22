@@ -59,12 +59,12 @@ jobs:
         run: |
             git add .
         # 提交信息改为中文，并防止无变更时报错
-            git commit -m "刷新文档和缓存" -a || echo "没有变更需要提交"
+          git commit -m "刷新文档和缓存" -a || echo "没有变更需要提交"
 
-            - name: 推送文档到仓库
-              uses: ad-m/github-push-action@master
-              with:
-                github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: 推送文档到仓库
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
       # === 失败时打印定位信息 ===
       - name: 任务失败告警
         if: failure()

@@ -69,24 +69,22 @@ menu:
   About: true
   Tags: true
   Archives: true
-  Categories: true
-  QuotesCard: true
-  collect: true
   bangumis: true
-  MusicGame: true,
-  photos: true
+  PageBox: true
+  Games: true
   Links:
     i18n:
       zh-CN: "友链"
       en: "Links" #此页面将显示您所有朋友的博客列表。
-  pages-menus: # 个人链接
-    name: "Message Board"
-    path: "/page/message-board"
+  message-board:
+    name: 'MessageBoard'
     i18n:
-      zh-CN: "留言"
-      en: "MessageBoard"
-  MySQl:
-    name: "My"
+      zh-CN: '留言'
+      en: 'Message Board'
+    path: '/page/message-board'
+    
+  MyBlog:
+    name: "MyBlog"
     i18n:
       zh-CN: "我的"
       en: "My"
@@ -103,12 +101,6 @@ menu:
         i18n:
           zh-CN: "后台"
           en: "background"
-      MusicGame:
-        name: "MusicGame"
-        path: "/MusicGame"
-        i18n:
-          zh-CN: "音乐厅"
-          en: "MusicGame"
 #! ---------------------------------------------------------------
 #! Theme Config
 #! @docs https://aurora.tridiamond.tech/guide/theme.html

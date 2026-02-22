@@ -112,8 +112,7 @@
           <Profile author="blog-author" />
           <!--TODO:时间组件-->
           <Notice />
-          <!--TODO:新闻组件-->
-          <NewsBox></NewsBox>
+
           <!--TODO:音乐组件-->
           <MusicBox></MusicBox>
           <!--TODO:最近评论-->
@@ -158,13 +157,11 @@ import Article from '@/components/ArticleCard/src/acticle.vue'
 import { useArticleStore } from '@/stores/article'
 import ArticleList from '@/components/ArticleList.vue'
 import { useNavigatorStore } from '@/stores/navigator'
-import NewsBox from '@/components/Sidebar/src/NewsBox.vue'
 import MusicBox from '@/components/Sidebar/src/MusicBox.vue'
 export default defineComponent({
   name: 'ARHome',
   components: {
     MusicBox,
-    NewsBox,
     Notice,
     ArticleList,
     Article,

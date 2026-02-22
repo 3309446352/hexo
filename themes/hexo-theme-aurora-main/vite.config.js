@@ -94,6 +94,21 @@ export default ({ mode }) => {
             proxyRes.headers['Access-Control-Allow-Origin'] = '*' // 强制跨域
           }
         },
+        '/steamstore': {
+          target: 'https://store.steampowered.com',
+          changeOrigin: true,
+          secure: false,
+          rewrite: path => path.replace(/^\/steamstore/, '')
+        },
+        '/bgm': {
+          target: 'https://api.bgm.tv',
+          changeOrigin: true,
+          secure: false,
+          rewrite: path => path.replace(/^\/bgm/, ''),
+          onProxyRes: proxyRes => {
+            proxyRes.headers['Access-Control-Allow-Origin'] = '*'
+          }
+        },
         '/bli': {
           target: 'https://api.bilibili.com',
           changeOrigin: true,

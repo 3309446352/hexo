@@ -27,7 +27,7 @@
   <teleport to="head">
     <title>{{ title }}</title>
   </teleport>
-  <Aplayer></Aplayer>
+  <Aplayer v-if="playerStore.showAplayer"></Aplayer>
   <VueEasyLightbox :visible="lightBoxVisible" :imgs="lightBoxImages" :index="lightBoxIndex" :moveDisabled="true"
     :rotateDisabled="true" :scrollDisabled="false" @hide="onHideLightBox">
   </VueEasyLightbox>
@@ -54,11 +54,12 @@ import FooterContainer from '@/components/Footer/FooterContainer.vue'
 import Navigator from '@/components/Navigator.vue'
 import MobileMenu from '@/components/MobileMenu.vue'
 import Dia from '@/components/Dia.vue'
-import defaultCover from '@/assets/default-cover.webp'
+import defaultCover from '@/assets/w.webp'
 import { useI18n } from 'vue-i18n'
 import VueEasyLightbox from 'vue-easy-lightbox'
 import Aplayer from '@/components/Aplayer.vue'
 import FooterLink from '@/components/Footer/FooterLink.vue'
+import { usePlayerStore } from '@/stores/MusicPlayer'
 export default defineComponent({
   name: 'App',
   components: {
@@ -73,6 +74,7 @@ export default defineComponent({
   },
   setup() {
     const appStore = useAppStore()
+    const playerStore = usePlayerStore()
     const lightBoxStore = useLightBoxStore()
     const commonStore = useCommonStore()
     const metaStore = useMetaStore()
@@ -236,6 +238,7 @@ export default defineComponent({
       loadingBarClass,
       handleOpenModal,
       onHideLightBox,
+      playerStore,
       t
     }
   }

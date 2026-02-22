@@ -179,8 +179,7 @@ export default defineComponent({
     }
     // 新增：验证密码并跳转
     const confirmAccess = () => {
-      const correctPassword = 'qwer'
-      if (inputPassword.value === correctPassword) {
+      if (inputPassword.value === props.data.slug) {
         showPasswordDialog.value = false
         router.push({ name: 'post-slug', params: { slug: props.data.slug } })
       } else {
