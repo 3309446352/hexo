@@ -1,17 +1,12 @@
 name: Sync Docs
 
 on:
-  # 允许手动push触发
   push:
     branches:
       - Test
-  # 允许外部仓库事件触发
   schedule:
-#    - cron: '0 */6 * * *'  # 每6小时检查一次 (UTC时间)
-    - cron: '0 0 * * *'  # 每24小时检查一次 (UTC 00:00，即北京时间早上08:00)
-  # 允许在GitHub界面上手动触发工作流
-  workflow_dispatch:  # 允许手动触发
-  # 允许通过API调用（如Vercel Serverless）触发
+    - cron: '0 16 * * *'   # ✅ 北京时间 00:00
+  workflow_dispatch:
   repository_dispatch:
     types:
       - deploy
@@ -20,68 +15,65 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+
     steps:
       - name: 检查分支
         uses: actions/checkout@master
         with:
-          ref: Test  # 明确指定分支
+          ref: Test
 
-      - name: 安装node环境
+      - name: 安装 Node 环境
         uses: actions/setup-node@master
         with:
-          node-version: "20.x"  # 更新到更现代的Node.js版本
-          cache: 'npm'  # 启用npm缓存加速安装
+          node-version: "20.x"
+          cache: 'npm'
+
       - name: 安装依赖
         run: |
           export TZ='Asia/Shanghai'
           export HUSKY=0
           npm install --prod --ignore-scripts
+
       - name: 拉取文档
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-          IMAGES_TOKEN: ${{ secrets.IMAGES_TOKEN }}          # ← 添加
-          IMAGES_USER: ${{ secrets.IMAGES_USER}}          # ← 添加
+          IMAGES_TOKEN: ${{ secrets.IMAGES_TOKEN }}
+          IMAGES_USER: ${{ secrets.IMAGES_USER }}
           IMAGES_REPO: ${{ secrets.IMAGES_REPO }}
-        run: |
-            npm run sync
+        run: npm run sync
+
       - name: 执行删除脚本
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-        run: |
-          node clear.js
-      - name: 配置Git用户名邮箱
+        run: node clear.js
+
+      - name: 配置 Git
         run: |
           git config --global user.name "3309446352"
           git config --global user.email "xuechengdugu@gmail.com"
-      - name: 提交拉取的文档到GitHub仓库
-        run: |
-            git add .
-        # 提交信息改为中文，并防止无变更时报错
-            git commit -m "刷新文档和缓存" -a || echo "没有变更需要提交"
 
-            - name: 推送文档到仓库
-              uses: ad-m/github-push-action@master
-              with:
-                github_token: ${{ secrets.GITHUB_TOKEN }}
-      # === 失败时打印定位信息 ===
+      - name: 提交变更
+        run: |
+          git add .
+          git commit -m "刷新文档和缓存" -a || echo "No changes"
+
+      - name: 推送文档到仓库
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: Test
+
       - name: 任务失败告警
         if: failure()
         run: |
-            echo "⚠️  同步任务执行失败！"
-            echo "👇 请点击上方失败的步骤（红叉处）查看具体报错原因："
-            echo "   1. 若 '拉取文档' 步骤失败：请检查 Notion Token 或网络连接。"
-            echo "   2. 若 '推送文档' 步骤失败：请检查 GITHUB_TOKEN 权限或远程仓库冲突。"
-            echo "   3. 若 '执行删除脚本' 步骤失败：请检查 clear.js 代码逻辑。"
-            echo "链接: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          echo "⚠️ 同步任务执行失败！"
+          echo "🔗 https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
       - name: 调试信息
         run: |
           echo "事件类型: ${{ github.event_name }}"
           echo "触发者: ${{ github.actor }}"
           echo "仓库: ${{ github.repository }}"
           echo "分支: ${{ github.ref }}"
-          echo "事件负载:"
-          echo "${{ toJson(github.event) }}"
-          echo "环境变量:"
-          printenv
