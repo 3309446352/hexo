@@ -1,32 +1,32 @@
 {
   "docs": [
     {
-      "id": "37962f35-ece7-80b5-b25a-df9fd378c3f2",
-      "doc_id": "37962f35-ece7-80b5-b25a-df9fd378c3f2",
-      "updated": 1781001780000,
+      "id": "37a62f35-ece7-8065-ba00-ccd742219d2d",
+      "doc_id": "37a62f35-ece7-8065-ba00-ccd742219d2d",
+      "updated": 1781893560000,
       "properties": {
         "categories": "读书笔记",
         "tags": [
           "读书笔记"
         ],
-        "description": " 世界处于一个高度不稳定的\"中间状态\"——旧秩序正在崩塌，新秩序尚未成形",
+        "description": "",
         "permalink": "",
-        "title": "政治版图和全球风向",
+        "title": "宋朝制度研究书目",
         "date": "2026-06-09 08:00:00",
-        "cover": "https://fddi.fudan.edu.cn/_upload/article/images/48/e4/1c9eb2fb451a8e934417b6d1d7eb/783e8473-d1bd-493c-80bb-a719ab63c778_d.jpg",
-        "updated": "2026-06-09 18:43:00"
+        "cover": "https://app.notion.com/images/page-cover/hudsonRiverSchool_rockyMountainsLandersPeak.jpg",
+        "updated": "2026-06-20 02:26:00"
       },
-      "realName": "政治版图和全球风向",
-      "relativePath": "/政治版图和全球风向.md",
+      "realName": "宋朝制度研究书目",
+      "relativePath": "/宋朝制度研究书目.md",
       "docPath": "./source/_posts"
     }
   ],
   "catalog": [
     {
       "object": "page",
-      "id": "37962f35-ece7-80b5-b25a-df9fd378c3f2",
-      "created_time": "2026-06-08T12:51:00.000Z",
-      "last_edited_time": "2026-06-09T10:43:00.000Z",
+      "id": "37a62f35-ece7-8065-ba00-ccd742219d2d",
+      "created_time": "2026-06-09T14:13:00.000Z",
+      "last_edited_time": "2026-06-19T18:26:00.000Z",
       "created_by": {
         "object": "user",
         "id": "f04da5d6-e3fa-44e9-8b2e-5c672b46c03c"
@@ -38,7 +38,7 @@
       "cover": {
         "type": "external",
         "external": {
-          "url": "https://fddi.fudan.edu.cn/_upload/article/images/48/e4/1c9eb2fb451a8e934417b6d1d7eb/783e8473-d1bd-493c-80bb-a719ab63c778_d.jpg"
+          "url": "https://app.notion.com/images/page-cover/hudsonRiverSchool_rockyMountainsLandersPeak.jpg"
         }
       },
       "icon": null,
@@ -54,14 +54,14 @@
         "tags": [
           "读书笔记"
         ],
-        "description": " 世界处于一个高度不稳定的\"中间状态\"——旧秩序正在崩塌，新秩序尚未成形",
+        "description": "",
         "permalink": "",
-        "title": "政治版图和全球风向",
+        "title": "宋朝制度研究书目",
         "date": "2026-06-09 08:00:00",
-        "cover": "https://fddi.fudan.edu.cn/_upload/article/images/48/e4/1c9eb2fb451a8e934417b6d1d7eb/783e8473-d1bd-493c-80bb-a719ab63c778_d.jpg",
-        "updated": "2026-06-09 18:43:00"
+        "cover": "https://app.notion.com/images/page-cover/hudsonRiverSchool_rockyMountainsLandersPeak.jpg",
+        "updated": "2026-06-20 02:26:00"
       },
-      "url": "https://app.notion.com/p/37962f35ece780b5b25adf9fd378c3f2",
+      "url": "https://app.notion.com/p/37a62f35ece78065ba00ccd742219d2d",
       "public_url": null,
       "archived": false
     }
