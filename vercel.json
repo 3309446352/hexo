@@ -4,7 +4,6 @@
             "source": "/bli/(.*)",
             "destination": "https://api.bilibili.com/x/space/bangumi/follow/list?$1"
         },
-
         {
             "source": "/:path*",
             "destination": "/index.html"
@@ -33,11 +32,29 @@
             ]
         },
         {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "Content-Type",
+                    "value": ""
+                }
+            ]
+        },
+        {
             "source": "/(.*).js",
             "headers": [
                 {
                     "key": "Content-Type",
                     "value": "application/javascript"
+                }
+            ]
+        },
+        {
+            "source": "/(.*).css",
+            "headers": [
+                {
+                    "key": "Content-Type",
+                    "value": "text/css"
                 }
             ]
         }
