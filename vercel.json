@@ -3,11 +3,6 @@
         {
             "source": "/bli/(.*)",
             "destination": "https://api.bilibili.com/x/space/bangumi/follow/list?$1"
-        },
-
-        {
-            "source": "/:path*",
-            "destination": "/index.html"
         }
     ],
     "headers": [
@@ -29,15 +24,6 @@
                 {
                     "key": "User-Agent",
                     "value": "HCLonely/hexo-bilibili-bangumi"
-                }
-            ]
-        },
-        {
-            "source": "/(.*).js",
-            "headers": [
-                {
-                    "key": "Content-Type",
-                    "value": "application/javascript"
                 }
             ]
         }
