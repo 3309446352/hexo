@@ -32,16 +32,13 @@ module.exports = {
   //     prefixKey: '/images'           // 图片 URL 前缀
   //   }
   // }
-  image: {
+image: {
     enable: true,
-    platform: 'github',  // 改为 github
-    github: {
-      token: process.env.IMAGES_TOKEN,
-      user: process.env.IMAGES_USER,                  // GitHub 用户名
-      repo: process.env.IMAGES_REPO,                  // 存放图片的仓库名
-      branch: process.env.IMAGES_BRANCH,                          // 分支名（默认 main）       // 图片存储路径
-      host: 'cdn.jsdelivr.net',// GitHub Token
-      prefixKey: 'img/'  // 图片访问前缀
+    platform: 'local',
+    local: {
+      outputDir: './source/images',
+      prefixKey: '/images'
     }
+  }
   }
 };
