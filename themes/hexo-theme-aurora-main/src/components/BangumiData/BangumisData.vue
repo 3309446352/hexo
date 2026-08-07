@@ -33,19 +33,19 @@
                   </span>
                   <span class="bangumi-info-item bangumi-play">
                     <span class="bangumi-info-label">想看</span>
-                    <em>{{ item.collection_info.wish }}</em>
+                    <em>{{ item.collection_info?.wish ?? 0 }}</em>
                   </span>
                   <span class="bangumi-info-item bangumi-follow">
                     <span class="bangumi-info-label">在看</span>
-                    <em>{{ item.collection_info.doing }}万</em>
+                    <em>{{ item.collection_info?.doing ?? 0 }}万</em>
                   </span>
                   <span class="bangumi-info-item bangumi-coin">
                     <span class="bangumi-info-label">已看</span>
-                    <em>{{ item.collection_info.collect }}</em>
+                    <em>{{ item.collection_info?.collect ?? 0 }}</em>
                   </span>
                   <span class="bangumi-info-item bangumi-coin">
                     <span class="bangumi-info-label">搁置</span>
-                    <em>{{ item.collection_info.on_hold }}万</em>
+                    <em>{{ item.collection_info?.on_hold ?? 0 }}万</em>
                   </span>
                   <span class="bangumi-info-item bangumi-coin">
                     <span class="bangumi-info-label">评分</span>
@@ -219,8 +219,12 @@ export default defineComponent({
       return { watchTab }
     }
     const ViewerData = async (subject_id: number) => {
-      const res = await axios.get(`/bgm/subject/${subject_id}`)
-      return res.data.collection
+      try {
+        const res = await axios.get(`/bgm/subject/${subject_id}`)
+        return res.data.collection ?? { wish: 0, doing: 0, collect: 0, on_hold: 0 }
+      } catch {
+        return { wish: 0, doing: 0, collect: 0, on_hold: 0 }
+      }
     }
 
     onMounted(() => {
