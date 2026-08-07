@@ -67,6 +67,10 @@ jobs:
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          IMAGES_TOKEN: ${{ secrets.IMAGES_TOKEN }}
+          IMAGES_USER: ${{ secrets.IMAGES_USER }}
+          IMAGES_REPO: ${{ secrets.IMAGES_REPO }}
+          IMAGES_BRANCH: ${{ secrets.IMAGES_BRANCH }}
         run: |
           npm run sync
       - name: 配置Git用户名邮箱

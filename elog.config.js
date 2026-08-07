@@ -34,10 +34,14 @@ module.exports = {
   // }
 image: {
     enable: true,
-    platform: 'local',
-    local: {
-      outputDir: './source/images',
-      prefixKey: '/images'
+    platform: 'github',
+    github: {
+      token: process.env.IMAGES_TOKEN,
+      user: process.env.IMAGES_USER,
+      repo: process.env.IMAGES_REPO,
+      branch: process.env.IMAGES_BRANCH,
+      host: 'cdn.jsdelivr.net',
+      prefixKey: 'img/'
     }
   }
   }
