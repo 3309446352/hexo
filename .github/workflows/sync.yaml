@@ -43,13 +43,6 @@ jobs:
           npm install @notionhq/client
           npm install mkdirp
 
-      # 步骤4：同步Notion
-      - name: Sync from Notion
-        run: node sync.js
-        env:
-          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-
       # 步骤5：生成静态文件
       - name: Generate Site
         run: |
