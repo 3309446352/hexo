@@ -6,6 +6,11 @@
         },
 
         {
+            "source": "/bgm/(.*)",
+            "destination": "https://api.bgm.tv/$1"
+        },
+
+        {
             "source": "/:path*",
             "destination": "/index.html"
         }
