@@ -79,9 +79,10 @@ jobs:
           git config --global user.email "xuechengdugu@gmail.com"
 
       - name: 推送文档到仓库
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git add -A
+          git diff --quiet && git diff --staged --quiet || git commit -m "sync: auto update from notion [skip ci]"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:Test
       - name: 调试信息
         run: |
           echo "事件类型: ${{ github.event_name }}"
