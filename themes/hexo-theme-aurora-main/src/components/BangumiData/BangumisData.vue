@@ -172,7 +172,7 @@ export default defineComponent({
       id == null && localStorage.setItem('vmid', ' ');
       do {
         const req = await axios.get(
-          `https://api.bgm.tv/v0/users/${id}/collections?subject_type=2&limit=${LIMIT}&offset=${offset}`
+          `/bgm/v0/users/${id}/collections?subject_type=2&limit=${LIMIT}&offset=${offset}`
         )
         const bangumisData = req.data.data
         total = req.data.total
@@ -219,7 +219,7 @@ export default defineComponent({
       return { watchTab }
     }
     const ViewerData = async (subject_id: number) => {
-      const res = await axios.get(`https://api.bgm.tv/subject/${subject_id}`)
+      const res = await axios.get(`/bgm/subject/${subject_id}`)
       return res.data.collection
     }
 
