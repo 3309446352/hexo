@@ -12,7 +12,7 @@ module.exports = {
   deploy: {
     platform: 'local',
     local: {
-      outputDir: path.resolve(__dirname, '../source/_posts'),
+      outputDir: path.resolve(__dirname, './source/_posts'),
       filename: 'title',
       format: 'markdown',
       catalog: false,

@@ -50,19 +50,7 @@ jobs:
       #     NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
       #     NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
 
-      # 步骤5：生成静态文件
-      - name: Generate Site
-        run: |
-          hexo clean
-          hexo generate
-
-      # 步骤6：部署到GitHub Pages
-      - name: Deploy to Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          publish_branch: pages  # 你的发布分支
+      # 步骤5：拉取文档（elog 从 Notion 同步到 source/_posts）
       - name: 拉取文档
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
@@ -78,11 +66,26 @@ jobs:
           git config --global user.name "3309446352"
           git config --global user.email "xuechengdugu@gmail.com"
 
+      # 步骤6：推送markdown回仓库 Test 分支
       - name: 推送文档到仓库
         run: |
           git add -A
           git diff --quiet && git diff --staged --quiet || git commit -m "sync: auto update from notion [skip ci]"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:Test
+
+      # 步骤7：生成静态文件
+      - name: Generate Site
+        run: |
+          hexo clean
+          hexo generate
+
+      # 步骤8：部署到GitHub Pages
+      - name: Deploy to Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: pages  # 你的发布分支
       - name: 调试信息
         run: |
           echo "事件类型: ${{ github.event_name }}"
