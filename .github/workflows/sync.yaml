@@ -43,12 +43,12 @@ jobs:
           npm install @notionhq/client
           npm install mkdirp
 
-      # 步骤4：同步Notion（已注释，sync.js 不在仓库中，若需启用请先把 sync.js 提交到仓库根目录）
-      # - name: Sync from Notion
-      #   run: node sync.js
-      #   env:
-      #     NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-      #     NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+      # 步骤4：同步Notion
+      - name: Sync from Notion
+        run: node sync.js
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
 
       # 步骤5：生成静态文件
       - name: Generate Site
@@ -56,6 +56,7 @@ jobs:
           hexo clean
           hexo generate
 
+          
       # 步骤6：部署到GitHub Pages
       - name: Deploy to Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -67,10 +68,6 @@ jobs:
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-          IMAGES_TOKEN: ${{ secrets.IMAGES_TOKEN }}
-          IMAGES_USER: ${{ secrets.IMAGES_USER }}
-          IMAGES_REPO: ${{ secrets.IMAGES_REPO }}
-          IMAGES_BRANCH: ${{ secrets.IMAGES_BRANCH }}
         run: |
           npm run sync
       - name: 配置Git用户名邮箱
@@ -79,10 +76,9 @@ jobs:
           git config --global user.email "xuechengdugu@gmail.com"
 
       - name: 推送文档到仓库
-        run: |
-          git add -A
-          git diff --quiet && git diff --staged --quiet || git commit -m "sync: auto update from notion [skip ci]"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:Test
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: 调试信息
         run: |
           echo "事件类型: ${{ github.event_name }}"
