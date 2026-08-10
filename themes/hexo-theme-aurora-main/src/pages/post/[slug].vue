@@ -1,8 +1,8 @@
 <template>
   <!-- TODO:文章组件-->
   <div class="flex flex-col mt-20">
-    <div :class="{ 'max-w-3xl mx-auto w-full': isFullWidth }">
-      <div :class="{ 'main-grid': !isFullWidth }">
+    <div :class="{ 'max-w-3xl mx-auto w-full': isCentered }">
+      <div :class="['main-grid', { 'full-width': isFullWidth || isCentered }]">
         <div class="post-header">
           <span class="post-labels">
             <ob-skeleton v-if="loading" tag="b" height="20px" width="35px" />
@@ -48,7 +48,7 @@
           <h1
             v-if="post.title"
             class="post-title text-white cursor-pointer"
-            @click="navigatorStore.toggleFullWidth()"
+            @click="navigatorStore.toggleCentered()"
           >
             {{ post.title }}
           </h1>
@@ -110,7 +110,7 @@
           </div>
         </div>
       </div>
-      <div :class="{ 'main-grid': !isFullWidth }">
+      <div :class="['main-grid', { 'full-width': isFullWidth || isCentered }]">
         <!--TODO: 文章内容-->
         <div>
           <template v-if="post.content">
@@ -182,7 +182,7 @@
         </div>
         <!-- 文章内容-->
         <!--TODO:用户显示和目录组件-->
-        <Sidebar v-if="!isFullWidth">
+        <Sidebar v-if="!isFullWidth && !isCentered">
           <Profile :author="post.author.slug || ''" />
           <Toc :toc="post.toc" :comments="enabledComment" />
         </Sidebar>
@@ -291,6 +291,7 @@ export default defineComponent({
     }
 
     const isFullWidth = computed(() => useNavigatorStore().isFullWidth)
+    const isCentered = computed(() => useNavigatorStore().isCentered)
     const navigatorStore = useNavigatorStore()
 
     return {
@@ -316,6 +317,7 @@ export default defineComponent({
       loading,
       post,
       isFullWidth,
+      isCentered,
       navigatorStore,
       t
     }

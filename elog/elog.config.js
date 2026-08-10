@@ -33,7 +33,7 @@ module.exports = {
       repo: process.env.IMAGES_REPO,
       branch: process.env.IMAGES_BRANCH,
       host: 'cdn.jsdelivr.net',
-      prefixKey: 'img/'
+      prefixKey: 'Content/'
     }
   }
 };

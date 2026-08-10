@@ -319,6 +319,9 @@
     gap: var(--gap);
     grid-template-columns: minmax(0, 1fr) 320px;
   }
+  .main-grid.full-width {
+    grid-template-columns: minmax(0, 1fr);
+  }
   .inverted-main-grid {
     display: grid;
     gap: var(--gap);

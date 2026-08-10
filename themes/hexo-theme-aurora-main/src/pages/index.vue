@@ -10,7 +10,10 @@
     <div>
       <ArticleList :title="'titles.articles'" icon="article" />
       <!--TODO:titles.可以引入titles-->
-      <div :class="{ 'main-grid': !isFullWidth }" id="article-list">
+      <div
+        :class="['main-grid', { 'full-width': isFullWidth }]"
+        id="article-list"
+      >
         <div class="flex flex-col relative">
           <ul :class="tabClass">
             <li

@@ -9,17 +9,22 @@ export const useNavigatorStore = defineStore({
     openNavigator: false,
     isDone: false,
     isFullWidth: false,
+    isCentered: false,
     progress: 0
   }),
   getters: {
     isMobileMenuOpen: state => state.openMenu,
     isNavigatorOpen: state => state.openNavigator,
     isFullWidthLayout: state => state.isFullWidth,
+    isCenteredLayout: state => state.isCentered,
     getProgress: state => state.progress
   },
   actions: {
     toggleFullWidth() {
       this.isFullWidth = !this.isFullWidth
+    },
+    toggleCentered() {
+      this.isCentered = !this.isCentered
     },
     toggleMobileMenu() {
       this.isDone = false
