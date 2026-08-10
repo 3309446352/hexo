@@ -43,8 +43,15 @@ jobs:
           npm install @notionhq/client
           npm install mkdirp
 
+      # 步骤4：同步Notion（sync.js 不在仓库中，已禁用）
+      # - name: Sync from Notion
+      #   run: node sync.js
+      #   env:
+      #     NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+      #     NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
       # 步骤4：同步Notion（elog 从 Notion 拉到 source/_posts）
-      - name: 拉取文档
+
+      - name: 拉取文档 同步Notion（elog 从 Notion 拉到 source/_posts）
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
