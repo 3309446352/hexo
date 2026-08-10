@@ -7,10 +7,10 @@
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
-    "sync:local": "elog sync -e .elog.env",
+    "sync:local": "elog sync -c elog/elog.config.js -e elog/.elog.env -a elog/elog.cache.json",
     "elog:init": "elog init",
-    "sync": "elog sync",
-    "elog:clean": "elog clean"
+    "sync": "elog sync -c elog/elog.config.js -a elog/elog.cache.json",
+    "elog:clean": "elog clean -c elog/elog.config.js"
   },
   "hexo": {
     "version": "7.3.0"
