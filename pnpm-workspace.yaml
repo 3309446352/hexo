@@ -1,0 +1,4 @@
+allowBuilds:
+  deasync: true
+  hexo-util: true
+  vue-demi: true

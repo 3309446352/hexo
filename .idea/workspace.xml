@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="503a1091-c67e-4d63-99a3-85b02dc45293" name="更改" comment="添加居中模式和伸缩模式">
+      <change beforePath="$PROJECT_DIR$/vercel.json" beforeDir="false" afterPath="$PROJECT_DIR$/vercel.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="3HYM11vX7fZizKKEED5qPwe1IzQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="sortKey" value="BY_TIME_ASCENDING" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Test&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Hexo-aurora&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;npm.Hexo-aurora &gt; server.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Hexo-aurora\\hexo-theme-aurora\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="Hexo-aurora &gt; server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="server" />
+      </scripts>
+      <node-interpreter value="project" />
+      <package-manager value="npm" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.Hexo-aurora &gt; server" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="503a1091-c67e-4d63-99a3-85b02dc45293" name="更改" comment="" />
+      <created>1786040330338</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1786040330338</updated>
+      <workItem from="1786040331476" duration="387000" />
+      <workItem from="1786040882908" duration="340000" />
+      <workItem from="1786042019210" duration="2052000" />
+      <workItem from="1786044213575" duration="540000" />
+      <workItem from="1786045041395" duration="604000" />
+      <workItem from="1786084441434" duration="1833000" />
+      <workItem from="1786106364681" duration="5798000" />
+      <workItem from="1786124418846" duration="1100000" />
+      <workItem from="1786302775626" duration="1054000" />
+      <workItem from="1786356129778" duration="2388000" />
+      <workItem from="1786386422556" duration="836000" />
+      <workItem from="1786889519376" duration="302000" />
+      <workItem from="1786890012280" duration="121000" />
+      <workItem from="1786890506482" duration="1695000" />
+    </task>
+    <task id="LOCAL-00001" summary="：添加新的页面音乐，语录，格言，和收集功能&#10;&#10;-创建了MusicGame。Vue的音乐播放器集成与meeting -js。&#10;增加了QuotesCard。Vue用于显示阅读提示和管理阅读记录。&#10;-实现了bangumis。Vue跟踪动画系列与动态组件切换。&#10;-发达的收集。Vue用于管理书籍，小说，游戏，音乐和电影的集合，具有用户友好的界面。&#10;—介绍页面。Vue作为导航到各种功能的中心">
+      <option name="closed" value="true" />
+      <created>1786040471692</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1786040471692</updated>
+    </task>
+    <task id="LOCAL-00002" summary="修改vercel.json">
+      <option name="closed" value="true" />
+      <created>1786042043382</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1786042043382</updated>
+    </task>
+    <task id="LOCAL-00003" summary="修改vercel.json">
+      <option name="closed" value="true" />
+      <created>1786042740483</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1786042740483</updated>
+    </task>
+    <task id="LOCAL-00004" summary="修改vercel.json">
+      <option name="closed" value="true" />
+      <created>1786043838409</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1786043838409</updated>
+    </task>
+    <task id="LOCAL-00005" summary="修改vercel111.json">
+      <option name="closed" value="true" />
+      <created>1786045075146</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1786045075146</updated>
+    </task>
+    <task id="LOCAL-00006" summary="修改vercel111.json">
+      <option name="closed" value="true" />
+      <created>1786085964443</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1786085964443</updated>
+    </task>
+    <task id="LOCAL-00007" summary="BangumisData.json">
+      <option name="closed" value="true" />
+      <created>1786110002743</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1786110002743</updated>
+    </task>
+    <task id="LOCAL-00008" summary="vercel.json">
+      <option name="closed" value="true" />
+      <created>1786110192553</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1786110192553</updated>
+    </task>
+    <task id="LOCAL-00009" summary="vercel.json">
+      <option name="closed" value="true" />
+      <created>1786118242912</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1786118242912</updated>
+    </task>
+    <task id="LOCAL-00010" summary="vercel.json">
+      <option name="closed" value="true" />
+      <created>1786124433279</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1786124433279</updated>
+    </task>
+    <task id="LOCAL-00011" summary="elog">
+      <option name="closed" value="true" />
+      <created>1786303014522</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1786303014523</updated>
+    </task>
+    <task id="LOCAL-00012" summary="修改">
+      <option name="closed" value="true" />
+      <created>1786356297312</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1786356297312</updated>
+    </task>
+    <task id="LOCAL-00013" summary="添加居中模式和伸缩模式">
+      <option name="closed" value="true" />
+      <created>1786386644576</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1786386644576</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Test" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="版本更新" />
+    <MESSAGE value="：添加新的页面音乐，语录，格言，和收集功能&#10;&#10;-创建了MusicGame。Vue的音乐播放器集成与meeting -js。&#10;增加了QuotesCard。Vue用于显示阅读提示和管理阅读记录。&#10;-实现了bangumis。Vue跟踪动画系列与动态组件切换。&#10;-发达的收集。Vue用于管理书籍，小说，游戏，音乐和电影的集合，具有用户友好的界面。&#10;—介绍页面。Vue作为导航到各种功能的中心" />
+    <MESSAGE value="修改vercel.json" />
+    <MESSAGE value="修改vercel111.json" />
+    <MESSAGE value="BangumisData.json" />
+    <MESSAGE value="vercel.json" />
+    <MESSAGE value="elog" />
+    <MESSAGE value="修改" />
+    <MESSAGE value="添加居中模式和伸缩模式" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加居中模式和伸缩模式" />
+  </component>
+</project>
