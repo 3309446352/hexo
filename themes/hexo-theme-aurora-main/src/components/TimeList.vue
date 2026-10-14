@@ -51,7 +51,7 @@ export default defineComponent({
 
     const SixWorld = async () =>{
       try {
-        const res = await axios.get('/60s-api/v2/60s?encoding=json')
+        const res = await axios.get('https://60s.okbaike.com/v2/60s?encoding=json')
         // const result = await axios.get('https://60s.viki.moe/v2/ai-news?date&all&encoding=json')
         currentItem.value = res.data.data.news
         // currentItem.value.push(...result.data.data.news.title)

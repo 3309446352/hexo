@@ -4,6 +4,7 @@
       :server="Server"
       :type="type"
       :id="Id"
+      api="https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&r=:r"
       fixed="true"
       autoplay="false"
       loop="all"

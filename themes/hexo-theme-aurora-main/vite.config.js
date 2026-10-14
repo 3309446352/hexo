@@ -100,15 +100,7 @@ export default ({ mode }) => {
           secure: false,
           rewrite: path => path.replace(/^\/steamstore/, '')
         },
-        '/bgm': {
-          target: 'https://api.bgm.tv',
-          changeOrigin: true,
-          secure: false,
-          rewrite: path => path.replace(/^\/bgm/, ''),
-          onProxyRes: proxyRes => {
-            proxyRes.headers['Access-Control-Allow-Origin'] = '*'
-          }
-        },
+        // /bgm 代理已移除：bgm.tv 自带 CORS，前端直接请求 https://api.bgm.tv 即可
         '/bli': {
           target: 'https://api.bilibili.com',
           changeOrigin: true,

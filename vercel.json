@@ -1,13 +1,8 @@
 {
     "rewrites": [
         {
-            "source": "/bli/(.*)",
-            "destination": "https://api.bilibili.com/x/space/bangumi/follow/list?$1"
-        },
-
-        {
-            "source": "/60s-api/(.*)",
-            "destination": "https://60s.okbaike.com/$1"
+            "source": "/bli",
+            "destination": "https://api.bilibili.com/x/space/bangumi/follow/list"
         },
 
         {

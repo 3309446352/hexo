@@ -3,8 +3,8 @@ import { defineStore } from 'pinia'
 export const usePlayerStore = defineStore({
   id: 'PlayerStore',
   state: () => {
-    const apiurl = localStorage.getItem('musicApiurl') || 'https://api.moeyao.cn/meting/'
-    localStorage.setItem('musicApiurl', apiurl)
+    const apiurl = localStorage.getItem('musicApiurl2') || 'https://api.injahow.cn/meting/'
+    localStorage.setItem('musicApiurl2', apiurl)
     return {
       showAplayer: localStorage.getItem('showAplayer') !== 'false',
       Music: {
@@ -37,7 +37,7 @@ export const usePlayerStore = defineStore({
       localStorage.setItem('musicServer', finalServer)
       localStorage.setItem('musicType', finalType)
       localStorage.setItem('musicId', String(finalId))
-      localStorage.setItem('musicApiurl', finalApiurl)
+      localStorage.setItem('musicApiurl2', finalApiurl)
       return this.Music
     }
   }
