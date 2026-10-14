@@ -1,4 +1,4 @@
-name: Supabase Keep Alive
+name: Supabase 保活
 on:
   schedule:
     - cron: '0 0 */6 * *'
