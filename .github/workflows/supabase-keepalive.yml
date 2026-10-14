@@ -1,4 +1,4 @@
-name: Supabase 保活
+name: Supabase 持久化
 on:
   schedule:
     - cron: '0 0 */6 * *'
