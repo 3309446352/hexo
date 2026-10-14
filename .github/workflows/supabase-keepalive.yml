@@ -17,3 +17,9 @@ jobs:
         run: |
           curl -sf "${{ secrets.SUPABASE_URL }}/rest/v1/Tag?select=id&limit=1" \
             -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" || echo "ping failed, but keepalive continues"
+      - name: Query BookData Table
+        run: |
+          echo "::group::BookData"
+          curl -s "${{ secrets.SUPABASE_URL }}/rest/v1/BookData?select=*&limit=5" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" | jq .
+          echo "::endgroup::"
