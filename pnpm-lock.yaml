@@ -12,8 +12,8 @@ importers:
         specifier: ^0.14.0
         version: 0.14.7(@types/node@26.2.0)(proxy-agent@5.0.0)
       '@notionhq/client':
-        specifier: ^5.24.0
-        version: 5.24.0
+        specifier: ^5.27.0
+        version: 5.27.0
       cnpm:
         specifier: ^9.4.0
         version: 9.4.0
@@ -243,8 +243,8 @@ packages:
     resolution: {integrity: sha512-l7WqTCpQqC+HibkB9chghONQTYcxNQT0/rOJemBfmuKQRTu2vuV8B3yA395iKaUdDo7HI+0KvQaz9687Xskzkw==}
     engines: {node: '>=12'}
 
-  '@notionhq/client@5.24.0':
-    resolution: {integrity: sha512-fd71hjK6QZYggwWdaBeLu4ajBQ4HTK0R6bj7v9GMFhilgsdMRJ5HDHQtKbc8/y6E5XXLYgNpDz78Q+BdXHa1ug==}
+  '@notionhq/client@5.27.0':
+    resolution: {integrity: sha512-JnkLtAzSDrEnvtZ8dQ5L4KO+xyL5g01xK5qmKTmhJ5KFY8LWsMyFG033vHCj0mFcsz9thAMjfcAQz/SWxiexag==}
     engines: {node: '>=18'}
 
   '@sindresorhus/is@0.14.0':
@@ -3143,7 +3143,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@notionhq/client@5.24.0': {}
+  '@notionhq/client@5.27.0': {}
 
   '@sindresorhus/is@0.14.0': {}
 
